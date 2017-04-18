@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<html>
+	<head>
+		<title>Scramble</title>
+	</head>
+	<body>
+		<div>
+			<h1><a href="">Cartão de Produção</a></h1>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="styleshhet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+			<link href="https://fonts.googleapis.com/css?family=Ruluko" rel="stylesheet">
+
+			<link rel="stylesheet" href="{% static 'css/cprod.css' %}">
+
+		</div>
+
+{% for cartaop in cprod %}
+		<div>
+			<p> Cliente: {{ cartaop.cliente }}</p>
+			<h1><a href="">{{ cartaop.nome_cp }}</a></h1>
+			<p>Data Inicial: {{ cartaop.data_ini }}</p>
+			<p>Data Final: {{ cartaop.data_fim }}</p>
+		</div>
+{% endfor %}
+
+		<div>
+			<p>published: 14.06.2014, 12:14</p>
+			<h2><a href="">My first post</a></h2>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+		</div>
+
+		<div>
+			<p>published: 14.06.2014, 12:14</p>
+			<h2><a href="">My second post</a></h2>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+		</div>
+	</body>
+</html>

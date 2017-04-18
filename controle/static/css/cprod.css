@@ -1,0 +1,53 @@
+
+h1 a {
+	color: #FCA205;
+	font-family: 'Ruluko', sans-serif;
+}
+
+body {
+	padding-left: 15xp;
+}
+span.titulo {
+	color: #FFFF00;
+	font-size: 80px; 
+}
+
+/*Style para a barra lateral */
+
+#mySidenav a{
+	position: absolute;
+	left: -130px;
+	transition: 0.3s;
+	padding: 15px;
+	width: 170px;
+	text-decoration: none;
+	font-size: 15px;
+	color: white;
+	border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+	left: 0;
+}
+
+#Des {
+	top: 20px;
+	background: #4CAF50;
+}
+#CP {
+	top: 80px;
+	background: #2196F3;
+}
+#CD {
+	top: 140px;
+	background-color: #F44336;
+}
+#Tar {
+	top: 220px;
+	background-color:#555
+}
+
+
+
+
+
