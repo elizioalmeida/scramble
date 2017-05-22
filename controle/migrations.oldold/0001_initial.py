@@ -27,8 +27,6 @@ class Migration(migrations.Migration):
                 ('cliente', models.CharField(max_length=50, verbose_name=b'Cliente')),
                 ('data_ini', models.DateField(verbose_name=b'Data In\xc3\xadcio')),
                 ('data_fim', models.DateField(verbose_name=b'Data Final')),
-                ('data_des_ini', models.DateField(null=True, verbose_name=b'Data Desenv In\xc3\xadcio', blank=True)),
-                ('data_des_fim', models.DateField(null=True, verbose_name=b'Data Desenv Final', blank=True)),
             ],
         ),
         migrations.CreateModel(
