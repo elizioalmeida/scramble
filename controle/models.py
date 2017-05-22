@@ -15,6 +15,7 @@ class CPod(models.Model):
 
     class Meta:
         verbose_name = ('Cartão de Produção')
+        verbose_name_plural = ('Catões de Produção')
 
     def __unicode__(self):
         return self.nome_cp
