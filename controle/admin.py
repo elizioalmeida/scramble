@@ -31,5 +31,20 @@ class CPodAdmin(admin.ModelAdmin):
     list_display = ( 'nome_cp', 'cliente', 'data_ini', 'data_fim', 'data_des_ini')
     list_filter = ['nome_cp']
 
+class CDesenvolvimentoAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,  {'fields': ['nome_cd']}),
+        (None,  {'fields': ['desenvolvedor']}),
+        (None,  {'fields': ['descricao']}),
+        (None,  {'fields': ['data_des_ini']}),
+        (None,  {'fields': ['data_des_fim']}),
+        (None,  {'fields': ['obs']}),
+
+    ]
+
+    list_display = ('nome_cd', 'desenvolvedor', 'descricao', 'data_des_ini', 'data_des_fim', 'obs')
+    list_filter = ['nome_cd']
+
 
 admin.site.register(CPod, CPodAdmin)
+admin.site.register(CDesenvolvimento, CDesenvolvimentoAdmin)
