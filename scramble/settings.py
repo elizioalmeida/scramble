@@ -26,7 +26,7 @@ SECRET_KEY = 'u1o9_z#u(qm$$x)05#&!(oq1y*&h%d)1(=glo301vbk+^k6%nq'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#ALLOWED_HOSTS = ['elizio.pythonanywhere.com]
 
 # Application definition
 
