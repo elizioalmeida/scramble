@@ -22,7 +22,7 @@ class CPod(models.Model):
 
 
 class Escopo(models.Model):
-    cpod = models.ForeignKey(CPod)
+    cpod = models.ForeignKey(CPod, verbose_name='Cartão de Produção')
     nome_escopo = models.CharField('Escopo', max_length=50)
     descricao = models.TextField('Descrição')
 
@@ -31,13 +31,14 @@ class Escopo(models.Model):
 
 
 class CDesenvolvimento(models.Model):
-    cpod = models.ForeignKey(CPod)
+    cpod = models.ForeignKey(CPod, verbose_name= 'Cartão de Produção')
     nome_cd = models.CharField('Nome do Cartão de Desenv', max_length=50)
     desenvolvedor = models.CharField('Desenvolvedor', max_length=50)
     descricao = models.TextField('Descrição')
     data_des_ini = models.DateField('Data Desenv Início', blank=True, null=True)
     data_des_fim = models.DateField('Data Desenv Fim', blank=True, null=True)
     obs = models.TextField('Observações', blank=True, null=True)
+    participacao = models.DecimalField('Paricipação', blank=True, null=True, decimal_places=2, max_digits=3)
 
     class Meta:
         verbose_name = ('Cartão de Desenvovimento')
