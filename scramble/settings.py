@@ -25,6 +25,8 @@ SECRET_KEY = 'u1o9_z#u(qm$$x)05#&!(oq1y*&h%d)1(=glo301vbk+^k6%nq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#APPEND_SLASH = False
+
 ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = ['elizio.pythonanywhere.com']
 
