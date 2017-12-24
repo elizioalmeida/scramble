@@ -1,0 +1,14 @@
+{% extends 'controle/base.html' %}
+<!-- cp_form.html -->
+
+
+{% block content %}
+
+	<h1>Cadastro de Cartão de Produção</h1>
+
+	<form method="POST" class="post-form">{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="save btn btn-default">GuardarTeste</button>
+	</form>
+{% endblock %}
+ 

@@ -1,10 +1,17 @@
+{% extends 'controle/base.html'  %}
+<!-- inicial.html -->
+
+
 {% load staticfiles %}
+
+
+{% block content %}
+
 
 <html>
 	<head>
 		<title>Scramble</title>
 		
-		<meta charset="utf-8">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +21,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!--
 		<p></p>
 		<div class="container-fluid text-center">
-			<div class="row">
-				<div class="col-sm-2" style="background-color:white;">{% load static %} <img src="{% static 'images/scramble.jpg' %}" alt= 'testando' width='110' heigth='110' class="img-rounded" /></div>
-				<div class="col-sm-8" style="background-color:#3333FF;"><span class="titulo">SCRAMBLE</span></div>
-				<div class="col-sm=2" style=background-color:white;">{% load static %} <img src="{% static 'images/logoExpertise.png' %}" width='200' heigth='110' /></div>
+			<div class="row" style="background-color: #3333FF;">
+				<div class="col-sm-2" style="background-color:white;">{% load static %} <img src="{% static 'images/scramble.jpg' %}" alt= 'testando' width='63' heigth='110' class="img-rounded" /></div>
+				<div class="col-sm-8" style="background-color:#3333FF;">{% load static %} <span class="titulo">SCRAMBLE</span></div>
+				<div class="col-sm-2" style="background-color:white;">{% load static %} <img src="{% static 'images/logoExpertise.png' %}" width='119' heigth='110' /></div>
 		
 		</div>
-		<p></p>
+-->
+	
 		
 		<style>
 			.navbar {
@@ -36,9 +45,9 @@
 				height: 100%;
 			}
 			footer{
-				background-color: #3333FF;
-				color: white;
-				padding: 15px;
+				background-color: #60E9FF;
+				color: black;
+				padding: 20px;
 			}
 			@media sreen and (max-width: 767px) {
 				.sidenave{
@@ -49,7 +58,16 @@
 			}
 		</style>
 	</head>
+
+
 	<body>
+<!-- Ver se vou retirar, por que coloquei?
+		<div class="page-header">
+			<a href="{% url 'cp_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+			<h1><a href="/">Form Controle de Produção</a></h1>
+		</div>
+-->
+
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -58,28 +76,46 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">SCRAMBLE</a>
+				<a class="navbar-brand" href="#">{% load static %}<img src="{% static 'images/logoExpertise.png' %}" alt='expertise' width='83' hegth=110 class='image-rounded'/></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Desenvolvedor<span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastro de Cartões<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{% url 'controle.views.teste' %}">Felipe</a></li>
-							<li><a href="#">Larry</a></li>
-							<li><a href="#">Lauro</a></li>
-							<li><a href="#">Vitor</a></li>
+							<li><a href="{% url 'teste1' %}">Cartão de Produção</a></li>
+							<li><a href="#">Cartão de Desenvolvimento</a></li>
+							<li><a href="#">Ítem de Desenvolvimento</a></li>
+							<li><a href="#">Tarefas Diárias</a></li>
 						</ul>
 					</li>
 
-
-					<li class="active"><a href="{% url 'controle.views.cprod' %}">Cartão de Produção</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Contact</a><li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Atualização de Cartões<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'teste2' %}">Cartão de Produção</a></li>
+							<li><a href="#">Cartão de Desenvolvimento</a></li>
+							<li><a href="#">Ítem de Desenvolvimento</a><li>
+							<li><a href="#">Tarefas Diárias</a><li>
+						</ul>
+					</li>
+				
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Listagem de Cartões<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'cpod_list' %}">Cartão de Produção</a></li>
+							<li><a href="#">Cartão de Desenvolvimento</a></li>
+							<li><a href="#">Ítem de Desenvolvimento</a></li>
+							<li><a href="#">Tarefas Diárias</a></li>
+						</ul>
+					</li>
 				</ul>
+				
+					
+	
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a><li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -89,22 +125,32 @@
 	<div class="container-fuid text-center">
 		<div class="row content">
 
-			
+<!--			
 			<div id="mySidenav" class="col-sm-2 sidnav">
-<!--				<p></p>
+				<p></p>
 				<p><a href="#" id="Des">Desenvolvedores</a></p>
 				<p><a href="#" id="CP">Cartão de Produção</a></p>
 				<p><a href="#" id="CD">Cartão de Desenvolvimento</a></p>
 				<p><a href="#" id="Tar">Tarefas</a></p>
--->
-				</div>
 
-			<div class="col-sm-8 text-left">
-				<h1><a>Welcome</a></h1>
+			</div>
+
+-->
+			<div class="col-sm-10 text-left">
+				<h3><a>Cadastro de Cartões</a></h3>
+				Incluir novos Cartões como:</br>
+				Cartões de Produção: São cartões que representam as necessidades do cliente e que determinam o que deve ser feito para tende-las.</br>
+				Cartões de Desenvolvimento: São cartões .....</br>
+				Ítem de Desenvolvimento: São cartões(?) .....</br>
+				Tarefas Diárias: São ....(?) ....            </br>
+
+				<h1><a><h3>Atualização</h3></a></h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<hr>
-				<h3>Test</h3>
+
+				<h1><a><h3>Listagem de Cartões</h3></a></h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				
+
 			</div>
 			<div class="col-sm-2 sidenav">
 				<div class="well">
@@ -120,7 +166,7 @@
 		<p>Footer Text</p>
 	</footer>
 	</body>
-
+</html>
 
 
 <!--
@@ -152,7 +198,6 @@
 		</div>
 	</body>
 
-	-->
 
+{% endblock content %}
 
-</html>

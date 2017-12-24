@@ -1,0 +1,68 @@
+{% extends 'controle/base.html' %}
+
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Cartão de Produção</title>
+		<link rel='stylesheet' href={% static 'css/cpod_list.css' %}>	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body>
+		<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+			<div class="FontCP">
+				<p class="centrocp">Cartão de Produção</p>
+			</div>
+		</div>
+	
+<!-- ===Teste=== 	
+		<p>
+			João disse, 
+			<q>
+			Será ótimo quando tudo estiver<strong>acabado</strong>.
+			</q>
+			Mas talvez ele não<strong>concorde</strong>!
+		</p>	
+-->		
+
+		<div style="overflow-x:auto;">
+
+		<table id="customers">
+			<tr>
+				<th>Nome</th>
+				<th>Cliente</th>
+				<th>Data Inicial</th>
+				<th>Teste de pk</th>
+				<th>Editar</th>
+				<th>Movimentar</th>
+			</tr>
+
+
+		{% for cp in object_list %}
+
+			<tr>
+			
+				<td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
+			<!--	<td><ul class="a"><li>{{ cp.nome_cp }}</li></td> -->
+				<td>{{ cp.cliente }}</td>
+				<td>{{ cp.data_ini }}</td>
+				<td>{{ cp.pk }}</td>
+				<td><a href='/usario/{{ obj.tipo_cedula }}'>Editar</a></td>
+				<td><button  type="button" name="ATUALIZAR" class="btn btn-info" onclick="retorna_combobox(<?=$linha['AUT_ID']; ?>)" > Atualizar </button></td>
+
+			</tr>
+
+		{% endfor %}
+
+		</table>
+		</div>	
+
+	</body>
+</html>
+
+
+{% endblock content %}
+

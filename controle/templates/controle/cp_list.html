@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Teste de lista</title>
+	</head>
+	<body>
+		<div>
+			<p>{{ object_list }}</p>
+			<h1><a href="">testee</a></h1>
+		</div>
+
+		{% for cp in object_list %}
+		
+		<div>
+			<p> published: 14.06.2014, 12:14</p>
+			<td>{{ cp.cp_nome }}</td>
+			<p> lelele lelele lleee</p>
+			<p>{{ cp.text|linebreaksbr }}</p>
+		</div>
+		{% endfor %}
+		
+	</body>
+</html>
+

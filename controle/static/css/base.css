@@ -1,0 +1,28 @@
+/* base.css */
+
+/* @import url(fonts.css); */
+
+/*
+h2 {
+	font-family: 'BenchNine', sans-serif;
+	font-size: 48px;
+	font-family: 'Verdana'; 
+	color: ;
+	background-color: ;
+}
+*/
+
+div.BenchNine{
+	font-family: 'BenchNine', sans-serife;
+	color: #DDDDDD;
+	font-size: 25pt;
+}
+
+div.centro{
+	height: 70px;
+	margin: 0 auto;
+	vertical-align: middle;
+	line-height: 70px;
+	white-space: nowrap; 
+}
+

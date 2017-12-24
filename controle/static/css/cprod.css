@@ -1,3 +1,5 @@
+/* cprod.css */
+
 
 h1 a {
 	color: #FCA205;
@@ -5,12 +7,13 @@ h1 a {
 }
 
 body {
-	padding-left: 15xp;
+	padding-left: 15px;
 }
 span.titulo {
 	color: #FFFF00;
-	font-size: 80px; 
+	font-size: 44px; 
 }
+
 
 /*Style para a barra lateral */
 
@@ -47,7 +50,53 @@ span.titulo {
 	background-color:#555
 }
 
+ul.a {list-style-type: circle;}
+
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+#customers td, #customers th {
+    	border: 1px solid #ddd;
+	padding: 8px;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:hover {background-color: #ddd;}
+#customers th {
+	background-color: #4CAF50;
+   	color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+}
+
+
+
+div.FontCP{
+	font-famiily: 'BenchNine', sans-serife;
+	color: #3F51B5;
+	font-size: 20pt;
+}
 
 
 
 
+p.centrocp{
+	height: 55px;
+	margin: 0 auto;
+  	vertical-align: middle;
+	line-height: 55px;
+	white-space: nowrap;
+}
+
+
+p strong
+{
+    background-color: #87CEEB;
+}
+
+p>strong
+{
+    background-color: #ffc;
+}

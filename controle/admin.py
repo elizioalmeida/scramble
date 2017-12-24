@@ -15,8 +15,8 @@ class ChoiceInline(admin.TabularInline):
     extra = 1
 
     formfield_overrides = {
-        #models.CharField: {'widget': TextInput(attrs={'size':'20'})},
-        models.TextField: {'widget': Textarea(attrs={'rows':3, 'cols':40})},
+        models.CharField: {'widget': TextInput(attrs={'size':'20'})},
+        models.TextField: {'widget': Textarea(attrs={'rows':2, 'cols':40})},
     }
 
 
@@ -25,8 +25,8 @@ class ChoiceInline1(admin.TabularInline):
     extra = 1
 
     formfield_overrides = {
-        models.CharField: {'widget': TextInput(attrs={'size':'30'})},
-        models.TextField: {'widget': Textarea(attrs={'rows':3, 'cols':20})},
+        models.CharField: {'widget': TextInput(attrs={'size':30})},
+        models.TextField: {'widget': Textarea(attrs={'rows':2, 'cols':20})},
         models.DecimalField: {'widget': TextInput(attrs={'size':4})}
     }
 
@@ -56,12 +56,13 @@ class CPodAdmin(admin.ModelAdmin):
             (None,  {'fields':['data_des_ini']}),
             (None,  {'fields':['data_des_fim']}),
             (None,  {'fields':['obs']}),
+	    (None,  {'fields':['status']}),	
             # 'classes':['collapse']}),
     ]
 
     inlines = [ChoiceInline, ChoiceInline1]
     #inlines = [ChoiceInline1]
-    list_display = ( 'nome_cp', 'cliente', 'data_ini', 'data_fim', 'data_des_ini')
+    list_display = ( 'nome_cp', 'cliente', 'data_ini', 'data_fim', 'data_des_ini', 'status', )
     list_filter = ['nome_cp']
 
 
@@ -85,7 +86,7 @@ class CDesenvolvimentoAdmin(admin.ModelAdmin):
 
     inlines = [ChoiceInline2]
 
-    list_display = ('nome_cd', 'cpod', 'desenvolvedor', 'descricao', 'data_des_ini', 'data_des_fim', 'obs', 'participacao',)
+    list_display = ('nome_cd', 'cpod', 'desenvolvedor', 'descricao', 'data_des_ini', 'data_des_fim', 'obs', 'participacao', )
     list_filter = ['desenvolvedor', 'cpod', 'nome_cd', ]
 
 

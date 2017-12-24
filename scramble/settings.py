@@ -25,8 +25,10 @@ SECRET_KEY = 'u1o9_z#u(qm$$x)05#&!(oq1y*&h%d)1(=glo301vbk+^k6%nq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = ['elizio.pythonanywhere.com']
+
+ALLOWED_HOSTS = ['174.138.53.84']
 
 # Application definition
 
@@ -78,7 +80,8 @@ WSGI_APPLICATION = 'scramble.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': '/home/elizio/scramble/db.sqlite3', 
+	#'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -101,5 +104,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#STATIC_ROOT = ('/home/elizio/scramble/controle/static/')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'controle/static')
+
+STATICFILES_DIR = [
+	os.path.join(BASE_DIR, "static"),
+	'/home/elizio/scramble/controle/static/',
+]
+
 

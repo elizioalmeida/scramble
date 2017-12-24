@@ -1,0 +1,24 @@
+{% extends "inicial.html" %}
+
+<html>
+	<head>
+		<title>Teste de lista view</title>
+	</head>
+	<body>
+		<div>
+			<h1><a href="">teste list view</a></h1>
+		</div>
+
+		{% for cp in object_list  %}
+
+		
+		<div>
+			{{ cp.cp_nome }}
+			{{ object_list }}
+						
+		</div>
+		{% endfor %}
+		
+	</body>
+</html>
+
