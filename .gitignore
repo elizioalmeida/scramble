@@ -4,4 +4,4 @@ myvenv
 .DS_Store
 old*.sqlite3
 lixo
-
+*.swp
