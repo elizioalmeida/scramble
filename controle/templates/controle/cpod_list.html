@@ -1,5 +1,7 @@
 {% extends 'controle/base.html' %}
 
+<!-- cpod_list.html -->
+
 
 {% block content %}
 
@@ -10,6 +12,18 @@
 		<link rel='stylesheet' href={% static 'css/cpod_list.css' %}>	
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        	<link rel="stylesheet" href={% static 'css/cprod.css' %}>
+      	        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
 	</head>
 	<body>
 		<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
@@ -27,38 +41,111 @@
 			Mas talvez ele não<strong>concorde</strong>!
 		</p>	
 -->		
+<div class="container col-sm-12">
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#tab1">Cartão de Produção</a></li> 
+		<li><a data-toggle="tab" href="#tab2">Cartão de Dersenvolvimento</a></li>
+		<li><a data-toggle="tab" href="#tab3">Cartão de Tarefa</a></li>
 
-		<div style="overflow-x:auto;">
+	</ul>
+<div class="tab-content">
+	<div id="tab1" class="tab-pane fade in active">
+
+		<div style="overflow-x:scroll; overflow-y:scroll">
 
 		<table id="customers">
 			<tr>
 				<th>Nome</th>
-				<th>Cliente</th>
 				<th>Data Inicial</th>
-				<th>Teste de pk</th>
-				<th>Editar</th>
-				<th>Movimentar</th>
+				<th>Data Final</th>
+				<th>Data Des. Inicial</th>
+				<th>Data Des. Final</th>
+				<th>Progresso</th>
+				<th>Teste pk</th>
 			</tr>
 
 
-		{% for cp in object_list %}
+		{% for cp in CProducao_list %}
+
 
 			<tr>
 			
 				<td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
 			<!--	<td><ul class="a"><li>{{ cp.nome_cp }}</li></td> -->
-				<td>{{ cp.cliente }}</td>
-				<td>{{ cp.data_ini }}</td>
+				<td>{{ cp.data_ini|date:"d/m/y" }}</td>
+				<td>{{ cp.data_fim }}</td>
+				<td>{{ cp.data_des_ini }}</td>
+				<td>{{ cp.data_des_fim }}</td>
+				<td>{{ cp.status }}</td>
 				<td>{{ cp.pk }}</td>
+<!--
 				<td><a href='/usario/{{ obj.tipo_cedula }}'>Editar</a></td>
-				<td><button  type="button" name="ATUALIZAR" class="btn btn-info" onclick="retorna_combobox(<?=$linha['AUT_ID']; ?>)" > Atualizar </button></td>
-
+				<td><button  type="button" name="ATUALIZAR" class="btn btn-info" onclick="retorna_combobox(<?=$linha['AUT_ID']; ?>)">
+				Atualizar</button></td>
+-->
 			</tr>
 
 		{% endfor %}
 
 		</table>
-		</div>	
+		</div>
+	</div>
+
+	<div id="tab2" class="tab-pane fade">
+        	<div style="overflow-x:scroll; overflow-y:scroll">
+
+                <table id="customers">
+                        <tr>
+                                <th>Nome</th>
+                                <th>Desenvolvedor</th>
+                                <th>Data Des. Inicial</th>
+                                <th>Data Des. Final</th>
+                                <th>Progresso</th>
+                                <th>Teste pk</th>
+                        </tr>
+		{% if CDesenvolvimento_list %}
+		
+                {% for cd in CDesenvolvimento_list %}
+
+                        <tr>
+
+<!--                                <td><a href="{% url 'cp_new' pk=cd.pk %}">{{ cd.nome_cd }}</a></td> -->
+                                <td>{{ cd.desenvolvedor }}</td>
+                                
+                                <td>{{ cd.desenvolvedor }}</td>
+				<td>{{ cd.data_des_ini }}</td>
+                                <td>{{ cd.data_des_fim }}</td>
+                                <td>{{ cd.participacao }}</td>
+                                <td>{{ cd.pk }}</td>
+                        </tr>
+
+                {% endfor %}
+		{% else %}
+			<li> <a> deu pau</a></li>
+		{% endif %}
+                </table>
+                </div>
+	</div>
+
+	<div id="tab3" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p> TAB3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
 
 	</body>
 </html>

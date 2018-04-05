@@ -9,12 +9,24 @@
 		<link rel="stylesheet" href={% static 'css/base.css' %}>
 
 		<body>
-		<div class="w3-container w3-indigo" style="margin-bottom: 1px">
-			<div class="BenchNine">	
-			<div class="centro">Controle de Desenvolvimento - SCRAMBLE</div>
-			</div>	
+		
+		<!-- <a fref="{% url 'cpod_list' %} class="top-menu"><span class="glyphicon glyphicon-plus"
+		<h1><a href="/"> Django blabla</a></h1>	-->	
+	
+		<div class="w3-row" style="margin-top: 1px; margin-bottom: 1px">
+		
+			<div class="w3-col w3-container w3-white" style="width: 10%">{% load static %}<div class="centro"><img src="{% static '/images/scramble.jpg' %}" width='63' heigth='110' class="img-rounded" /></div></div>
+				
+			<div class="w3-col w3-container w3-indigo" style="width: 60%">
+				<div class="BenchNine">
+				<div class="centro">Controle de Desenvolvimento - SCRAMBLE</div></div> 
+			</div>
+	
+			<div class="w3-col w3-container w3-white" style="width: 20%">{% load static %}<div class="centro"><img src="{% static 'images/logoExpertise.png' %}" width='119' heigth='110' /></div></div>
+		
+
 		</div>
-		</body>
+ 		</body>
 
 {% block content %}
 {% endblock content %}

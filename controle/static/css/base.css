@@ -21,8 +21,15 @@ div.BenchNine{
 div.centro{
 	height: 70px;
 	margin: 0 auto;
+	horizontal-align:middle;
 	vertical-align: middle;
 	line-height: 70px;
-	white-space: nowrap; 
+	white-space: normal; 
+}
+
+img.centrada{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 

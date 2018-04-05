@@ -4,11 +4,78 @@
 
 {% block content %}
 
-	<h1>Cadastro de Cartão de Produção</h1>
+
+{% load staticfiles %}
+<link rel='stylesheet' href={% static 'css/forms.css' %}>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<html>
+<head>
+<!--
+<div class="container">
+
+	<form name="CPForm" id="CPForm" data-toggle= "validator" role="form" action="" method="get">
+		<div class="row">
+			<div class="col-xs-6 form-group">
+			<label for="client">Cartão</label>
+			<input type="text" id="cliente" name="cliente" class="form-control">
+		</div>
+
+	</form>
+
+</div>
+-->
+
+
 
 	<form method="POST" class="post-form">{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit" class="save btn btn-default">GuardarTeste</button>
+
+<!--		<p></p> -->
+		<fieldset>
+		<div>
+		<legend>Cadastro de Cartão de Produção</legend>
+		
+		{% for field in form %}
+
+			<div class="row">
+			<div class="form-group">
+
+			<label class="{% for class in field.label_classes %}{{ class }} {% endfor %}"
+				for="{{ field.name }}">{{ field.label }}</label>
+
+				<p>{{ field }}</p>
+			
+			</div>
+			</div>
+	
+		{% endfor %}
+
+		</fieldset>
+		</div>
+		<fieldset>
+		<div class="btn-group">	
+
+		<button type="submit" class="btn btn-primary" >Salvar</button>
+
+<!--		<button type="button" class="btn btn-primary" href="{% url 'cpod_list' %}">Lista de Cartões de Produção</button>
+
+		<a class="btn btn-default" href="{% url 'cpod_list' %}">Lista de Cartões de Produção</a>
+-->
+		<a href="{% url 'cpod_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
+	
+		</div>
+		</fieldset>
+
 	</form>
+
+
+</head>
+</html>
+
+
 {% endblock %}
  

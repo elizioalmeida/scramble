@@ -1,0 +1,69 @@
+{% extends 'controle/base.html' %}
+<!-- cp_form.html -->
+
+
+{% block content %}
+
+
+{% load staticfiles %}
+<link rel='stylesheet' href={% static 'css/forms.css' %}>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrap.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<html>
+<head>
+<div class="container">
+	<form name="form-test" action="" method="get">
+		<div class="row">
+			<div class="col-xs-6 form-group">
+			<label for="name">Cartão</label>
+			<input type="text" id="nome" name="name" class="form-control">
+		</div>
+
+	</form>
+</div>
+
+
+	<h1>Cadastro de Cartão de Produção</h1>
+
+	<form method="POST" class="post-form">{% csrf_token %}
+
+		{% for field in form %}
+
+<!--
+			<label class="{% for class in field.label_classes %}{{ class }} {% endfor %}"
+				for="{{ field.name }}">{{ field.label }}</label>
+-->
+			<div class="row">
+				<div class="form-group">
+				{{ field.errors }}
+				{{ field.label_tag }}
+<!--				{{ field.label }} -->
+				{{ field }}
+			
+				</div>
+			</div>
+		{% endfor %}
+
+
+
+ 		{{ form.as_p }}
+		{{ form.label }}
+
+
+		<button type="submit" class="save btn btn-default">GuardarTeste</button>
+	</form>
+
+
+	<h1>cp.name</h1>
+
+
+</head>
+</html>
+
+
+{% endblock %}
+ 

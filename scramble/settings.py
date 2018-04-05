@@ -25,7 +25,13 @@ SECRET_KEY = 'u1o9_z#u(qm$$x)05#&!(oq1y*&h%d)1(=glo301vbk+^k6%nq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 #ALLOWED_HOSTS = []
+
+#APPEND_SLASH = False
+
+ALLOWED_HOSTS = []
+
 #ALLOWED_HOSTS = ['elizio.pythonanywhere.com']
 
 ALLOWED_HOSTS = ['174.138.53.84']
@@ -95,7 +101,7 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False #True
 
 USE_TZ = True
 
@@ -114,4 +120,6 @@ STATICFILES_DIR = [
 	'/home/elizio/scramble/controle/static/',
 ]
 
+DATE_INPUT_FORMATS = ('%d/%m/%Y','%Y/%m/%d')
+DATE_FORMAT=('d/m/Y') 
 
