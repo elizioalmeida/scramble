@@ -5,3 +5,5 @@ myvenv
 old*.sqlite3
 lixo
 *.swp
+*.swo
+*.swn

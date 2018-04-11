@@ -18,9 +18,7 @@ urlpatterns = [
 #	url(r'^controle/cpod_list$', views.cp_listview.as_view(), name='cpod_list'),
 #	url(r'^controle/cpod_list$', views.cd_listview.as_view(template_name='cpod_list.html'), name='cd_list'), #linha nova
 
-	url(r'^controle/cpod_list$', views.teste_view, name='cpod_list'),
-
-
+	url(r'^controle/cpod_list$', views.list_view, name='cpod_list'),
 
 	url(r'^controle/addcp$', views.addcp_listview.as_view(), name='addcp'),
 
@@ -30,7 +28,7 @@ urlpatterns = [
         url(r'^$', views.inicial, name='inicial'),
    	url(r'^teste$', views.teste),
 	url(r'^controle/cprod$', views.cprod),
-	url(r'^controle/cp_form$', views.cp_listview, name='cp_form'),
+#	url(r'^controle/cp_form$', views.cp_listview, name='cp_form'),
 
 
 ]

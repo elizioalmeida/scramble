@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import CPod, CDesenvolvimento
+from .models import CPod, CDesenvolvimento, ItemDesenvolvimento
 from .forms import CPForm
 
 from django.views import generic
@@ -11,6 +11,7 @@ from django.template import RequestContext, loader
 
 # Create your views here.
 
+'''
 class cp_listview(ListView):
 	model = CPod
 	paginate_by = 10
@@ -22,19 +23,21 @@ class cd_listview(ListView):
 	paginate_by = 10
 	template_name = 'cpod_list.html'
 	context_object_name = 'CDesenvolvimento_list'
-
-def teste_view(request):
+'''
+def list_view(request):
 	
-	#CP_list = CPod.object.all().order_by("cp_nome")[:10]
-	CP_list = CPod.objects.all().order_by('nome_cp')[:10]
-	CD_list = CDesenvolvimento.objects.all()
+	CP_list = CPod.objects.all().order_by('nome_cp')
+	CD_list = CDesenvolvimento.objects.all().order_by('nome_cd')
+	ID_list = ItemDesenvolvimento.objects.all().order_by('nome_item')[:10]
+
 
 	template = loader.get_template('controle/cpod_list.html')
 	ctx = {
 		'CProducao_list': CP_list,
 		'CDesenvolvimento_list': CD_list,
+		'IDesenvolvimento_list': ID_list,
 	}
-	context = RequestContext(request, ctx)
+	context = RequestContext(request, ctx) 
 
 	return HttpResponse(template.render(ctx))
 

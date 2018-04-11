@@ -9,7 +9,7 @@
 <html>
 	<head>
 		<title>Cartão de Produção</title>
-		<link rel='stylesheet' href={% static 'css/cpod_list.css' %}>	
+<!--		<link rel='stylesheet' href={% static 'css/cpod_list.css' %}>	-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -26,33 +26,26 @@
 
 	</head>
 	<body>
+
 		<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
 			<div class="FontCP">
 				<p class="centrocp">Cartão de Produção</p>
 			</div>
 		</div>
 	
-<!-- ===Teste=== 	
-		<p>
-			João disse, 
-			<q>
-			Será ótimo quando tudo estiver<strong>acabado</strong>.
-			</q>
-			Mas talvez ele não<strong>concorde</strong>!
-		</p>	
--->		
 <div class="container col-sm-12">
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs" >
 		<li class="active"><a data-toggle="tab" href="#tab1">Cartão de Produção</a></li> 
 		<li><a data-toggle="tab" href="#tab2">Cartão de Dersenvolvimento</a></li>
 		<li><a data-toggle="tab" href="#tab3">Cartão de Tarefa</a></li>
 
 	</ul>
-<div class="tab-content">
+
+<div class="row">
+
+<div class="tab-content col-sm-9">
 	<div id="tab1" class="tab-pane fade in active">
-
 		<div style="overflow-x:scroll; overflow-y:scroll">
-
 		<table id="customers">
 			<tr>
 				<th>Nome</th>
@@ -63,61 +56,57 @@
 				<th>Progresso</th>
 				<th>Teste pk</th>
 			</tr>
-
-
 		{% for cp in CProducao_list %}
-
-
-			<tr>
 			
+			<tr>
 				<td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
-			<!--	<td><ul class="a"><li>{{ cp.nome_cp }}</li></td> -->
 				<td>{{ cp.data_ini|date:"d/m/y" }}</td>
 				<td>{{ cp.data_fim }}</td>
 				<td>{{ cp.data_des_ini }}</td>
 				<td>{{ cp.data_des_fim }}</td>
 				<td>{{ cp.status }}</td>
 				<td>{{ cp.pk }}</td>
-<!--
-				<td><a href='/usario/{{ obj.tipo_cedula }}'>Editar</a></td>
-				<td><button  type="button" name="ATUALIZAR" class="btn btn-info" onclick="retorna_combobox(<?=$linha['AUT_ID']; ?>)">
-				Atualizar</button></td>
--->
 			</tr>
+			
 
 		{% endfor %}
 
 		</table>
 		</div>
 	</div>
+		
+
 
 	<div id="tab2" class="tab-pane fade">
         	<div style="overflow-x:scroll; overflow-y:scroll">
 
                 <table id="customers">
                         <tr>
-                                <th>Nome</th>
+                                <th>Cartão Prod.</th>
+				<th>Nome</th>
                                 <th>Desenvolvedor</th>
-                                <th>Data Des. Inicial</th>
-                                <th>Data Des. Final</th>
+                                <th>Data Inicial</th>
+                                <th>Data Final</th>
                                 <th>Progresso</th>
                                 <th>Teste pk</th>
                         </tr>
 		{% if CDesenvolvimento_list %}
 		
                 {% for cd in CDesenvolvimento_list %}
+			
+			{% if cd.desenvolvedor == "Lauro" %}
 
                         <tr>
-
-<!--                                <td><a href="{% url 'cp_new' pk=cd.pk %}">{{ cd.nome_cd }}</a></td> -->
-                                <td>{{ cd.desenvolvedor }}</td>
-                                
+<!--                            <td><a href="{% url 'cp_new' pk=cd.pk %}">{{ cd.nome_cd }}</a></td> -->
+                                <td>{{ cd.cpod }}</td>
+                                <td>{{ cd.nome_cd }}</td>
                                 <td>{{ cd.desenvolvedor }}</td>
 				<td>{{ cd.data_des_ini }}</td>
                                 <td>{{ cd.data_des_fim }}</td>
                                 <td>{{ cd.participacao }}</td>
                                 <td>{{ cd.pk }}</td>
                         </tr>
+			{% endif %}
 
                 {% endfor %}
 		{% else %}
@@ -128,21 +117,62 @@
 	</div>
 
 	<div id="tab3" class="tab-pane fade">
-        <h3>Menu 2</h3>
-        <p> TAB3 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<div style="overflow-x:scroll; overflow-y:scroll">
+
+                <table id="customers">
+                        <tr>
+				<th>Cartão Desenv.</th>
+				<th>Nome</th>
+                                <th>Data Inicial</th>
+                                <th>Data Final</th>
+                                <th>Progresso</th>
+				<th>Concluido</th>
+                                <th>Teste pk</th>
+                        </tr>
+                {% if IDesenvolvimento_list %}
+
+                {% for id in IDesenvolvimento_list %}
+
+                        <tr>
+
+<!-- 
+				<td><a href="{% url 'cp_new' pk=id.pk %}">{{ cd.nome_cd }}</a></td> 
+-->
+                                <td>{{ id.cdes }}</td>
+                                <td>{{ id.nome_item }}</td>
+                                <td>{{ id.data_ini }}</td>
+                                <td>{{ id.data_fim }}</td>
+                                <td>{{ id.participacao }}</td>
+				<td>{{ id.concluido }}</td>
+                                <td>{{ id.pk }}</td>
+                        </tr>
+
+                {% endfor %}
+                {% else %}
+                        <li> <a> deu pau</a></li>
+                {% endif %}
+                </table>
+                </div>
+
+
         </div>
 
 
-
-
-
-
 </div>
 
 
 
 
+       <div class="alert alert-success col-sm-3">
+        <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+
+
 </div>
+
+
+</div>
+
 
 
 
