@@ -1,5 +1,5 @@
 {% extends 'controle/base.html' %}
-<!-- cp_form.html -->
+<!-- cd_form.html -->
 
 
 {% block content %}
@@ -37,10 +37,9 @@
 <!--		<p></p> -->
 		<fieldset>
 		<div>
-		<legend>Cadastro de Cartão de Produção</legend>
+		<legend>Cadastro de Cartão de Desenvolvimento</legend>
 		
-		{% for field in cpform %}
-
+		{% for field in cdform %}
 			<div class="row">
 			<div class="form-group">
 
@@ -56,13 +55,13 @@
 
 		</div>
 		</fieldset>
-
+		
 		<fieldset>
 		<div class="btn-group">	
 			<a><button type="submit" class="btn btn-primary" >Salvar</button></a>
 			<a href="{% url 'cpod_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
-			<a href="{% url 'cd_list' %}"><button type="button" class="btn btn-primary">Escopo</button></a>
-			<a href="{% url 'cd_list' %}"><button type="button" class="btn btn-primary">Cartão de Desenvolvimento</button></a>				
+			<a href="#"><button type="button" class="btn btn-primary">Escopo</button></a>
+			<a href="#"><button type="button" class="btn btn-primary">Cartão de Desenvolvimento</button></a>				
 		</div>
 		</fieldset>
 

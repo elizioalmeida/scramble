@@ -1,0 +1,211 @@
+{% extends 'controle/base.html' %}
+
+<!-- cpod_list.html -->
+
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Cartão de Produção</title>
+<!--		<link rel='stylesheet' href={% static 'css/cpod_list.css' %}>	-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+       	<link rel="stylesheet" href={% static 'css/cprod.css' %}>
+		<link rel="stylesheet" href={% static 'css/button.css' %}>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--		<script src="http://bootstrap.bundle.min.js / bootstrap.bundle.js"></script>     -->
+
+
+
+
+	</head>
+	<body>
+
+		<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+			<div class="FontCP"><p class="centrocp">Cartão de Produção</p></div>
+		</div>
+
+<div class="container col-sm-12">	
+
+    <div class="container col-sm-9">
+	<ul class="nav nav-tabs" >
+		<li class="active"><a data-toggle="tab" href="#tab1">Cartão de Produção</a></li> 
+		<li><a data-toggle="tab" href="#tab2">Cartão de Dersenvolvimento</a></li>
+		<li><a data-toggle="tab" href="#tab3">Cartão de Tarefa</a></li>
+
+	</ul>
+
+		<div class="tab-content">
+	
+		<div id="tab1" class="tab-pane fade in active">
+			<div style="overflow:auto; height: 500px ">
+
+				<table id="customers">
+					<tr>
+					<th>Nome</th>
+					<th>Data Inicial</th>
+					<th>Data Final</th>
+					<th>Data Des. Inicial</th>
+					<th>Data Des. Final</th>
+					<th>Progresso</th>
+					<th>Teste pk</th>
+					</tr>
+		{% for cp in CProducao_list %}
+					<tr>
+					<td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
+					<td>{{ cp.data_ini|date:"d/m/y" }}</td>
+					<td>{{ cp.data_fim }}</td>
+					<td>{{ cp.data_des_ini }}</td>
+					<td>{{ cp.data_des_fim }}</td>
+					<td>{{ cp.status }}</td>
+					<td>{{ cp.pk }}</td>
+					</tr>
+		{% endfor %}
+				</table>
+			</div>  
+		</div>
+	
+		<div id="tab2" class="tab-pane fade">
+			<div style="overflow-x:scroll; overflow-y:scroll">
+
+				<table id="customers">
+                	<tr>
+                    <th>Cartão Prod.</th>
+					<th>Nome</th>
+                    <th>Desenvolvedor</th>
+                    <th>Data Inicial</th>
+                    <th>Data Final</th>
+                    <th>Progresso</th>
+                    <th>Teste pk</th>
+                    </tr>
+		{% if CDesenvolvimento_list %}
+			{% for cd in CDesenvolvimento_list %}
+			{% if cd.desenvolvedor == "Lauro" %}
+               		<tr>
+<!--               	<td><a href="{% url 'cp_new' pk=cd.pk %}">{{ cd.nome_cd }}</a></td> -->
+                  	<td>{{ cd.cpod }}</td>
+                  	<td>{{ cd.nome_cd }}</td>
+                   	<td>{{ cd.desenvolvedor }}</td>
+					<td>{{ cd.data_des_ini }}</td>
+                  	<td>{{ cd.data_des_fim }}</td>
+                   	<td>{{ cd.participacao }}</td>
+                   	<td>{{ cd.pk }}</td>
+               		</tr>
+			{% endif %}
+            {% endfor %}
+		{% else %}
+			<li> <a> deu pau</a></li>
+		{% endif %}
+            	</table>
+        	</div>
+		</div>
+
+		<div id="tab3" class="tab-pane fade">
+			<div style="overflow-x:scroll; overflow-y:scroll">
+
+           		<table id="customers">
+               		<tr>
+					<th>Cartão Desenv.</th>
+					<th>Nome</th>
+                  	<th>Data Inicial</th>
+                   	<th>Data Final</th>
+                   	<th>Progresso</th>
+					<th>Concluido</th>
+                   	<th>Teste pk</th>
+               		</tr>
+        {% if IDesenvolvimento_list %}
+        	{% for id in IDesenvolvimento_list %}
+                    <tr>
+<!-- 	<td><a href="{% url 'cp_new' pk=id.pk %}">{{ cd.nome_cd }}</a></td> -->
+                   	<td>{{ id.cdes }}</td>
+                   	<td>{{ id.nome_item }}</td>
+                   	<td>{{ id.data_ini }}</td>
+                   	<td>{{ id.data_fim }}</td>
+                   	<td>{{ id.participacao }}</td>
+					<td>{{ id.concluido }}</td>
+                   	<td>{{ id.pk }}</td>
+               		</tr>
+            {% endfor %}
+		{% else %}
+            <li> <a> deu pau</a></li>
+        {% endif %}
+           		</table>
+           	</div>
+       	</div>
+
+	</div>
+    </div>
+    
+
+<div class="btn-group-vertical col-sm-3" border="2px">
+<div class="dropdown">
+
+	<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+		Filtro Produção<span class="caret"></span>
+	</button>
+		
+	<ul class="dropdown-menu">
+
+		<li><a href="controle/cpod_list?activeTab=#tab2" data-toggle="tab">Nome</a></li>
+
+
+
+		<li><a data-toggle="tab" href="#tab3" data-open-tab="#tab3">Nome1</a></li>
+		
+
+		<li><a href="#">Another Action</a></li>
+		<li class="divider"></li>
+		<li><a href="#">Something else here</a></li>
+	</ul>
+</div>
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Filtro Desenvolvimento<span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+		<li><a href="#">qqqqqqAction</a></li>
+        <li><a href="#">Another Action</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Something else here</a></li>
+    </ul>
+</div>
+
+<div class="dropdown">
+	<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Filtro Desenvolvedor<span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+    	<li><a href="#">Actioniiiiiiiqqqqq</a></li>
+        <li><a href="#">Another Action</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Something else here</a></li>
+	</ul>
+</div>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+	</body>
+
+</html>
+
+{% endblock content %}
+

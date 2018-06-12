@@ -1,6 +1,7 @@
 {% extends 'controle/base.html' %}
 
-<!-- cp_list.html -->
+<!-- cpod_list.html -->
+
 
 {% block content %}
 
@@ -8,12 +9,16 @@
 <html>
 	<head>
 		<title>Cartão de Produção</title>
+<!--		<link rel='stylesheet' href={% static 'css/cpod_list.css' %}>	-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
        	<link rel="stylesheet" href={% static 'css/cprod.css' %}>
@@ -21,12 +26,18 @@
 		<link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-<body>
 
-	<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
-		<div class="FontCP"><p class="centrocp">Cartão de Produção</p></div>
-	</div>
+<!--		<script src="http://bootstrap.bundle.min.js / bootstrap.bundle.js"></script>     -->
+
+
+
+
+	</head>
+	<body>
+
+		<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+			<div class="FontCP"><p class="centrocp">Cartão de Produção</p></div>
+		</div>
 
 <div class="w3-panel w3-border" style="margin: 2px"><!-- <div class="container col-sm-12">   -->	
 
@@ -35,40 +46,41 @@
 		<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 			<div class="menu-list">
 			<ul id="menu-content" class="menu-content collapse out">
-			
-
-
-				<li data-toggle="collapse"
-					data-target="#projects"
-					class="collapsed">
-					<a href="#"><i class="fas fa-project-diagram fa-lg"></i>   Projeto<span class="arrow"></span></a>
+				
+				<li>
+				<a href="#"><i class="fa fa-dashboard fa-lg"></i>Desenvolvedor</a>
 				</li>
-					<ul class="sub-menu collapse" id="projects">
-					{% regroup CProducao_list|dictsort:"projeto" by projeto as list_cp %}
-						{% for cps in list_cp %}
-						<li><a href="{% url 'cp_listview' proj=cps.grouper %}">{{ cps.grouper }}</a></li>
-						{% endfor %}
-					</ul>
-
-
+				
 				<li data-toggle="collapse" data-target="#products" class="collapsed">
-				<a href="#"><i class="fa fa-group fa-lg"></i>       Desenvolvedor<span class="arrow"></span></a>
+				<a href="#"><i class="fa fa-group fa-lg"></i>  Desenvolvedor<span class="arrow"></span></a>
 				</li>
-					<ul class="sub-menu collapse" id="products">
+						<ul class="sub-menu collapse" id="products">
 					{% regroup CDesenvolvimento_list by desenvolvedor as des_list %}
 						{% for des in des_list %}
 						<li><a href="{% url 'cpod_list' %}">{{ des.grouper }}</a></li>
 					{% endfor %}
-					</ul>
 
+
+<!--		<li><a href="controle/cpod_list?activeTab=#tab2" data-toggle="tab">Nome</a></li>
+
+			<li><a data-toggle="tab" href="#tab3" data-open-tab="#tab3">Nome1</a></li>
+-->
+					</ul>
 			</ul>
 			</div>
 	</div>
 
+	<div class="container col-sm-10">
+	<ul class="nav nav-tabs" >
+		<li class="active"><a data-toggle="tab" href="#tab1">Cartão de Produção</a></li> 
+		<li><a data-toggle="tab" href="#tab2">Cartão de Dersenvolvimento</a></li>
+		<li><a data-toggle="tab" href="#tab3">Cartão de Tarefa</a></li>
+	</ul>
 
-
-			<div "col-sm-2" style="overflow:auto; height: 500px ">
-		
+		<div class="tab-content">
+	
+		<div id="tab1" class="tab-pane fade in active">
+			<div style="overflow:auto; height: 500px ">
 
 				<table id="customers">
 					<tr>
@@ -84,7 +96,7 @@
 		{% for cp in CProducao_list %}
 					<tr>
 					<td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
-					<td><a href="{% url 'cp_listview' proj=cp.pk %}">{{ cp.projeto }}</a></td>
+					<td><a href="{% url 'cp_listview' proj=cp.projeto %}">{{ cp.projeto }}</a><td>
 					<td>{{ cp.data_ini|date:"d/m/y" }}</td>
 					<td>{{ cp.data_fim }}</td>
 					<td>{{ cp.data_des_ini }}</td>
@@ -95,12 +107,80 @@
 		{% endfor %}
 				</table>
 			</div>  
-			
+		</div>
+	
+		<div id="tab2" class="tab-pane fade">
+			<div style="overflow-x:scroll; overflow-y:scroll">
+
+				<table id="customers">
+                	<tr>
+                    <th>Cartão Prod.</th>
+					<th>Nome</th>
+                    <th>Desenvolvedor</th>
+                    <th>Data Inicial</th>
+                    <th>Data Final</th>
+                    <th>Progresso</th>
+                    <th>Teste pk</th>
+                    </tr>
+		{% if CDesenvolvimento_list %}
+			{% for cd in CDesenvolvimento_list %}
+               		<tr>
+                  	<td>{{ cd.cpod }}</td>
+                  	<td>{{ cd.nome_cd }}</td>
+                   	<td>{{ cd.desenvolvedor }}</td>
+					<td>{{ cd.data_des_ini }}</td>
+                  	<td>{{ cd.data_des_fim }}</td>
+                   	<td>{{ cd.participacao }}</td>
+                   	<td>{{ cd.pk }}</td>
+               		</tr>
+            {% endfor %}
+		{% else %}
+			<li><a> deu pau</a></li>
+		{% endif %}
+            	</table>
+        	</div>
+		</div>
+
+		<div id="tab3" class="tab-pane fade">
+			<div style="overflow-x:scroll; overflow-y:scroll">
+
+           		<table id="customers">
+               		<tr>
+					<th>Cartão Desenv.</th>
+					<th>Nome</th>
+                  	<th>Data Inicial</th>
+                   	<th>Data Final</th>
+                   	<th>Progresso</th>
+					<th>Concluido</th>
+                   	<th>Teste pk</th>
+               		</tr>
+        {% if IDesenvolvimento_list %}
+        	{% for id in IDesenvolvimento_list %}
+                    <tr>
+<!-- 	<td><a href="{% url 'cp_new' pk=id.pk %}">{{ cd.nome_cd }}</a></td> -->
+                   	<td>{{ id.cdes }}</td>
+                   	<td>{{ id.nome_item }}</td>
+                   	<td>{{ id.data_ini }}</td>
+                   	<td>{{ id.data_fim }}</td>
+                   	<td>{{ id.participacao }}</td>
+					<td>{{ id.concluido }}</td>
+                   	<td>{{ id.pk }}</td>
+               		</tr>
+            {% endfor %}
+		{% else %}
+            <li><a> deu pau</a></li>
+        {% endif %}
+           		</table>
+           	</div>
+       	</div>
+
+	</div>
+
 
 
 </div>
 
-</body>
+	</body>
 </html>
 
 {% endblock content %}

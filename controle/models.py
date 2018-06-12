@@ -14,7 +14,8 @@ class CPod(models.Model):
     data_des_ini = models.DateField('Data Desenv Início',blank=True, null=True)
     data_des_fim = models.DateField('Data Desenv Final', blank=True, null=True)
     obs = models.TextField('Observações', blank=True, null=True)
-    status = models.IntegerField('Progresso', default=0, blank=True, null=True)   
+    status = models.IntegerField('Progresso', default=0, blank=True, null=True)
+    projeto = models.CharField('Projeto', max_length=50)
 
     class Meta:
         verbose_name = ('Cartão de Produção')

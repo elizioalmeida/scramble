@@ -57,6 +57,7 @@ ul.a {list-style-type: circle;}
 	border-collapse: collapse;
 	width: 100%;
 }
+
 #customers td, #customers th {
     	border: 1px solid #ddd;
 	padding: 8px;
@@ -92,12 +93,11 @@ p.centrocp{
 }
 
 
-p strong
-{
+p strong{
     background-color: #87CEEB;
 }
 
-p>strong
-{
+p>strong{
     background-color: #ffc;
 }
+
