@@ -1,6 +1,6 @@
 {% extends 'controle/base.html' %}
 
-<!-- cd_list.html -->
+<!-- es_list.html -->
 
 
 {% block content %}
@@ -26,18 +26,18 @@
 	</head>
 	<body>
 		<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
-			<div class="FontCP"><p class="centrocp">Cartão de Desenvolvimento</p></div>
+			<div class="FontCP"><p class="centrocp">Escopo</p></div>
 		</div>
 
 	<div class="container">
 	<ul class="nav nav-tabs" >
 
-		{% regroup CDesenvolvimento_list|dictsort:"desenvolvedor" by desenvolvedor as des_list %}
-			{% for des in des_list %}
-			{% if des == des_list|first  %}
-				<li class="active"><a data-toggle="tab" data-target="#{{ des.grouper }}">{{ des.grouper }}</a></li>
+		{% regroup Escopo_list|dictsort:"nome_escopo" by nome_escopo as esc_list %}
+			{% for esc in esc_list %}
+			{% if esc == esc_list|first  %}
+				<li class="active"><a data-toggle="tab" data-target="#{{ esc.grouper }}">{{ esc.grouper }}</a></li>
 			{% else %}
-				<li><a data-toggle="tab" data-target="#{{ des.grouper }}">{{ des.grouper }}</a></li>
+				<li><a data-toggle="tab" data-target="#{{ esc.grouper }}">{{ esc.grouper }}</a></li>
 			{% endif %}
 
 			{% endfor %}
@@ -46,40 +46,30 @@
 
 	<div class="tab-content">
 
-		{% regroup CDesenvolvimento_list|dictsort:"desenvolvedor" by desenvolvedor as des_list %}
-		{% for des in des_list %}
+		{% regroup Escopo_list|dictsort:"nome_escopo" by nome_escopo as esc_list %}
+		{% for esc in esc_list %}
 			
-			{% if des == des_list|first  %}
-			<div id={{ des.grouper }} class="tab-pane fade in active">
+			{% if esc == esc_list|first  %}
+			<div id={{ esc.grouper }} class="tab-pane fade in active">
 			{% else %}
-			<div id={{ des.grouper }} class="tab-pane fade">
+			<div id={{ esc.grouper }} class="tab-pane fade">
 			{% endif %}
 			<div style="overflow:auto; heigth: 500px">
 				<table id="customers">
 				<tr>
-				<th>Nome</th>
-				<th>Projeto</th>
-				<th>Desenvolvedor</th>
+				<th>Escopo</th>
+				<th>Cartão de Produção</th>
 				<th>Descrição</th>
-				<th>Data Des. Inicial</th>
-				<th>Data Des. Final</th>
-				<th>Progresso</th>
-				<th>Ítem Desenv.</th>
 				</tr>
 			
-				{% for cd in CDesenvolvimento_list %}
-				{% if cd.desenvolvedor == des.grouper %}
+				{% for es in Escopo_list %}
+				{% if es.nome_escopo == esc.grouper %}
 
 					<tr>
- 					<td><a href="{% url 'cd_new' pk=cd.pk %}">{{ cd.nome_cd }}</a></td>
-					<td>{{ cd.cpod }}</td>
-					<td>{{ cd.desenvolvedor }}</td>
-					<td>{{ cd.descricao }}</td>
-					<td>{{ cd.data_des_ini }}</td>
-					<td>{{ cd.data_des_fim }}</td>
-					<td>{{ cd.participacao }}</td>
-					<td class="text-center"><a class="btn btn-info btn-xs" href="#">
-											<span class="glyphicon glyphicon-th-list"></span></a></td>
+<!-- 				<td><a href=" url 'es_new' pk=cd.pk %}">{{ es.nome_escopo }}</a></td>   -->
+	 				<td><a href="#">{{ es.nome_escopo }}</a></td>  
+					<td>{{ es.cpod }}</td>
+					<td>{{ es.descricao }}</td>
 					</tr>
 				{% endif %}
 				{% endfor %}
@@ -92,7 +82,7 @@
 
 		{% endfor %}
 	</div>
-	</div>
+	<div></div>
 				
 
 

@@ -56,7 +56,8 @@
                 {% for cp in object_list %}
 
                         <tr>
-                                <td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
+<!--                                <td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td> -->
+                                <td>{{ cp.nome_cp }}</td>
                         <!--    <td><ul class="a"><li>{{ cp.nome_cp }}</li></td> -->
                                 <td>{{ cp.cliente }}</td>
                                 <td>{{ cp.data_ini }}</td>

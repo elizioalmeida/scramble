@@ -29,6 +29,16 @@
 			<div class="FontCP"><p class="centrocp">Cartão de Produção</p></div>
 		</div>
 
+
+	<i>1 - Teste</i>
+	<p></p>
+	{% for te in C_teste %}
+		<i>{{ te.projeto }} : {{ te.projcount }}</i>
+	{%endfor %}
+
+	<a href="{% url 'cp_novo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+
 	<div class="container">
 	<ul class="nav nav-tabs" >
 
@@ -43,7 +53,7 @@
 			{% endfor %}
 	</ul>
 	<div></div>
-
+		
 	<div class="tab-content">
 
 		{% regroup CProducao_list|dictsort:"projeto" by projeto as proj_list %}
@@ -64,30 +74,76 @@
 				<th>Data Des. Inicial</th>
 				<th>Data Des. Final</th>
 				<th>Progresso</th>
+				<th>Escopo</th>
 				</tr>
 			
 				{% for cp in CProducao_list %}
 				{% if cp.projeto == proj.grouper %}
 
 				<tr>
-				<td><a href="{% url 'cp_new' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
+				<td><a href="{% url 'cp_edit' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
 				<td>{{ cp.projeto }}</td>
 				<td>{{ cp.data_ini }}</td>
 				<td>{{ cp.data_fim }}</td>
 				<td>{{ cp.data_des_ini }}</td>
 				<td>{{ cp.data_des_fim }}</td>
 				<td>{{ cp.status }}</td>
+				<td class="text-center"><a class="btn btn-info btn-xs" href="{% url 'es_teste' pro=cp.pk %}">
+										<span class="glyphicon glyphicon-th-list"></span></a></td>
+										
+
 				</tr>
 				{% endif %}
 				{% endfor %}
 
 				</table>
 
-
 			</div>
 			</div>
 
 		{% endfor %}
+
+			{% for te in Escopo_list %}
+			<i>{{ te.cpod }}//{{ te.nome_escopo }}//{{ te.descricao }}</i>
+			{% endfor %}
+
+			<div class="container">
+			<ul class="nav nav-tabs">
+				{% regroup CDesenvolvimento_list|dictsort:"desenvolvedor" by desenvolvedor as des_list %}
+					{% for desenv in des_list %}
+						<li><a data-toggle="tab" data-target="#{{ desenv.grouper }}">{{ desenv.grouper }}</a></li>
+					{% endfor %}
+			</ul>
+			</div>
+
+
+			<div class="btn-group">
+				<a href="{% url 'cp_novo' %}"><button type="button" class="btn btn-info">Novo Cartão de Produção</button></a>
+		
+
+			</div>
+
+
+
+<!--
+			<form method="POST" class="post-form">{% csrf_token %}
+
+			{% for field in Escopo_list %}
+				<div class "row">
+				<div class="form-group">
+				<label class="{% for class in field.label_classes %}{{ class }} {% endfor %}"
+					for="{{ fiel.name }}">{{ field.label }}</label>
+					<p>{{ field }}</p>
+
+
+				</div>
+				</div>
+
+			{% endfor %}
+			</form>
+-->		
+
+
 	</div>
 	</div>
 				

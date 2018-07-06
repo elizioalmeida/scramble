@@ -2,14 +2,18 @@
 <!-- teste2.html -->
 
 
+{% block content %}
 
 
-<h1><a> teste2 </a></h1>
+	<h1><a> Novo Cartão </a></h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		{{ cpform.as_p }}
+		<button type="submit" class="save btn btn-default">Save</button>
+	</form>
+
+
 <h2>	teste2</h2>
 
 
 
-</html>
-
-
-{% endblock content %}
+{% endblock %}

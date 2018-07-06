@@ -31,7 +31,7 @@ label {
 
 input, textarea {
 	color: #3f51b5;
-        border: 1px solid #ddd;
+    border: 1px solid #ddd;
 	margin-left: 2px;
 	padding: 5px;
 	border-radius: 8px;
@@ -46,8 +46,7 @@ input[type=text] {
 label:after { content: ": " }
 
 .btn {
-
-	color: green;
+	color: black;
 }
 
 

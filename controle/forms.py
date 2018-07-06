@@ -3,7 +3,7 @@
 import datetime
 from django.forms import ModelForm
 from django import forms
-from .models import CPod, CDesenvolvimento, Escopo
+from .models import CPod, CDesenvolvimento, Escopo, ItemDesenvolvimento
 
 #from django.utils.translation import ugettext_lazy as _
 
@@ -40,6 +40,14 @@ class ESForm(forms.ModelForm):
 		model = Escopo
 		fields= ( 'cpod', 'nome_escopo', 'descricao' )
 		widgets= {
+				'descricao': forms.Textarea(attrs={'cols':80, 'rows': 2}),
 
 			}
 
+class CPForm_novo(forms.ModelForm):
+	class Meta:
+		model = CPod
+		fields = ( 'nome_cp', 'cliente', 'projeto', 'data_ini', 'data_fim', 'data_des_ini', 'data_des_fim', 'obs', 'status')
+		 
+		widgets = {
+			}
