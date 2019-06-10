@@ -68,7 +68,7 @@
                   <a href="#"><i class="fa fa-globe fa-lg"></i>Cartões<span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
-                  <li class="active"><a href="{% url 'cpod_list' %}">Cartões de Produção</a></li>
+                  <li class="active"><a href="{% url 'cp_list' %}">Cartões de Produção</a></li>
                   <li><a href="#">Escopo</a></li>
                   <li><a href="#">Cartões de Desenvolvimento</a></li>
                   <li><a href="#">Ítem de Desenvolvimento</a></li>
@@ -120,6 +120,11 @@
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
 				<h3>HOME</h3>
+				<p>teste: {{ sql }} </p>
+				{% for i in sql %}
+				teste 2 : {{ i }}
+				{% endfor %}
+				
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, incididunt ut labore et dolore magna aliqua.</p>
     			</div>
     			<div id="menu1" class="tab-pane fade">

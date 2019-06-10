@@ -1,0 +1,96 @@
+{% extends 'controle/base.html' %}
+<!-- sql.html -->
+
+
+{% block content %}
+
+<head>
+<!--
+    <p> TR par   = {{tr_par}}</p>
+	{% for p in tr_par %}
+	<p>{{p.nome_item}}  ===  ({{p.concluido}}*{{p.participacao}}) == {{p.calculado}}</p>
+	{% endfor %}
+-->
+<!--	
+    <p> TR_par2 = {{tr_par2}}</p>
+	{% for p in tr_par2 %}
+	<p>{{p.ITnome}}  === {{p.TRnome}} - {{p.TRpar}} - {{p.TRsta}} - Concluido : {{ p.IT_concluido }}</p>
+	{% endfor %}
+    <p> - </p>
+-->
+    
+    <p> TR_par = {{tr_par}}</p>
+	{% for p in tr_par %}
+	<p>{{p.itdes}}  ::-> {{p.nome_tarefa}} : {{p.participacao}} - {{p.status}} - Concluido1 : {{ p.ttt }}</p>
+	{% endfor %}
+    
+    <p> ------- </p>
+    <p> Item Desenvolvimento = </p>
+    <p>-----------------</p>
+    
+	{% for it in IT %}
+	    {% for tr in tr_par %}
+		{% if it.id == tr.itdes %}
+		
+		    <p> Item ID: {{ it.id }} // {{ tr.itdes }} == Item nome: {{ it.nome_item }} == Concluído: {{ tr.ttt }}</p>
+		
+		{% endif %}
+	    {% endfor %}
+	{% endfor %}
+	
+    <p>--------------------------</p>
+    <p> Cartão Desenvolvimento > </p>
+    <p>--------------------------</p>
+	it_par={{ it_par }}
+    <p> ----</p><p> </p>
+	
+	
+	{% for cd in CD %}
+	    {% for it in it_par %}
+		{% if cd.id == it.cdes %}
+		    {% for tr in tr_par %}
+			{% if it.id == tr.itdes %}
+	    
+	    <p>{{ cd.id }} // {{ it.cdes }} -- {{ cd.nome_cd }} >>> {{ it.id }} .Partic do item: {{ it.ggg }} * {{ tr.ttt }} </p>
+	    <p> {{ hhh }} ----- {{ lll }} </p>
+	    
+			{% endif %}
+		    {% endfor %}
+		{% endif %}
+	    {% endfor %}
+	{% endfor %}
+	
+<!--
+    <p> TR_par 3 = {{ tr_par3 }}</p>
+	
+	
+    <p> TR_con= {{sql_TR_con}}</p>
+
+    <p> ppppppp   {{ IT }}</p>
+    <p> TTTTTTT {{ITid}}</p>
+    {% for it in IT %}
+	{% if it.id == 15 %}
+    <p> Item =  {{ it }}</p>
+	{% endif %}
+    {% endfor %}
+
+
+    
+    <p> teste :: {{ sql }}</p>
+    {% for tr in sql %}
+	
+    <p> Item222 =  {{ tr }}</p>
+	{% for tt in tr %}
+	<p> ???? {{ tt }}</p>
+	{% endfor %}
+    {% endfor %}
+
+-->
+
+
+</head>
+
+
+
+
+{% endblock %}

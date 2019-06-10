@@ -11,4 +11,4 @@ class MyModelAdmin(admin.ModelAdmin):
 	
 
 
-admin.site.register(CPod, CDesenvolvimento)
+admin.site.register(CPod, CDesenvolvimento, ItemDesenvolvimento, Tarefas, Escopo)

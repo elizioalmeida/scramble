@@ -1,0 +1,68 @@
+/* forms.css */
+
+fieldset {
+	border:2px solid #ddd;
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	margin-top: 20px;
+	margin-left: 17px;
+	margin-right: 17px;
+}
+
+legend {
+	padding: 0.2em 0.5em;
+  	border: 2px solid #ddd;
+  	color: white;
+  	font-size: 24px;
+  	text-align: left;
+	background-color: #4CAF50;
+	margin-top: 5px;
+	border-radius: 8px;
+}
+
+label {
+	float:left;
+	width:25%;
+	margin-right:0.5em;
+	padding-top:0.2em;
+	text-align:right;
+	color: #3f51b5;
+}
+
+input, textarea {
+	color: #3f51b5;
+    border: 1px solid #ddd;
+	margin-left: 2px;
+	padding: 5px;
+	border-radius: 8px;
+	
+
+}
+/*
+input[type=text] {
+	color:red;
+}
+*/
+label:after { content: ": " }
+
+.btn {
+	color: black;
+}
+
+
+
+'''
+	font-family: arial;
+	font-size: 14px;
+	font-weight: 700; 
+	text-transform: uppercase;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	display: inline-block;
+	text-decorations: none;
+
+
+	color: red;
+}
+'''

@@ -1,0 +1,121 @@
+{% extends 'controle/base.html' %}
+<!-- it_cdes.html -->
+
+{% block content %}
+{% load staticfiles %}
+<title>Ítem de Desenvolvimento</title>
+<head>
+
+    <link rel="stylesheet" href={% static 'css/cprod.css' %}>
+    <link rel="stylesheet" href={% static 'css/button.css' %}>
+    <link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+    
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href={% static 'css/forms.css' %}>
+    
+    
+</head>
+</body>
+	<fieldset><div class="w3-container w3-light-blue" style="margin-botton: 1px">
+		<div class="FontCP"><p class="centrocp">Tarefas / Ítem de Desenvolvimento</p></div>
+	</div>
+	</fieldset>
+
+<fieldset><div class="container">
+	<ul class="nav nav-tabs">
+	{% regroup TR_list by itdes.id as itdes_list %}
+	{% for itdes in itdes_list %}
+		{% if itdes == itdes_list|first %}
+			<li class="active">
+			    <a data-toggle="tab"
+			     data-target="#{{ itdes.grouper|cut:' '|cut:'.' }}">
+			     {% for it in itdes.list %}
+				{% if it == itdes.list|first %}
+				{{ it.itdes }}
+				{% endif %}
+			     {% endfor %}
+			     </a>
+			</li>
+		{% else %}
+			<li>
+			    <a data-toggle="tab"
+			     data-target="#{{ itdes.grouper|cut:' '|cut:'.' }}">
+			     {% for it in itdes.list %}
+				{% if it == itdes.list|first %}
+				{{ it.itdes }}
+				{% endif %}
+			     {% endfor %}
+			    </a>
+			</li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+	
+	<div class="tab-content">
+	{% regroup TR_list by itdes.id as itdes_list %}
+	{% for itdes in itdes_list %}
+	    
+	    
+		{% if itdes == itdes_list|first %}
+			<div id="{{ itdes.grouper|cut:' '|cut:'.' }}" class="tab-pane fade in active">
+		{% else %}
+			<div id="{{ itdes.grouper|cut:' '|cut:'.' }}" class="tab-pane fade">
+		{% endif %}
+
+		<div style="overflow:auto; heigth: 500px">
+		    <table id="customers">
+			<tr>
+			<th>Tarefas</th>
+			<th>Item Desenv.</th>
+			<th>Descrição</th>
+			<th>Data Inicial</th>
+			<th>Data Final</th>
+			<th>Progresso</th>
+			<th>Concluído</th>
+			<th>Apagar Tarefa</th>
+			</tr>
+			
+			{% for tr in TR_list %}
+			{% if tr.itdes.id == itdes.grouper %}
+			<tr>
+			<td><a href="{% url 'tr_edit' pk=tr.pk %}">{{ tr.nome_tarefa }}</a></td>
+			<td>{{ tr.trdes }}</td>
+			<td>{{ tr.descricao }}</td>
+			<td>{{ tr.data_ini }}</td>
+			<td>{{ tr.data_fim }}</td>
+			<td>{{ tr.participacao }}</td>
+			<td>{{ tr.status }}</td>
+			<td class="text-center"><a class="btn btn-info btn-xs" 
+					href="{% url 'tr_delete' pk=tr.pk %}">
+					<span class="glyphicon glyphicon-remove"></span></a></td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+		    </table>
+		</div>
+
+
+
+
+		</div>
+	{% endfor %}
+	</div>
+
+
+</div></fieldset>
+</body>
+
+{% endblock content %}

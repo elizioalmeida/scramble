@@ -1,0 +1,116 @@
+{% extends 'controle/base.html' %}
+
+<!-- es_list.html -->
+
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+    <head>
+	<title>Cartão de Produção</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+       	<link rel="stylesheet" href={% static 'css/cprod.css' %}>
+	<link rel="stylesheet" href={% static 'css/button.css' %}>
+	<link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel='stylesheet' href={% static 'css/forms.css' %}>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+    </head>
+    <body>
+	<fieldset>
+	<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+	    {% for cp in CP_list %}
+		{% if cp == CP_list|first %}
+		    <div class="FontCP"><p class="centrocp">Cartões de Desenvolvimento de: {{ cp.nome_cp }}</p></div>
+		{% endif %}
+	    {% endfor %}
+	</div>
+	</fieldset>
+
+	<fieldset>
+	<div class="container">
+
+	<div class="tab-content">
+
+	    <div style="overflow:auto; heigth: 500px">
+		<table id="customers">
+		<tr>
+		<th>Cartão Desenvolvimento</th>
+		<th>Desenvolvedor</th>
+		<th>Descrição</th>
+		<th>Data Início</th>
+		<th>Data Fim</th>
+		<th>Observação</th>
+		<th>Participação</th>
+		<th>Progresso</th>
+		<th>Apagar Cartão de Desenvolvimento</th>
+		</tr>
+			
+			
+		{% if CDes_list %}
+		
+		{% for cd in CDes_list|dictsort:"cpod" %}
+
+		<tr>
+		<td><a href="{% url 'cd_new' pk=cd.pk %}">{{ cd.nome_cd }} - {{ cd.pk }} </a></td>
+		<td>{{ cd.desenvolvedor }}</td>
+		<td>{{ cd.descricao }}</td>
+		<td>{{ cd.data_des_ini }}</td>
+		<td>{{ cd.data_des_fim }}</td>
+		<td>{{ cd.obs }}</td>
+		<td>{{ cd.participacao }}</td>
+		<td>{{ cd.status }}</td>
+		<td class="text-center"><a class="btn btn-info btn-xs" 
+					href="{% url 'cd_delete' pk=cd.pk %}">
+					<span class="glyphicon glyphicon-remove"></span></a></td>
+		</tr>
+		{% endfor %}
+		
+		{% elif CP_list %}
+		{% for cprod in CP_list %}
+		<tr>
+		<td> Sem Cartão Cadastrado</td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		</tr>
+		{% endfor %}
+		{% endif %}
+
+		</table>
+	    </div>
+		
+	</div>
+	</div>
+	</fieldset>
+			
+	<fieldset>
+	<div class="btn-group">
+	    <a href="{% url 'cd_novo' cp=CDes_pro %}"><button type="button" class="btn btn-info">Novo Cartão Des.</button></a>
+	    <a><button type="button" class="btn btn-info" onClick="javascript:history.go(-1);">Voltar Página</button></a>
+	    <a href="{% url 'inicial' %}"><button type="button" class="btn btn-info">Página Inicial</button></a>
+	</div>
+	</fieldset>
+
+				
+    </body>
+    </html>
+
+
+{% endblock content %}
+

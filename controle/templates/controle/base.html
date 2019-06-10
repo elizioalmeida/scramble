@@ -2,82 +2,157 @@
 <!DOCTYPE html>
 <!-- base.html -->
 <html lang="pt-br">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link href="https://fonts.googleapis.com/css?family=BenchNine:300" rel="stylesheet">
-		<link rel="stylesheet" href={% static 'css/base.css' %}>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href={% static 'css/base.css' %}>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link href="https://fonts.googleapis.com/css?family=BenchNine:300" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
 
-	</head>
-
-	<body>
-		<div class="w3-row" style="margin-top: 1px; margin-bottom: 1px">
-			
-			<div class="w3-col w3-container w3-white" style="width: 10%">{% load static %}
-				<div class="centro">
-				<img src="{% static '/images/scramble.jpg' %}" width='63' heigth='110' class="img-rounded" />
-				</div>
-			</div>
+    <body>
+	<div class="w3-row" style="margin-top: 1px; margin-bottom: 1px">
+	    <div class="w3-col w3-container w3-white" style="width: 10%">{% load static %}
+		<div class="centro"><img src="{% static '/images/scramble.jpg' %}" width='63' heigth='110' class="img-rounded" /></div>
+	    </div>
 				
-			<div class="w3-col w3-container w3-indigo" style="width: 80%">
-				<div class="BenchNine">
-				<div class="centro">Controle de Desenvolvimento - SCRAMBLE</div></div> 
-			</div>
+	    <div class="w3-col w3-container w3-indigo" style="width: 80%">
+		<div class="BenchNine"><div class="centro">Controle de Desenvolvimento - SCRAMBLE</div></div> 
+	    </div>
 	
-			<div class="w3-col w3-container w3-white" style="width: 10%">{% load static %}
-				<div class="centro"><img src="{% static 'images/logoExpertise.png' %}" width='119' heigth='110' />
-				</div>
-			</div>
-		
+	    <div class="w3-col w3-container w3-white" style="width: 10%">{% load static %}
+		<div class="centro"><img src="{% static 'images/logoExpertise.png' %}" width='119' heigth='110' /></div>
+	    </div>
+	</div>
+
+	<nav class="navbar navbar-inverse">
+	    <div class="container-fluid">
+		<div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		    </button>
 		</div>
+		
+		<div class="collapse navbar-collapse" id="myNavbar">
 
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastro de Cartões
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="{% url 'teste' %}">Cartão de Produção</a></li>
-								<li><a href="#">Cartão de Produção Novo</a></li>
-								<li><a href="#">Ítem de Desenvolvimento</a></li>
-								<li><a href="#">Tarefas Diárias</a></li>
-							</ul>
-						</li>
+		    <ul class="nav navbar-nav">
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Cartões de Produção
+				<span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+				    <li class="active"><a href="{% url 'cp_list' %}">Lista todos os Cartões de Produção</a></li>
+				    <li><a href="{% url 'cp_proj' %}">Lista de Cartões de Produção por Projeto</a></li>
+				    <li><a href="{% url 'cp_cli' %}">Lista de Cartões de Produção por Cliente</a></li>	
+				    <li class="divider"></li>
+				    <li><a href="{% url 'cp_novo' %}" >Cartão de Produção Novo</a></li>
+				    <li><a href="{% url 'inicial' %}">Página Inicial</a></li>
+				</ul>
+			</li>
+		    </ul>
+
+		    <ul class="nav navbar-nav">
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Cartões de Desenvolvimento
+				<span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+				    <li class="active"><a href="{% url 'cd_list' %}">Lista todos os Cartões de Desenvolvimento</a></li>
+				    <li><a href="{% url 'cd_cpod' %}">Lista de Cartões de Desenvolvimento por Cartão de Produção</a></li>
+				    <li><a href="{% url 'cd_des' %}">Lista de Cartões de Desenvolvimento por Desenvolvedor</a></li>	
+				    <li class="divider"></li>
+				    <li><a href="{% url 'inicial' %}">Página Inicial</a></li>
+				</ul>
+			</li>
+		    </ul>
+		    
+		    <ul class="nav navbar-nav">
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Escopo
+				<span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+				    <li class="active"><a href="{% url 'es_list' %}">Lista todos os Escopos</a></li>
+				    <li><a href="{% url 'es_cpod' %}">Lista de Escopos por Cartão de Produção</a></li>
+				    <li><a href="{% url 'cd_des' %}">Lista de Escopo por ????</a></li>	
+				    <li class="divider"></li>
+				    <li><a href="{% url 'inicial' %}">Página Inicial</a></li>
+				</ul>
+			</li>
+		    </ul>
+
+		    <ul class="nav navbar-nav">
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Ítens de Desenvolvimento
+				<span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+				    <li class="active"><a href="{% url 'it_list' %}">Lista todos os Ítens de Desenvolvimento</a></li>
+				    <li><a href="{% url 'it_cdes' %}">Lista Ítens de Desenvolvimento por Cartão de Desenvolvimento</a></li>
+				    <li><a href="{% url 'it_cdes' %}">Lista Ítens de Desenvolvimento por ???</a></li>	
+				    <li class="divider"></li>
+				    <li><a href="{% url 'inicial' %}">Página Inicial</a></li>
+				</ul>
+			</li>
+		    </ul>
+
+		    <ul class="nav navbar-nav">
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Tarefas Diárias
+				<span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+				    <li class="active"><a href="{% url 'tr_list' %}">Lista todas as Tarefas Diárias</a></li>
+				    <li><a href="{% url 'tr_item' %}">Lista Tarefas Diárias por Ítem de Desenvolvimento</a></li>
+				    <li><a href="{% url 'tr_item' %}">Lista Tarefa diária por ???</a></li>	
+				    <li class="divider"></li>
+				    <li><a href="{% url 'inicial' %}">Página Inicial</a></li>
+				</ul>
+			</li>
+		    </ul>
+
+		    <ul class="nav navbar-nav">
+			<li class="dropdown">
+			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Relatórios
+				<span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+				    <li class="active"><a href="{% url 'pdf_view' %}">Cartões de Produção</a></li>
+				    <li><a href="{% url 'tr_item' %}">Cartões de Desenvolvimento</a></li>
+				    <li><a href="{% url 'tr_item' %}">Ítem de Desenvolvimento</a></li>	
+				    <li class="divider">Gráfico</li>
+				    <li><a href="{% url 'grafCP' %}">Gráfico de C. Produção</a></li>
+				</ul>
+			</li>
+		    </ul>
 
 
-					</ul>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		    <ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</nav>
 
 
-
-
-
- 	</body>
 
 {% block content %}
 {% endblock content %}
 
-
+    
+    </body>
 </html>
 

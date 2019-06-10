@@ -1,0 +1,58 @@
+{% extends 'controle/base.html' %}
+<!-- es_form_new.html -->
+
+
+{% block content %}
+
+
+{% load staticfiles %}
+<link rel='stylesheet' href={% static 'css/forms.css' %}>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<head>
+
+	<form method="POST" class="post-form">{% csrf_token %}
+
+		<fieldset>
+		<div>
+		    {% for nm in nome_cpod %}
+		    <legend>Escopo Novo para Cartão: {{ nm }}</legend>
+		    {% endfor %}
+		    
+		{% for field in esform %}
+		
+		    <div class="row">
+		    <div class="form-group">
+			<label class="{% for class in field.label_classes %}{{ class }} {% endfor %}"
+				for="{{ field.name }}">{{ field.label }}</label>
+
+				<p>{{ field }}</p>
+			
+			</div>
+			</div>
+			
+		{% endfor %}
+
+		</div>
+		</fieldset>
+		
+		<fieldset>
+		<div class="btn-group">	
+			<a><button type="submit" class="btn btn-primary" >Salvar</button></a>
+			<a href="{% url 'cp_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
+			<a href="#"><button type="button" class="btn btn-primary">Escopo</button></a>
+			<a href="#"><button type="button" class="btn btn-primary">Cartão de Desenvolvimento</button></a>				
+		</div>
+		</fieldset>
+
+	</form>
+	
+</head>
+
+
+{% endblock %}
+ 

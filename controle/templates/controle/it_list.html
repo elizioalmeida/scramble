@@ -1,0 +1,80 @@
+{% extends 'controle/base.html' %}
+
+<!-- cd_list.html -->
+
+
+{% block content %}
+
+{% load staticfiles %}
+<head>
+    <title>Scramble</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href={% static 'css/cprod.css' %}>
+    <link rel="stylesheet" href={% static 'css/button.css' %}>
+    <link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href={% static 'css/forms.css' %}>
+</head>
+
+<body>
+    <fieldset>
+    <div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+	<div class="FontCP"><p class="centrocp">Ítem de Desenvolvimento - Lista Completa</p></div>
+    </div>
+    </fieldset>
+    
+    <fieldset><div class="container">
+    <ul class="nav nav-tabs" >
+	<div style="overflow:auto; heigth: 500px">
+	<table id="customers">
+	<tr>
+	<th>Ítem Desenv.</th>
+	<th> ID </th>
+	<th>Cartão Desenv.</th>
+	<th>Descrição</th>
+	<th>Data Inicial</th>
+	<th>Data Final</th>
+	<th>Participação</th>
+	<th>Concluído</th>
+	<th>Tarefas Diárias</th>
+	<th>Apagar Ítem de Desenvolvimento</th>
+	</tr>
+			
+	{% for it in IT_list %}
+
+	<tr>
+	<td><a href="{% url 'it_edit' pk=it.pk %}">{{ it.nome_item }}</a></td>
+	<td>{{ it.id }}</td>
+	<td>{{ it.cdes }}</td>
+	<td>{{ it.descricao }}</td>
+	<td>{{ it.data_ini }}</td>
+	<td>{{ it.data_fim }}</td>
+	<td>{{ it.participacao }}</td>
+	<td>{{ it.concluido }}</td>
+	<td class="text-center"><a class="btn btn-info btn-xs" href="{% url 'tr_list_it' pro=it.pk %}">
+				<span class="glyphicon glyphicon-th-list"></span></a></td>
+	<td class="text-center"><a class="btn btn-info btn-xs" 
+					href="{% url 'it_delete' pk=it.pk %}">
+					<span class="glyphicon glyphicon-remove"></span></a></td>
+	</tr>
+	
+	{% endfor %}
+	</table>
+	</div>
+    </ul>
+    </div></fieldset>
+
+</body>
+
+
+{% endblock content %}
+

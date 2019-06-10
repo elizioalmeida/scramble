@@ -1,0 +1,9 @@
+UPDATE controle_itemdesenvolvimento
+SET concluido = (
+SELECT  SUM((TR.participacao*TR.status)/100)
+	FROM controle_tarefas TR
+	LEFT JOIN controle_itemdesenvolvimento IT ON TR.itdes_id = 15
+	WHERE IT.id=TR.itdes_id
+	GROUP BY IT.id)
+	WHERE controle_itemdesenvolvimento.id= 15
+	;

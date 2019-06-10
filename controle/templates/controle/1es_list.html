@@ -1,0 +1,106 @@
+{% extends 'controle/base.html' %}
+
+<!-- es_list.html -->
+
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+    <head>
+	<title>Cartão de Produção</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+       	<link rel="stylesheet" href={% static 'css/cprod.css' %}>
+	<link rel="stylesheet" href={% static 'css/button.css' %}>
+	<link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+	<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+	    <div class="FontCP"><p class="centrocp">Escopo</p></div>
+	</div>
+
+	<div class="container">
+
+	<div class="tab-content">
+
+	    <div style="overflow:auto; heigth: 500px">
+		<table id="customers">
+		<tr>
+		<th>Cartão de Produção</th>
+		<th>Escopo</th>
+		<th>Descrição</th>
+		</tr>
+			
+			
+		{% if ES_list %}
+		
+		{% for es in ES_list|dictsort:"cpod" %}
+
+		<tr>
+	 	<td>{{ es.cpod }}</td>
+		<td><a href="{% url 'es_edit' pk=es.pk %}">{{ es.nome_escopo }} - {{ es.pk }}</a></td>
+		<td>{{ es.descricao }}</td>
+		</tr>
+		{% endfor %}
+		
+		{% elif CP_list %}
+		{% for cprod in CP_list %}
+		<tr>
+		<td>{{ cprod.nome_cp }}</td>
+		<td> -- </td>
+		<td> -- </td>
+		
+		</tr>
+		{% endfor %}
+		{% endif %}
+
+		</table>
+	    </div>
+		
+	</div>
+	</div>
+			
+	<div class="btn-group">
+	    {% if ES_list %}
+	    <p>ES_list = {{ ES_list }}</p>
+	    <p>ES_pro = {{ ES_pro }}</p>
+	    {% regroup ES_list|dictsort:"cpod" by cpod as cpod_un %}
+		{% for cp_ in cpod_un %}
+		{{ cp_.grouper }}
+
+	    <a href="{% url 'es_novo' cp=ES_pro %}"><button type="button" class="btn btn-info">Novo Escopo</button></a>
+		{% endfor %}
+	    {% elif CP_list %}
+	    <p>CP_list = {{ CP_list }}</p>
+	    <p>CP_pro = {{ CP_pro }} == {{ ES_pro }}</p>
+	    <p>{{ CP_list.nome_cp }}</p>
+	    {% regroup CP_list|dictsort:"id" by id as cpod_un %}
+		{% for cp_ in cpod_un %}
+		{{ cp_ }}
+		{{ cpod_un }}
+		{{ cp_.grouper }}
+		{{ cp_.nome_cp }}
+	    
+		{% endfor %}
+	    
+	    <a href="{% url 'es_novo' cp=CP_pro %}"><button type="button" class="btn btn-info">Novo mas não tão novo com url</button></a>
+	    {% else %}
+	    {% endif %}
+	     
+	</div>
+
+				
+    </body>
+    </html>
+
+
+{% endblock content %}
+

@@ -11,43 +11,32 @@
 <script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
-
-<html>
 <head>
-<!--
-<div class="container">
-
-	<form name="CPForm" id="CPForm" data-toggle= "validator" role="form" action="" method="get">
-		<div class="row">
-			<div class="col-xs-6 form-group">
-			<label for="client">Cartão</label>
-			<input type="text" id="cliente" name="cliente" class="form-control">
-		</div>
-
-	</form>
-
-</div>
--->
-
-
 
 	<form method="POST" class="post-form">{% csrf_token %}
 
-<!--		<p></p> -->
 		<fieldset>
 		<div>
 		<legend>Cadastro de Cartão de Desenvolvimento</legend>
-		
 		{% for field in cdform %}
 			<div class="row">
 			<div class="form-group">
-
+			
+			{% if field.errors %}
+			<fieldset class="error" >
+			<p>{{ field.help_text }}</p>
+			<p>{{ field.errors }}</p>
+			</fieldset>
+			{% endif %}
+			
 			<label class="{% for class in field.label_classes %}{{ class }} {% endfor %}"
 				for="{{ field.name }}">{{ field.label }}</label>
-
-				<p>{{ field }}</p>
 			
+				    {% if field.errors %}
+					<p><input class="error" {{ field }}></input></p>
+				    {% else %}
+					<p>{{ field }}</p>
+				    {% endif %}
 			</div>
 			</div>
 	
@@ -59,7 +48,7 @@
 		<fieldset>
 		<div class="btn-group">	
 			<a><button type="submit" class="btn btn-primary" >Salvar</button></a>
-			<a href="{% url 'cpod_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
+			<a href="{% url 'cp_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
 			<a href="#"><button type="button" class="btn btn-primary">Escopo</button></a>
 			<a href="#"><button type="button" class="btn btn-primary">Cartão de Desenvolvimento</button></a>				
 		</div>
@@ -69,7 +58,6 @@
 
 
 </head>
-</html>
 
 
 {% endblock %}

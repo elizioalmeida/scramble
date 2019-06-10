@@ -11,7 +11,7 @@ fieldset {
 
 legend {
 	padding: 0.2em 0.5em;
-  	border: 2px solid #ddd;
+  	border: 5px solid #ddd;
   	color: white;
   	font-size: 24px;
   	text-align: left;
@@ -38,6 +38,26 @@ input, textarea {
 	
 
 }
+
+fieldset.error {
+	border:2px solid #ddd;
+	background-color: #e8dada;
+	border-radius: 8px;
+	margin-top: 20px;
+	margin-left: 17px;
+	margin-right: 17px;
+	color: red;
+	font-size: 16px;
+  	text-align: left;
+}
+
+input.error { 
+	font-weight: bold;
+  	color: #dd1c1c;
+  	font-size: 14px;
+	background-color: #e8dada;
+}
+
 /*
 input[type=text] {
 	color:red;
@@ -48,8 +68,6 @@ label:after { content: ": " }
 .btn {
 	color: black;
 }
-
-
 
 '''
 	font-family: arial;

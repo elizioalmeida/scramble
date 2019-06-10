@@ -8,10 +8,9 @@
 {% block content %}
 
 
-<html>
 	<head>
 		<title>Scramble</title>
-		
+<!--		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +20,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		
+-->
 		<style>
 			.navbar {
 				margin-bottom: 0;
@@ -67,7 +66,7 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastro de Cartões<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{% url 'teste1' %}">Cartão de Produção</a></li>
+							<li><a href="{% url 'cp_list' %}">Cartão de Produção</a></li>
 							<li><a href="{% url 'addcp_list' %}">Cartão de Produção Novo</a></li>
 							<li><a href="#">Ítem de Desenvolvimento</a></li>
 							<li><a href="#">Tarefas Diárias</a></li>
@@ -77,7 +76,7 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Atualização de Cartões<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{% url 'teste2' %}">Cartão de Produção</a></li>
+							<li><a href="{% url 'cp_novo' %}">Cartão de Produção</a></li>
 							<li><a href="#">Cartão de Desenvolvimento</a></li>
 							<li><a href="#">Ítem de Desenvolvimento</a><li>
 							<li><a href="#">Tarefas Diárias</a><li>
@@ -87,7 +86,7 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Listagem de Cartões<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{% url 'cpod_list' %}">Cartão de Produção</a></li>
+							<li><a href="{% url 'cp_list' %}">Cartão de Produção</a></li>
 							<li><a href="{% url 'cd_list' %}">Cartão de Desenvolvimento</a></li>
 							<li><a href="#">Ítem de Desenvolvimento</a></li>
 							<li><a href="#">Tarefas Diárias</a></li>
@@ -150,7 +149,6 @@
 		<p>Footer Text</p>
 	</footer>
 	</body>
-</html>
 
 
 <!--

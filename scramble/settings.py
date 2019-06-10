@@ -33,9 +33,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 #ALLOWED_HOSTS = ['elizio.pythonanywhere.com']
-ALLOWED_HOSTS = ['scramble.expertisesolutions.com.br']
+#ALLOWED_HOSTS = ['scramble.expertisesolutions.com.br']
 
-#ALLOWED_HOSTS = ['174.138.53.84']
+
+ALLOWED_HOSTS = ['174.138.53.84']
 
 # Application definition
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'controle',
+    #'latexify',
 )
 
 MIDDLEWARE_CLASSES = (

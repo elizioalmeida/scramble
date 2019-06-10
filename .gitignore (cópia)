@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+myvenv
+.DS_Store
+old*.sqlite3
+lixo
+*.swp
+*.swo
+*.swn

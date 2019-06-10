@@ -1,0 +1,112 @@
+{% extends 'controle/base.html' %}
+<!-- es_cpod.html -->
+
+{% block content %}
+{% load staticfiles %}
+<title>Cartão de Desenvolvimento</title>
+<head>
+
+    <link rel="stylesheet" href={% static 'css/cprod.css' %}>
+    <link rel="stylesheet" href={% static 'css/button.css' %}>
+    <link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+    
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href={% static 'css/forms.css' %}>
+    
+    
+</head>
+</body>
+	<fieldset>
+	<div class="w3-container w3-light-blue" style="margin-botton: 1px">
+		<div class="FontCP"><p class="centrocp">Escopo / Cartão de Produção</p></div>
+	</div>
+	</fieldset>
+
+<fieldset><div class="container">
+	<ul class="nav nav-tabs">
+	{% regroup ES_list by cpod.id as cprod_list %}
+	{% for cprod in cprod_list %}
+		{% if cprod == cprod_list|first %}
+			<li class="active">
+			    <a data-toggle="tab"
+			     data-target="#{{ cprod.grouper|cut:' '|cut:'.' }}">
+			     {% for cp in cprod.list %}
+				{% if cp == cprod.list|first %}
+				{{ cp.cpod }}
+				{% endif %}
+			     {% endfor %}
+			     </a>
+			</li>
+		{% else %}
+			<li>
+			    <a data-toggle="tab"
+			     data-target="#{{ cprod.grouper|cut:' '|cut:'.' }}">
+			     {% for cp in cprod.list %}
+				{% if cp == cprod.list|first %}
+				{{ cp.cpod }}
+				{% endif %}
+			     {% endfor %}
+			    </a>
+			</li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+	
+	<div class="tab-content">
+	{% regroup ES_list by cpod.id as cprod_list %}
+	{% for cprod in cprod_list %}
+	    
+	    
+		{% if cprod == cprod_list|first %}
+			<div id="{{ cprod.grouper|cut:' '|cut:'.' }}" class="tab-pane fade in active">
+		{% else %}
+			<div id="{{ cprod.grouper|cut:' '|cut:'.' }}" class="tab-pane fade">
+		{% endif %}
+
+		<div style="overflow:auto; heigth: 500px">
+		    <table id="customers">
+			<tr>
+			<th>Escopo</th>
+			<th>Descrição</th>
+			<th>Apagar Escopo</th>
+			</tr>
+			
+			{% for es in ES_list %}
+			{% if es.cpod.id == cprod.grouper %}
+			<tr>
+ 			<td><a href="{% url 'es_edit' pk=es.pk %}">{{ es.nome_escopo }}</a></td>
+			<td>{{ es.descricao }}</td>
+			<td class="text-center"><a class="btn btn-info btn-xs" 
+					href="{% url 'es_delete' pk=es.pk %}">
+					<span class="glyphicon glyphicon-remove"></span></a></td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+		    </table>
+		</div>
+
+
+
+
+		</div>
+	{% endfor %}
+	</div>
+
+
+</div></fieldset>
+</body>
+
+{% endblock content %}

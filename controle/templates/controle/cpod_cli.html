@@ -1,0 +1,122 @@
+{% extends 'controle/base.html' %}
+
+<!-- cpod_cli.html -->
+
+
+{% block content %}
+
+{% load staticfiles %}
+<head>
+    <title>Cartão de Produção</title>
+
+    <link rel="stylesheet" href={% static 'css/cprod.css' %}>
+    <link rel="stylesheet" href={% static 'css/button.css' %}>
+    <link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+    
+
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href={% static 'css/forms.css' %}>
+</head>
+<body>
+    <fieldset>
+    <div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+	<div class="FontCP"><p class="centrocp">Cartão de Produção - Cliente</p></div>
+    </div>
+    </fieldset>
+
+    <fieldset><div class="container">
+	<ul class="nav nav-tabs" >
+	{% regroup CProducao_list by cliente as cli_list %}
+	{% for cli in cli_list %}
+	    {% if cli == cli_list|first  %}
+	    
+		<li class="active"><a data-toggle="tab"
+		data-target="#{{ cli.grouper|cut:' '|cut:'.' }}">{{ cli.grouper }}</a></li>
+	    {% else %}
+		<li><a data-toggle="tab"
+		data-target="#{{ cli.grouper|cut:' '|cut:'.' }}">{{ cli.grouper }}</a></li>
+	    {% endif %}
+	{% endfor %}
+	</ul>
+	
+    <div class="tab-content">
+	{% regroup CProducao_list by cliente as cli_list %}
+	{% for cli in cli_list %}
+	    {% if cli == cli_list|first  %}
+	    
+	    <div id="{{ cli.grouper|cut:' '|cut:'.' }}"class="tab-pane fade in active">
+	    {% else %}
+	    <div id="{{ cli.grouper|cut:' '|cut:'.' }}" class="tab-pane fade">
+	    {% endif %}
+			
+	    <div style="overflow:auto; heigth: 500px">
+		<table id="customers">
+		<tr>
+		<th>Nome</th>
+		<th>Projeto</th>
+		<th>Data Inicial</th>
+		<th>Data Final</th>
+		<th>Data Des. Inicial</th>
+		<th>Data Des. Final</th>
+		<th>Progresso</th>
+		<th>Escopo</th>
+		<th>Desenv.</th>
+		<th>Apagar Cartão de Produção</th>
+		</tr>
+			
+		{% for cp in CProducao_list %}
+		{% if cp.cliente == cli.grouper %}
+
+		<tr>
+		<td><a href="{% url 'cp_edit' pk=cp.pk %}">{{ cp.nome_cp }}</a></td>
+		<td>{{ cp.projeto }}</td>
+		<td>{{ cp.data_ini }}</td>
+		<td>{{ cp.data_fim }}</td>
+		<td>{{ cp.data_des_ini }}</td>
+		<td>{{ cp.data_des_fim }}</td>
+		<td>{{ cp.status }}</td>
+		<td class="text-center"><a class="btn btn-info btn-xs"
+				    href="{% url 'es_list_cp' pro=cp.pk %}">
+				    <span class="glyphicon glyphicon-th-list"></span></a></td>
+		<td class="text-center"><a class="btn btn-info btn-xs" 
+				    href="{% url 'cd_list_cp' pro=cp.pk %}">
+				    <span class="glyphicon glyphicon-th-list"></span></a></td>
+		<td class="text-center"><a class="btn btn-info btn-xs" 
+					href="{% url 'cp_delete' pk=cp.pk %}">
+					<span class="glyphicon glyphicon-remove"></span></a></td>
+	
+		</tr>
+		{% endif %}
+		{% endfor %}
+		</table>
+	    </div>
+	    </div>
+	{% endfor %}
+<!--
+	    <div class="btn-group">
+		<a href="{% url 'cp_novo' %}">
+		<button type="button" class="btn btn-info">Novo Cartão Prod./Cliente</button></a>
+	    </div>
+-->
+    </div>
+    </div></fieldset>
+				
+
+
+</body>
+
+
+{% endblock content %}
+

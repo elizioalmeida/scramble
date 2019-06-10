@@ -1,0 +1,115 @@
+{% extends 'controle/base.html' %}
+
+<!-- tr_list_it.html -->
+
+
+{% block content %}
+
+{% load staticfiles %}
+<html>
+    <head>
+	<title>Cartão de Produção</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+       	<link rel="stylesheet" href={% static 'css/cprod.css' %}>
+	<link rel="stylesheet" href={% static 'css/button.css' %}>
+	<link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel='stylesheet' href={% static 'css/forms.css' %}>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+    </head>
+    <body>
+	<fieldset>
+	<div class="w3-container w3-light-blue" style="margin-bottom: 1px">
+	     {% for it in IT_list %}
+		{% if it == IT_list|first %}
+		    <div class="FontCP"><p class="centrocp">Tarefa: {{ it.nome_item }}</p></div>
+		{% endif %}
+	    {% endfor %}
+	</div>
+	</fieldset>
+
+	<fieldset>
+	<div class="container">
+
+	<div class="tab-content">
+
+	    <div style="overflow:auto; heigth: 500px">
+		<table id="customers">
+		<tr>
+		<th>Tarefa</th>
+		<th>Descrição</th>
+		<th>Data Início</th>
+		<th>Data Fim</th>
+		<th>Observação</th>
+		<th>Participação</th>
+		<th>Progresso</th>
+		<th>Apagar Tarefa</th>
+		</tr>
+			
+			
+		{% if TR_list %}
+		
+		{% for tr in TR_list|dictsort:"itdes" %}
+
+		<tr>
+		    
+		<td><a href="{% url 'tr_edit' pk=tr.pk %}">{{ tr.nome_tarefa }} - {{ tr.pk }}</a></td> 
+		<td>{{ tr.descricao }}</td>
+		<td>{{ tr.data_ini }}</td>
+		<td>{{ tr.data_fim }}</td>
+		<td>{{ tr.obs }}</td>
+		<td>{{ tr.participacao }}</td>
+		<td>{{ tr.status }}</td>
+		<td class="text-center"><a class="btn btn-info btn-xs" 
+					href="{% url 'tr_delete' pk=tr.pk %}">
+					<span class="glyphicon glyphicon-remove"></span></a></td>
+		</tr>
+		{% endfor %}
+		
+		{% elif IT_list %}
+		{% for itdes in IT_list %}
+		<tr>
+		<td> Sem Item Cadastrado</td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		<td> -- </td>
+		</tr>
+		{% endfor %}
+		{% endif %}
+
+		</table>
+	    </div>
+		
+	</div>
+	</div>
+	</fieldset>
+			
+	<fieldset>
+	<div class="btn-group">
+	    <a href="{% url 'tr_novo' it=TR_pro %}"><button type="button" class="btn btn-info">Nova Tarefa</button></a>
+	    <a><button type="button" class="btn btn-info" onClick="javascript:history.go(-1);">Voltar Página</button></a>
+	    <a href="{% url 'inicial' %}"><button type="button" class="btn btn-info">Página Inicial</button></a>
+	</div>
+	</fieldset>
+
+				
+    </body>
+    </html>
+
+
+{% endblock content %}
+

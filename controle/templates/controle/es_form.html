@@ -6,7 +6,7 @@
 
 
 {% load staticfiles %}
-<link rel='stylesheet' href={% static 'css/forms.css' %}>
+<link rel='stylesheet' href={% static 'css/forms_new.css' %}>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -21,7 +21,7 @@
 
 		<fieldset>
 		<div>
-		<legend>Cadastro de Escopo</legend>
+		<legend>Edita Escopo</legend>
 		
 		{% for field in esform %}
 
@@ -44,7 +44,7 @@
 		<fieldset>
 		<div class="btn-group">	
 			<a><button type="submit" class="btn btn-primary" >Salvar</button></a>
-			<a href="{% url 'cpod_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
+			<a href="{% url 'cp_list' %}"><button type="button" class="btn btn-primary">Lista de Cartões de Produção</button></a>
 			<a href="#"><button type="button" class="btn btn-primary">Escopo</button></a>
 			<a href="#"><button type="button" class="btn btn-primary">Cartão de Desenvolvimento</button></a>				
 		</div>

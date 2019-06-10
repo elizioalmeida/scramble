@@ -6,14 +6,17 @@
 
 
 	<h1><a> Novo Cartão </a></h1>
-	<form method="POST" class="post-form">{% csrf_token %}
-		{{ cpform.as_p }}
+	
+	<form action="" method="POST">{% csrf_token %}
+
+	{{ cpform.as_p }}
+	
+	    <input type="submit" value="Submit" />
 		<button type="submit" class="save btn btn-default">Save</button>
 	</form>
-
-
-<h2>	teste2</h2>
-
+	
+<h2>	teste2-2</h2>
+<p> {{ cpform.method }}</p>
 
 
 {% endblock %}
