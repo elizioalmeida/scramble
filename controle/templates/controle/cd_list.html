@@ -63,9 +63,10 @@
 	<td class="text-center"><a class="btn btn-info btn-xs"
 				    href="{% url 'it_list_cd' pro=cd.pk %}">
 				    <span class="glyphicon glyphicon-th-list"></span></a></td>
-	<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'cd_delete' pk=cd.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+	<td class="text-center"><a class="btn btn-info btn-xs"
+				onclick="return confirm('Gostaria de deletar este Desenvolvimento?')"
+				href="{% url 'cd_delete' pk=cd.pk cp=cd.cpod_id %}">
+				<span class="glyphicon glyphicon-trash"></span></a></td>
 	
 	</tr>
 	

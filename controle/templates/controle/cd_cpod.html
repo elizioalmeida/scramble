@@ -98,11 +98,13 @@
 			<td>{{ cd.data_des_ini }}</td>
 			<td>{{ cd.data_des_fim }}</td>
 			<td>{{ cd.participacao }}</td>
-			<td class="text-center"><a class="btn btn-info btn-xs" href="#">
+			<td class="text-center"><a class="btn btn-info btn-xs"
+						    href="{% url 'it_list_cd' pro=cd.pk %}">
 						<span class="glyphicon glyphicon-th-list"></span></a></td>
-			<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'cd_delete' pk=cd.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+			<td class="text-center"><a class="btn btn-info btn-xs"
+					onclick="return confirm('Gostaria de deletar este Desenvolvimento?')"
+					href="{% url 'cd_delete' pk=cd.pk cp=cd.cpod_id %}">
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 			</tr>
 			{% endif %}
 			{% endfor %}

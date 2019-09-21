@@ -31,7 +31,7 @@
 	<div class="FontCP"><p class="centrocp">Ítem de Desenvolvimento - Lista Completa</p></div>
     </div>
     </fieldset>
-    
+
     <fieldset><div class="container">
     <ul class="nav nav-tabs" >
 	<div style="overflow:auto; heigth: 500px">
@@ -48,7 +48,7 @@
 	<th>Tarefas Diárias</th>
 	<th>Apagar Ítem de Desenvolvimento</th>
 	</tr>
-			
+
 	{% for it in IT_list %}
 
 	<tr>
@@ -62,11 +62,12 @@
 	<td>{{ it.concluido }}</td>
 	<td class="text-center"><a class="btn btn-info btn-xs" href="{% url 'tr_list_it' pro=it.pk %}">
 				<span class="glyphicon glyphicon-th-list"></span></a></td>
-	<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'it_delete' pk=it.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+	<td class="text-center"><a class="btn btn-info btn-xs"
+				    onclick="return confirm('Gostaria de deletar este Ítem?')"
+				    href="{% url 'it_delete' pk=it.pk cd=it.cdes_id %}">
+				    <span class="glyphicon glyphicon-trash"></span></a></td>
 	</tr>
-	
+
 	{% endfor %}
 	</table>
 	</div>
@@ -77,4 +78,3 @@
 
 
 {% endblock content %}
-

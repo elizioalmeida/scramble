@@ -6,14 +6,16 @@
 
 
 {% load staticfiles %}
+
+<html>
+<title>Cartão de Produção - Novo</title>
+
 <link rel='stylesheet' href={% static 'css/forms.css' %}>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
-
-<html>
 <head>
 
 	<form method="POST" class="post-form">{% csrf_token %}
@@ -53,12 +55,12 @@
 		<fieldset>
 		<div class="btn-group">	
 			<a><button type="submit" class="btn btn-info" >Salvar</button></a>
+<!---
 			<a><button type="button" class="btn btn-info" onClick="javascript:history.go(-1);">Voltar Página</button></a>
-<!--
 			<a href="{% url 'cp_list' %}"><button type="button" class="btn btn-info">Lista de Cartões de Produção</button></a>
 			<a href="#"><button type="button" class="btn btn-info">Escopo</button></a>
 			<a href="{% url 'cd_list' %}"><button type="button" class="btn btn-info">Cartão de Desenvolvimento</button></a>				
--->
+--->
 		</div>
 		</fieldset>
 

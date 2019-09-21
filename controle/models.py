@@ -72,6 +72,7 @@ class CDesenvolvimento(models.Model):
 
     def __unicode__(self):
         return self.nome_cd
+	
 
 
 class ItemDesenvolvimento (models.Model):

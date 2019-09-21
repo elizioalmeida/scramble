@@ -1,6 +1,8 @@
 {% extends 'controle/base.html' %}
 <!-- cd_des.html -->
 
+
+
 {% block content %}
 {% load staticfiles %}
 <title>Cartão de Desenvolvimento</title>
@@ -9,22 +11,27 @@
     <link rel="stylesheet" href={% static 'css/cprod.css' %}>
     <link rel="stylesheet" href={% static 'css/button.css' %}>
     <link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
-<!--
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- 
+	<meta http-equiv="Content-Type" content="text/html" />
+	--->
+	<meta charset="UTF-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+       	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css">
        	
 		
-		<link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
--->
+	<link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- -->
 
 </head>
 <body>
@@ -37,9 +44,12 @@
 	{% regroup CDesenvolvimento_list|dictsort:"desenvolvedor" by desenvolvedor as des_list %}
 	{% for des in des_list %}
 	    {% if des == des_list|first  %}
-		<li class="active"><a data-toggle="tab" data-target="#{{ des.grouper|cut:' '|cut:'.' }}">{{ des.grouper }}</a></li>
+		<li class="active"><a data-toggle="tab"
+		data-target="#{{ des.grouper|cut:' '|cut:'.' }}">{{ des.grouper }}</a></li>
 	    {% else %}
-		<li><a data-toggle="tab" data-target="#{{ des.grouper|cut:' '|cut:'.' }}">{{ des.grouper }}</a></li>
+		
+		<li><a data-toggle="tab"
+		data-target="#{{ des.grouper|cut:' '|cut:'.' }}">{{ des.grouper }}</a></li>
 	    {% endif %}
 	{% endfor %}
 	</ul>
@@ -77,11 +87,12 @@
 			<td>{{ cd.data_des_ini }}</td>
 			<td>{{ cd.data_des_fim }}</td>
 			<td>{{ cd.participacao }}</td>
-			<td class="text-center"><a class="btn btn-info btn-xs" href="#">
+			<td class="text-center"><a class="btn btn-info btn-xs"
+						    href="{% url 'it_list_cd' pro=cd.pk %}">
 						<span class="glyphicon glyphicon-th-list"></span></a></td>
 			<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'cd_delete' pk=cd.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+					href="{% url 'cd_delete' pk=cd.pk cp=cd.cpod_id %}">
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 			</tr>
 			{% endif %}
 			{% endfor %}
@@ -91,5 +102,16 @@
 	{% endfor %}
 	</div>
 	</div>
+<!-- 
+<script>
+$(document).ready(function(){
+  $(".nav-tabs a").click(function(){
+    $(this).tab('show')
+    $(this).tab('active');
+  });
+});
+</script>
+-->
+
 </body>
 {% endblock content %}

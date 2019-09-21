@@ -38,11 +38,10 @@
 
     <fieldset><div class="container">
 	<ul class="nav nav-tabs" >
-	{% regroup CProducao_list by cliente as cli_list %}
+	{% regroup CProducao_list|dictsort:"cliente" by cliente as cli_list %}
 	{% for cli in cli_list %}
 	    {% if cli == cli_list|first  %}
-	    
-		<li class="active"><a data-toggle="tab"
+	    	<li class="active"><a data-toggle="tab"
 		data-target="#{{ cli.grouper|cut:' '|cut:'.' }}">{{ cli.grouper }}</a></li>
 	    {% else %}
 		<li><a data-toggle="tab"
@@ -52,7 +51,7 @@
 	</ul>
 	
     <div class="tab-content">
-	{% regroup CProducao_list by cliente as cli_list %}
+	{% regroup CProducao_list|dictsort:"cliente" by cliente as cli_list %}
 	{% for cli in cli_list %}
 	    {% if cli == cli_list|first  %}
 	    
@@ -93,9 +92,10 @@
 		<td class="text-center"><a class="btn btn-info btn-xs" 
 				    href="{% url 'cd_list_cp' pro=cp.pk %}">
 				    <span class="glyphicon glyphicon-th-list"></span></a></td>
-		<td class="text-center"><a class="btn btn-info btn-xs" 
+		<td class="text-center"><a class="btn btn-info btn-xs"
+					onclick="return confirm('Gostaria de deletar este Cartão de Produção?')"
 					href="{% url 'cp_delete' pk=cp.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 	
 		</tr>
 		{% endif %}

@@ -9,12 +9,12 @@
     <link rel="stylesheet" href={% static 'css/cprod.css' %}>
     <link rel="stylesheet" href={% static 'css/button.css' %}>
     <link rel="stylesheet" href={% static 'css/sidemenu.css' %}>
-    
+
     <script src="jquery.min.js" type="text/javascript"></script>
     <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <script src="bootstrap.min.js" type="text/javascript"></script>
-    
-    
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -25,8 +25,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel='stylesheet' href={% static 'css/forms.css' %}>
-    
-    
+
+
 </head>
 </body>
 	<fieldset>
@@ -64,12 +64,12 @@
 		{% endif %}
 	{% endfor %}
 	</ul>
-	
+
 	<div class="tab-content">
 	{% regroup IT_list by cdes.id as cdes_list %}
 	{% for cdes in cdes_list %}
-	    
-	    
+
+
 		{% if cdes == cdes_list|first %}
 			<div id="{{ cdes.grouper|cut:' '|cut:'.' }}" class="tab-pane fade in active">
 		{% else %}
@@ -89,7 +89,7 @@
 			<th>Tarefas Diárias</th>
 			<th>Apagar Ítem de Desenvolvimento</th>
 			</tr>
-			
+
 			{% for it in IT_list %}
 			{% if it.cdes.id == cdes.grouper %}
 			<tr>
@@ -100,11 +100,13 @@
 			<td>{{ it.data_fim }}</td>
 			<td>{{ it.participacao }}</td>
 			<td>{{ it.concluido }}</td>
-			<td class="text-center"><a class="btn btn-info btn-xs" href="#">
+			<td class="text-center"><a class="btn btn-info btn-xs"
+						   href="{% url 'tr_list_it' pro=it.pk %}">
 				<span class="glyphicon glyphicon-th-list"></span></a></td>
-			<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'it_delete' pk=it.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+			<td class="text-center"><a class="btn btn-info btn-xs"
+						onclick="return confirm('Gostaria de deletar este Ítem?')"
+						href="{% url 'it_delete' pk=it.pk cd=it.cdes_id %}">
+						<span class="glyphicon glyphicon-trash"></span></a></td>
 			</tr>
 			{% endif %}
 			{% endfor %}

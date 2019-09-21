@@ -34,16 +34,16 @@
     
     <fieldset><div class="container">
 	<ul class="nav nav-tabs" >
-
-		{% regroup CProducao_list|dictsort:"projeto" by projeto as proj_list %}
-			{% for proj in proj_list %}
-			{% if proj == proj_list|first  %}
-				<li class="active"><a data-toggle="tab" data-target="#{{ proj.grouper }}">{{ proj.grouper }}</a></li>
-			{% else %}
-				<li><a data-toggle="tab" data-target="#{{ proj.grouper }}">{{ proj.grouper }}</a></li>
-			{% endif %}
-
-			{% endfor %}
+	{% regroup CProducao_list|dictsort:"projeto" by projeto as proj_list %} 
+	{% for proj in proj_list %}
+	    {% if proj == proj_list|first  %}
+		<li class="active"><a data-toggle="tab"
+		data-target="#{{ proj.grouper|cut:' '|cut:'.' }}">{{ proj.grouper }}</a></li>
+	    {% else %}
+		<li><a data-toggle="tab"
+		data-target="#{{ proj.grouper|cut:' '|cut:'.' }}">{{ proj.grouper }}</a></li>
+	    {% endif %}
+	{% endfor %}
 	</ul>
 	<div></div>
 		
@@ -53,10 +53,11 @@
 		{% for proj in proj_list %}
 			
 			{% if proj == proj_list|first  %}
-			<div id={{ proj.grouper }} class="tab-pane fade in active">
+			<div id="{{ proj.grouper|cut:' '|cut:'.' }}" class="tab-pane fade in active">
 			{% else %}
-			<div id={{ proj.grouper }} class="tab-pane fade">
+			<div id="{{ proj.grouper|cut:' '|cut:'.' }}" class="tab-pane fade">
 			{% endif %}
+			
 			<div style="overflow:auto; heigth: 500px">
 				<table id="customers">
 				<tr>
@@ -89,9 +90,10 @@
 				<td class="text-center"><a class="btn btn-info btn-xs" 
 				    href="{% url 'cd_list_cp' pro=cp.pk %}">
 				    <span class="glyphicon glyphicon-th-list"></span></a></td>
-				<td class="text-center"><a class="btn btn-info btn-xs" 
+				<td class="text-center"><a class="btn btn-info btn-xs"
+					onclick="return confirm('Gostaria de deletar este Cartão de Produção?')"
 					href="{% url 'cp_delete' pk=cp.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 	
 				</tr>
 				{% endif %}

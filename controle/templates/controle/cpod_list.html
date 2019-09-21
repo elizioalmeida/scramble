@@ -69,12 +69,13 @@
 				<td class="text-center"><a class="btn btn-info btn-xs"
 				    href="{% url 'es_list_cp' pro=cp.pk %}">
 				    <span class="glyphicon glyphicon-th-list"></span></a></td>
-				<td class="text-center"><a class="btn btn-info btn-xs" 
+				<td class="text-center"><a class="btn btn-info btn-xs"
 				    href="{% url 'cd_list_cp' pro=cp.pk %}">
 				    <span class="glyphicon glyphicon-th-list"></span></a></td>
-				<td class="text-center"><a class="btn btn-info btn-xs" 
+				<td class="text-center"><a class="btn btn-info btn-xs"
+					onclick="return confirm('Gostaria de deletar este Cartão de Produção?')"
 					href="{% url 'cp_delete' pk=cp.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 				</tr>
 				{% endfor %}
 

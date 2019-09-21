@@ -47,9 +47,10 @@
 	<tr>
 	<td><a href="{% url 'es_edit' pk=es.pk %}">{{ es.nome_escopo }}</a></td>
 	<td>{{ es.descricao }}</td>
-	<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'es_delete' pk=es.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+	<td class="text-center"><a class="btn btn-info btn-xs"
+					onclick="return confirm('Gostaria de deletar este Escopo?')"
+					href="{% url 'es_delete' pk=es.pk escopo=es.cpod_id  %}">
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 	
 	</tr>
 	

@@ -1,6 +1,6 @@
 {% extends 'controle/base.html' %}
 
-<!-- es_list.html -->
+<!-- cd_list_cp.html -->
 
 
 {% block content %}
@@ -64,7 +64,7 @@
 		{% for cd in CDes_list|dictsort:"cpod" %}
 
 		<tr>
-		<td><a href="{% url 'cd_new' pk=cd.pk %}">{{ cd.nome_cd }} - {{ cd.pk }} </a></td>
+		<td><a href="{% url 'cd_new' pk=cd.pk %}">{{ cd.nome_cd }} - {{ cd.pk }} {{ cd.cpod_id }}</a></td>
 		<td>{{ cd.desenvolvedor }}</td>
 		<td>{{ cd.descricao }}</td>
 		<td>{{ cd.data_des_ini }}</td>
@@ -72,9 +72,10 @@
 		<td>{{ cd.obs }}</td>
 		<td>{{ cd.participacao }}</td>
 		<td>{{ cd.status }}</td>
-		<td class="text-center"><a class="btn btn-info btn-xs" 
-					href="{% url 'cd_delete' pk=cd.pk %}">
-					<span class="glyphicon glyphicon-remove"></span></a></td>
+		<td class="text-center"><a class="btn btn-info btn-xs"
+					onclick="return confirm('Gostaria de deletar este Desenvolvimento?')"
+					href="{% url 'cd_delete' pk=cd.pk cp=cd.cpod_id  %}">
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 		</tr>
 		{% endfor %}
 		

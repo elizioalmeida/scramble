@@ -51,6 +51,10 @@ def relCP():
 
     CD_ = CDesenvolvimento.objects.all().order_by('nome_cd')
 
+    IT_ = ItemDesenvolvimento.objects.all().order_by('nome_item')
+
+    Tar_ = Tarefas.objects.all().order_by('nome_tarefa')
+
     con = sqlite3.connect("/home/elizio/scramble/db.sqlite3")
     conecta = con.cursor()
     conecta.execute("""
@@ -74,29 +78,31 @@ def relCP():
     pa('\\usepackage[brazil]{babel}\n')
     pa('\\usepackage[utf8]{inputenc}\n')
     pa('\\usepackage{booktabs}\n')
+    pa('\\usepackage{verbatim}\n')
     
+    pa('\\usepackage[lmargin=0.5cm, rmargin=0.5cm, tmargin=0.5cm]{geometry}\n')
     
-    pa('\\usepackage[lmargin=0.5cm, tmargin=0.5cm]{geometry}\n')
-    
-    #pa('\\usepackage{pgfplots}\n')
-    #pa('\\pgfplotsset{compat=newest} \n')
-    #pa('\\usepackage{fancyhdr}\n')
+    pa('\\usepackage{fancyhdr}\n') 
     pa('\\usepackage{caption}\n')
     pa('\\usepackage{multirow}\n')
-    
-    ##pa('\\usepackage{tabularx}\n')
+
     pa('\\usepackage{array, makecell}\n')
     pa('\\setcellgapes{10pt}\n')
     pa('\\usepackage[table]{xcolor}\n')
-    ##pa('\\usepackage{color, colortbl}\n')
     
     pa('\\usepackage{tabu}\n')
-    ##pa('\\usepackage{ltablex}\n')
-    ##pa('\\usepackage{tabularx}\n')
     pa('\\usepackage{longtable}\n')
+
     
+    #pa('\\usepackage{pgfplots}\n')
+    #pa('\\pgfplotsset{compat=newest} \n')
     ##pa('\\usepackage{xcolor}\n')
     #pa('\\usepackage[ddmmyyyy]{datetime}\n')
+    #pa('\\usepackage{siunitx}\n') #% format SI units ( mas não resolveu )
+    ##pa('\\usepackage{tabularx}\n')    
+    ##pa('\\usepackage{color, colortbl}\n')
+    ##pa('\\usepackage{ltablex}\n')
+    ##pa('\\usepackage{tabularx}\n')
     
     #### --- color
     pa('  % \n')
@@ -104,47 +110,71 @@ def relCP():
     pa('\\definecolor{CDes}{RGB}{0, 0, 255} \n')
     pa('\\definecolor{CPro}{RGB}{51, 153, 51} \n')
     pa('\\definecolor{grey2}{RGB}{250,250,250} \n')
-    
-    
-    pa('\\title{Relatório de Cartões de Produção}\n')
-    pa('\\author{elizio}\n')
+    ##pa('\\definecolor{Tar}{black}{0.9}\n')
+    pa('\\definecolor{Tar}{RGB}{0,0,0} \n')
+     
+    ##pa('\\title{Relatório de Cartões de Produção}\n')
+    ##pa('\\author{elizio}\n')
     pa('\\vskip 2em \n')
-    pa('\\font\\default=cmr12\n ')
+    pa('\\font\\default=cmr12\n')
     pa('\\def\\today{January 21, 2011}\n')
-    pa('\\begin{document}\n')
-    pa('\\maketitle\n')
     
-    #pa('\\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}} \n')
+    '''
+    pa('  %%% \n')
+    pa(' \\fancypagestyle{style2}{ \n')
+    pa(' \\renewcommand{\\footrulewidth}{0.4pt} \n')
+    pa(' \\lhead{toptext} \n')
+    pa(' \\chead{} \n')
+    pa(' \\rhead{} \n')
+    pa(' \\lfoot{docref \\newline Document uncontrolled when printed} \n')
+    pa(' \\cfoot{} \n')
+    pa(' \\rfoot{Version\\ 1.0\\Page\\ \\thepage} }\n')
+    #pa(' } \n')
+    '''
+    
+    pa('  %%% \n')
+    
+    
+    pa('\\begin{document}\n')
+    ##pa('\\maketitle\n')
+    
     pa('\\renewcommand{\\arraystretch}{1.7} \n')
     
     pa('  % \n')
+    '''
     pa('  \\begin{table}[!ht]\\centering \n')
 
-    #pa('   \\ra{1.3} \n')
-    #pa('  \\center\n')
-    #pa('  \\makegapedcells\n') # testar se ainda preciso // estava atrapalhando tudo relativo a cores
-    
     pa('  \\caption{Projetos}\n')
     pa('  \\caption*{ Esta é uma informação adicional para a legenda da tabela}\n')
     pa('  \\vspace{0,5cm}\n')
-
-    #pa('  \\taburowcolors [2] 2{green!25 .. yellow!50} \n')
-    #pa('  \\rowcolors {2}{green!25}{yellow!50} \n')
+    '''
     
-
-    pa('    % \n')
-    #pa('    \\begin{center} \n')
-    pa('    \\centering\n')
-    pa('    \\color{red}\\begin{longtabu}{p{0.1cm}c||c|c|c|c|c|c|cp{0.1cm}}\n')	
+    pa('  % \n')
+    pa('  \\centering\n')
+    pa('  \\begin{longtable}{p{0.1cm}c|c|c|c|c|c|c|cp{0.1cm}}\n')	
+    pa('  %%% Page(?) \n')
     
-    #pa('\\begin{tabular}{c||c|c|l|l|l|l|l|l}\n')
+    #pa('    \\hline \\\ \n')
+    # ------> pa('    \\multicolumn{10}{c}{ \\color{red} \\LARGE Relatório de Cartões de Produção}\\\ \n')
+    #pa('    \\hline \n')
+    #pa('    \\caption{legenda da logtable. \\label{long}} \\\ \n')
+    pa('  \\endfirsthead \n')
     
-        
+    
     p1 = '\\textbf{\\textcolor{CPro}{'
     p2 = '    &\\textbf{\\textcolor{CPro}{'
     p3 = '\\textcolor{CPro}{'
     p4 = '    &\\textcolor{CPro}{'
+    
+    c1 = '\\textbf{\\textcolor{CDes}{'
+    c2 = '      &\\textbf{\\textcolor{CDes}{'
+    c3 = '\\textcolor{CDes}{'
+    c4 = '      &\\textcolor{CDes}{'
 
+    t1 = '\\textbf{\\textcolor{Tar}{'
+    t2 = '      &\\textbf{\\textcolor{Tar}{'
+    t3 = '\\textcolor{Tar}{'
+    t4 = '      &\\textcolor{Tar}{'
 
     
     for row in CP_:
@@ -152,25 +182,53 @@ def relCP():
 	
 	pa('    \\arrayrulecolor{CPro}  \n')
 	pa('    \\hline \hline\n')
+	
+	pa('    \\multicolumn{10}{c}{ \\Large ' + p3 + '  Cartão de Produção: ' + str(row.nome_cp) + '}}\\\ \n')
+	pa('    \\hline \n')
+	
 	pa('    \\rule[0mm]{0mm}{1mm}\n')
 	
-	pa('    \\multirow{2}{*}{} \n') 
-	pa('    &\\renewcommand{\cellalign}{cc}\\multirow{2}{*}[-0.4cm]{' + p1 + 'Cartão Produção}}} \n') 
-	pa('    \\ & \multicolumn{2}{c|}{' + p1 + 'Data Planejada}}} & \multicolumn{3}{c|}{' + p1 + '\% Desenvolvimento}}} & \multicolumn{3}{c}{' + p1 + 'Nova Previsão}}}\\\\ [1ex] \n')
-	pa('    \\cline{3-10} \n')
-	#pa('    \\ & & \\makecell{Inicial} & \\renewcommand{\cellalign}{lc}{Final} & Planejado & Decorrido & Perda/ Ganho & Nova Data & Ganho/Perdido & \\\\ [1ex] \hline \hline \n')
-	pa('    \\ & & ' + p1 + 'Inicial}} & ' + p1 + 'Final}} & ' + p1 + 'Planejado}} & ' + p1 + 'Decorrido}} & ' + p1 + 'Perda/ Ganho }} & ' + p1 + 'Nova Data}} & ' + p1 + 'Ganho/Perdido}} & \\\\ [1ex] \hline \hline \n')
-        
+	#pa('    \\multirow{2}{*}{} \n') 
+	#pa('    &\\renewcommand{\cellalign}{cc}\\multirow{2}{*}[-0.4cm]{' + p1 + 'Cartão Produção}}} \n') 
+	#pa('     & \multicolumn{2}{c|}{' + p1 + 'Data }}} & \multicolumn{2}{c|}{' + p1 + '\% Desenvolvimento}}} & \multicolumn{4}{c}{' + p1 + ' Dias Consumidos}}}\\\\ [1ex] \n')
+	#pa('    \\cline{1-10} \n')
+	pa('      &\\multicolumn{1}{c|}{' + p1 + 'Data Inicial}}} \n')
+	pa('      &\\multicolumn{1}{c|}{' + p1 + 'Data Final}}} \n')
+	pa('      &\\multicolumn{2}{c|}{' + p1 + 'Progresso}}} \n')
+	pa('      &\\multicolumn{1}{c}{' + p1 + 'Dias }}}  \\\\ [1ex] \hline \hline \n')
+        ## Participacao sempre sera 100% --pa('    \\ &  ' + p1 + 'Inicial}} & ' + p1 + 'Final}} &  ' + p1 + 'Participação}} &' + p1 + 'Progresso}} &  ' + p1 +  'Dias }} & ' + p1 + ' [ \% Percentual ] }} &  & & \\\\ [1ex] \hline \hline \n')
 	
-	pa('    &' + p3 +	str(row.nome_cp) + '}\n')
-        pa('    &' + p3 + str(row.data_ini.day).zfill(2) + '/' + str(row.data_ini.month).zfill(2) + '/' + str(row.data_ini.year) + '}\n')
-        pa('    &' + p3 + str(row.data_fim.day).zfill(2) + '/' + str(row.data_fim.month).zfill(2) + '/' + str(row.data_fim.year) + '}\n')
-        
 	
-        if(row.data_fim - row.data_ini ).days == 0: d_total = 1
+	
+        if row.data_des_ini == None:
+	    pa(p4 + 'Sem data' + '}\n')
+	else:
+	    pa('    &' + p3 + str(row.data_ini.day).zfill(2) + '/' + str(row.data_ini.month).zfill(2) + '/' + str(row.data_ini.year) + '}\n')
+	if row.data_des_fim == None:
+	    pa(p4 + 'Sem data' + '}\n')
+	else:
+	    pa('    &' + p3 + str(row.data_fim.day).zfill(2) + '/' + str(row.data_fim.month).zfill(2) + '/' + str(row.data_fim.year) + '}\n')
+	
+	## - sempre será 100% -- pa(' & ' + p3 + str(row.participacao) +  ' \\% }\n')
+	
+	pa('    &' + p3 + str(row.status) + '\\%' + ' }\n') # status
+	
+	
+	diasdecorridos = ( ( date.today() - row.data_ini ).days) 
+	diastotais = ( ( date.today() - row.data_fim ).days)
+	dias = int(diasdecorridos / diastotais * 100)
+	
+	pa(      p4 + str(diasdecorridos) + '} \\\\ [1ex] \hline \hline \n')
+	#pa('      &\\multicolumn{2}{|c|}{' + p3 + str(diasdecorridos) + '} \\\\ [1ex] \hline \hline \n')
+	#pa('    &' + p3 +  '} & \\\\ [1ex] \hline \hline \n')
+	#pa(' &' + p3 + str(dias) + '\\%' + ' }\n')
+	
+	
+	
+        if(row.data_fim - row.data_ini ).days == 0: d_total = 1 # analisar
         else: d_total = int((row.data_fim - row.data_ini ).days)
         d_trabalhado = int((date.today() - row.data_ini).days)
-        decorrido    = int((d_trabalhado / d_total)*100)
+        # decorrido    = int((d_trabalhado / d_total)*100) = Analisar este dado como seria mostrado.
         
 	
         if row.status == 0: 
@@ -179,73 +237,83 @@ def relCP():
             d_falta= int( d_trabalhado / row.status * 100)
         
         nova_data = (row.data_ini + timedelta(d_falta))
-        
-        pa('    &' + p3 + str(row.status) + '\\%' + ' }\n') # status
-        pa('    &' + p3 + str(decorrido) + '\\%' + ' }\n') # decorrido
-        pa('    &' + p3 + str(row.status - decorrido) + '\\%' + '}\n') # perda
-        pa('    &' + p3 + str(nova_data.day).zfill(2) + '/' + str(nova_data.month).zfill(2) + '/' + str(nova_data.year).zfill(2) +  '}\n') 
-        pa('    &' + p3 + str((row.data_fim - nova_data ).days) + '} & \\\\ [1ex] \hline \hline \n')
+	
+	
+	
 	pa('    \\addlinespace[2ex]\n')
+	###################################################################
 	
 	pa('      % \n')
 	pa('      \\arrayrulecolor{CDes} \n')
 	
-	c1 = '\\textbf{\\textcolor{CDes}{'
-	c2 = '      &\\textbf{\\textcolor{CDes}{'
-	c3 = '\\textcolor{CDes}{'
-	c4 = '      &\\textcolor{CDes}{'
-	
-	
-	pa('      \\cline{2-9} \n')
-	
-	pa('      \n')
-	
-	#pa('      \\taburowcolors [1] 1{green!25 .. green!25} \n')
-	
-	pa('      &\\multicolumn{2}{|c||}{' + c1 + 'Cartão Desenvolvimento}}} \n')
-	pa('      &\\multicolumn{2}{c|}{' + c1 + 'Desenvolvedor}}} \n')
-	pa(c2 + 'Data Inicial}} \n')
-	pa(c2 + 'Data Final}} \n')
-	pa(c2 + 'Nova Data}} \n')
-	pa('      &\\multicolumn{1}{c|}{' + c1 + 'Ganho/ Perdido}}} \\\\ [1ex] \cline{2-9} \n')
 	for cd in CD_:
             if cd.cpod.id == row.id:
 		
+		pa('    \\multicolumn{6}{c}{ ' + c3 + ' Cartão de Desenvolvimento: ' +  str(cd.nome_cd) + '}}\\\ \n')
+		pa('     \\cline{2-6} \n')
+		pa('      \n')
+		    
+		pa('      &\\multicolumn{1}{|c|}{' + c1 + 'Desenvolvedor}}} \n')
+		pa(c2 + 'Data Inicial}} \n')
+		pa(c2 + 'Data Final}} \n')
+		pa(c2 + 'Participação}} \n')
+		pa('      &\\multicolumn{1}{c|}{' + c1 + 'Progresso}}} \\\\ [1ex] \cline{2-6} \n')
 		
-                pa('      &\\multicolumn{2}{|c||}{' + c3 + str(cd.nome_cd) + '}}\n')
-                pa('      &\\multicolumn{2}{c|}{' + c3 + str(cd.desenvolvedor) + '}}\n' )
-                pa(c4 + str(cd.data_des_ini.day).zfill(2) + '/' + str(cd.data_des_ini.month).zfill(2)+ '/' + str(cd.data_des_ini.year).zfill(2) + '}\n')
-                pa(c4 + str(cd.data_des_fim.day).zfill(2) + '/' + str(cd.data_des_fim.month).zfill(2) +'/'+ str(cd.data_des_fim.year).zfill(2) + '}\n')
-		
-		if(cd.data_des_fim - cd.data_des_ini ).days == 0: cdd_total = 1
-		else: cdd_total = int((cd.data_des_fim - cd.data_des_ini ).days)
-        
-		cdd_trabalhado = int((date.today() - cd.data_des_ini).days)
-		cdd_decorrido    = int((cdd_trabalhado / cdd_total)*100)
-		
-		if cd.status == 0: 
-		    cdd_falta = 0
+                pa('      &\\multicolumn{1}{|c|}{' + c3 + str(cd.desenvolvedor) + '}}\n' )
+                if cd.data_des_ini == None:
+		    pa(c4 + 'Sem data' + '}\n')
 		else:
-		    cdd_falta= int( cdd_trabalhado / cd.status * 100)
-        
-		cdd_nova_data = (cd.data_des_ini + timedelta(cdd_falta))
+		    pa(c4 + str(cd.data_des_ini.day).zfill(2) + '/' + str(cd.data_des_ini.month).zfill(2)+ '/' + str(cd.data_des_ini.year).zfill(2) + '}\n')
+                if cd.data_des_fim == None:
+		    pa(c4 + 'Sem data' + '}\n')
+		else:
+		    pa(c4 + str(cd.data_des_fim.day).zfill(2) + '/' + str(cd.data_des_fim.month).zfill(2) +'/'+ str(cd.data_des_fim.year).zfill(2) + '}\n')
+                pa( c4 + str(cd.participacao) + '}\n')
+		pa('      &\\multicolumn{1}{c|}{' + c3 + str(cd.status ) + '}}\\\\ [1ex] \n')
+		
+		pa('      \\cline{2-6}\\\\ \n')
+
+		############################
 		
 		
-                pa(c4 + str(cdd_nova_data.day).zfill(2) +'/' + str(cdd_nova_data.month).zfill(2) + '/'+ str(cdd_nova_data.year).zfill(2) + '}\n')
-                pa('      &\\multicolumn{1}{c|}{' + c3 + str((cd.data_des_fim - cdd_nova_data).days) + '}}\\\\ [1ex] \n')
+		for it in IT_:
+		    if it.cdes.id == cd.id:
+			nome = str(it.nome_item) 
+			pa('      \\arrayrulecolor{Tar} \n')
+			pa('     \\cline{2-6} \n')
+			#pa('      \n')
+			
+			#### - Cabeçaçho de Tarefas.
+			try:
+			    for tar in Tar_:
+				if tar.itdes.id == it.id:	
+				    pa('      &\\multicolumn{1}{c||}{' + t1 + 'Tarefa}}} \n')
+				    pa('      &\\multicolumn{2}{c|}{' + t1 + 'Participação}}} \n')
+				    pa('      &\\multicolumn{2}{c}{' + t1 + 'Progresso}}} \\\\ [1ex] \cline{2-6} \n')
+				    break
+			except:
+			    None
+			    
+			for tar in Tar_:
+				if tar.itdes.id == it.id:	
+				    pa('      &\\multicolumn{1}{c||}{' + t3 + str(tar.nome_tarefa) + '}}\n')
+				    pa('      &\\multicolumn{2}{c|}{' + t3 + str(tar.participacao) + '}}\n')
+				    pa('      &\\multicolumn{2}{c}{' + t3 + str(tar.status) + '}}\\\\ \n')
+				    pa('\\cline{2-6} \n')
+			
 		
-	pa('      \\cline{2-9}\\\\ \n')
-	pa('      \\addlinespace[2ex]   \n')
+	#pa('      \\addlinespace[2ex]   \n')
 	pa('      \\newpage \n')
+	
 	
     #pa('\\pagebreak \n')
 
     pa('\\hline \\hline\n')
     pa('\\bottomrule\\\\ \n')
     
-    pa('\\end{longtabu}\n')
+    pa('\\end{longtable}\n')
     #pa('\\end{center} \n')
-    pa('\\end{table}\n')
+    #pa('\\end{table}\n')
     
 
     '''
@@ -358,3 +426,42 @@ def verifica_arquivo(): #ver depois se vai usar ou então eliminar
 if __name__ == "__main__":
     hwg = principal()
 '''
+''' Como estava o quadro inicialmente 
+	pa('    \\multirow{2}{*}{} \n') 
+	pa('    &\\renewcommand{\cellalign}{cc}\\multirow{2}{*}[-0.4cm]{' + p1 + 'Cartão Produção}}} \n') 
+	pa('    \\ & \multicolumn{2}{c|}{' + p1 + 'Data Planejada}}} & \multicolumn{3}{c|}{' + p1 + '\% Desenvolvimento}}} & \multicolumn{3}{c}{' + p1 + 'Nova Previsão}}}\\\\ [1ex] \n')
+	pa('    \\cline{3-10} \n')
+	#pa('    \\ & & \\makecell{Inicial} & \\renewcommand{\cellalign}{lc}{Final} & Planejado & Decorrido & Perda/ Ganho & Nova Data & Ganho/Perdido & \\\\ [1ex] \hline \hline \n')
+	pa('    \\ & & ' + p1 + 'Inicial}} & ' + p1 + 'Final}} & ' + p1 + 'Planejado}} & ' + p1 + 'Decorrido}} & ' + p1 + 'Perda/ Ganho }} & ' + p1 + 'Nova Data}} & ' + p1 + 'Ganho/Perdido}} & \\\\ [1ex] \hline \hline \n')
+        
+	##pa('    \\endhead\n')
+	
+    
+	if row.data_des_ini == None: row.data_des_ini = date.today() # testar como sera o calculo, e uma ideia.
+	
+	pa('    &' + p3 +	str(row.nome_cp) + '}\n')
+        pa('    &' + p3 + str(row.data_ini.day).zfill(2) + '/' + str(row.data_ini.month).zfill(2) + '/' + str(row.data_ini.year) + '}\n')
+        pa('    &' + p3 + str(row.data_fim.day).zfill(2) + '/' + str(row.data_fim.month).zfill(2) + '/' + str(row.data_fim.year) + '}\n')
+        
+	
+        if(row.data_fim - row.data_ini ).days == 0: d_total = 1
+        else: d_total = int((row.data_fim - row.data_ini ).days)
+        d_trabalhado = int((date.today() - row.data_ini).days)
+        decorrido    = int((d_trabalhado / d_total)*100)
+        
+	
+        if row.status == 0: 
+            d_falta = 0
+        else:
+            d_falta= int( d_trabalhado / row.status * 100)
+        
+        nova_data = (row.data_ini + timedelta(d_falta))
+        
+        pa('    &' + p3 + str(row.status) + '\\%' + ' }\n') # status
+        pa('    &' + p3 + str(decorrido) + '\\%' + ' }\n') # decorrido
+        pa('    &' + p3 + str(row.status - decorrido) + '\\%' + '}\n') # perda
+        pa('    &' + p3 + str(nova_data.day).zfill(2) + '/' + str(nova_data.month).zfill(2) + '/' + str(nova_data.year).zfill(2) +  '}\n') 
+        pa('    &' + p3 + str((row.data_fim - nova_data ).days) + '} & \\\\ [1ex] \hline \hline \n')
+	pa('    \\addlinespace[2ex]\n')
+	'''
+	

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.6)  23 MAY 2019 03:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.7.24)  28 JUL 2019 09:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **/home/elizio/scramble/controle/static/reports/relGrafCP.tex
 (/home/elizio/scramble/controle/static/reports/relGrafCP.tex
 LaTeX2e <2018-04-01> patch level 4
-Babel <3.20> and hyphenation patterns for 27 language(s) loaded.
+Babel <3.20> and hyphenation patterns for 31 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -533,11 +533,11 @@ Your command will be ignored, type <return> to proceed
 
  
 Here is how much of TeX's memory you used:
- 21341 strings out of 494058
- 565619 string characters out of 6166234
- 780037 words of memory out of 5000000
- 24808 multiletter control sequences out of 15000+600000
+ 21341 strings out of 493985
+ 565619 string characters out of 6164652
+ 780287 words of memory out of 5000000
+ 24815 multiletter control sequences out of 15000+600000
  3938 words of font info for 15 fonts, out of 8000000 for 9000
- 266 hyphenation exceptions out of 8191
+ 311 hyphenation exceptions out of 8191
  62i,0n,96p,781b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
