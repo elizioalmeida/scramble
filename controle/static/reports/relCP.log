@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.7.24)  20 SEP 2019 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.7.24)  3 JUN 2021 07:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -234,6 +234,10 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count112
 \LT@p@ftn=\toks25
 )
+
+LaTeX Warning: Unused global option(s):
+    [portrait].
+
 (/home/elizio/scramble/controle/static/reports//relCP.aux)
 \openout1 = `relCP.aux'.
 
@@ -257,13 +261,13 @@ LaTeX Font Info:    ... okay on input line 26.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: landscape 
-* h-part:(L,W,R)=(14.22636pt, 816.59412pt, 14.22636pt)
-* v-part:(T,H,B)=(14.22636pt, 511.57985pt, 71.70166pt)
-* \paperwidth=845.04684pt
-* \paperheight=597.50787pt
-* \textwidth=816.59412pt
-* \textheight=511.57985pt
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 569.05515pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 729.41383pt, 101.40665pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=569.05515pt
+* \textheight=729.41383pt
 * \oddsidemargin=-58.04362pt
 * \evensidemargin=-58.04362pt
 * \topmargin=-95.04362pt
@@ -271,7 +275,7 @@ LaTeX Font Info:    ... okay on input line 26.
 * \headsep=25.0pt
 * \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=144.0pt
+* \marginparwidth=57.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
@@ -304,39 +308,27 @@ Package caption Info: End \AtBeginDocument code.
 \MPnumerator=\count117
 \makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks27
-)
-Underfull \vbox (badness 10000) detected at line 122
- []
+) [1
 
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 1 on input line 477.
-
-[7]
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
-[8] (/home/elizio/scramble/controle/static/reports//relCP.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+(/home/elizio/scramble/controle/static/reports//relCP.aux) ) 
 Here is how much of TeX's memory you used:
- 4606 strings out of 493985
- 66525 string characters out of 6164652
- 177966 words of memory out of 5000000
- 8382 multiletter control sequences out of 15000+600000
+ 4607 strings out of 493985
+ 66535 string characters out of 6164652
+ 172114 words of memory out of 5000000
+ 8383 multiletter control sequences out of 15000+600000
  4544 words of font info for 17 fonts, out of 8000000 for 9000
  311 hyphenation exceptions out of 8191
- 41i,7n,43p,257b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on /home/elizio/scramble/controle/static/reports//relCP.pdf (8 p
-ages, 54301 bytes).
+ 41i,7n,43p,257b,224s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on /home/elizio/scramble/controle/static/reports//relCP.pdf (4 p
+ages, 42549 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 29 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

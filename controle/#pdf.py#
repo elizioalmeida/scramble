@@ -171,7 +171,7 @@ def relCP():
 	pa('  &\\multicolumn{2}{c|}{' + p3 + str(row.status) + '}} \n')
 	
 	diasdecorridos = ( ( date.today() - row.data_ini ).days) 
-	diastotais = ( 1+ ( date.today() - row.data_fim ).days)
+	diastotais = ( ( date.today() - row.data_fim ).days)
 	dias = int(diasdecorridos / diastotais * 100)
         tdias = ((row.data_fim - row.data_ini ).days)
         pdias = int(diasdecorridos / tdias * 100)
@@ -234,7 +234,7 @@ def relCP():
 		    if it.cdes.id == cd.id:
 			nome = str(it.nome_item)
 			pa('                        \n')
-			pa('      % -- Tarefas ---  \n')
+			pa('       -- Tarefas ---  \n')
 			pa('      \\arrayrulecolor{Tar} \n')
 			
 			
@@ -282,15 +282,6 @@ def relCP():
 	return FileResponse(open(os.path.dirname(__file__) + '/static/reports/teste.pdf', 'r'), content_type='application/pdf')
 
 def relGrafCP():
-    CP_ = CPod.objects.all().order_by('nome_cp')
-    ctx = {'CProducao_lis': CP_ }
-
-    CD_ = CDesenvolvimento.objects.all().order_by('nome_cd')
-
-    IT_ = ItemDesenvolvimento.objects.all().order_by('nome_item')
-
-    Tar_ = Tarefas.objects.all().order_by('nome_tarefa')
-
     con = sqlite3.connect("/home/elizio/scramble/db.sqlite3")
     conecta = con.cursor()
     conecta.execute("""
@@ -312,21 +303,7 @@ def relGrafCP():
     pa = pageAry.append
 
     pa('% Gráfico de Cartões de Produção.\n')
-    ##pa('\\documentclass{article}\n')
-    ##pa('\\documentclass{minimal} \n')
-    pa('\\documentclass[a4paper, portrait]{article} \n')
-    pa('\\usepackage{tikz}  \n')
-    
-    '''
-    pa('%%%< \n')
-    pa('\usepackage{verbatim} \n')
-    pa('\usepackage[active,tightpage]{preview} \n')
-    pa('\PreviewEnvironment{tikzpicture} \n')
-    pa('\setlength\PreviewBorder{5pt}% \n')
-    pa('%%%> \n')
-    '''
-
-
+    pa('\\documentclass{article}\n')
     pa('\\usepackage[brazil]{babel}\n')
     pa('\\usepackage[utf8]{inputenc}\n')
     pa('\\usepackage{booktabs}\n')
@@ -336,56 +313,22 @@ def relGrafCP():
     pa('\\title{Relatório de Projetos}\n')
     pa('\\vskip 2em\n\\font\\default=cmr12\n ')
     pa('\\def\\today{January 21, 2011}\n')
-
-    pa('\\usetikzlibrary{positioning,shapes,shadows,arrows} \n')
-
     pa('\\begin{document}\n')
-    pa('\\tikzstyle{abstract}=[rectangle, draw=black, rounded corners, fill=blue!40, drop shadow, \n')
-    pa('text centered, anchor=north, text=white, text width=3cm] \n')
-    pa('\\tikzstyle{comment}=[rectangle, draw=black, rounded corners, fill=green, drop shadow, \n')
-    pa('text centered, anchor=north, text=white, text width=3cm] \n')
-    pa('\\tikzstyle{myarrow}=[->, >=open triangle 90, thick] \n')
-    pa('\\tikzstyle{line}=[-, thick] \n')
-
-
-    
-    pa('\\begin{center} \n')
     pa('\\maketitle\n')
-    pa('Gráfico de C. Produção em Processo.......\\\\ \n')
+
+    pa('Gráfico de C. Produção em Processo.\\\\ \n')
     pa('================================\\\\ \n')
 
     pa('Data: ' + str(now.day).zfill(2) + '/ ' + str(now.month).zfill(2) + '/ ' + str(now.year) + '\\\\ \n')
     pa('Hora: ' + str(now.hour).zfill(2) + ':' + (str(now.minute)).zfill(2) + '\\\\ \n')
 
-    for cp in CP_:
-        pa('Reiniciando \\\\ \n')
-        
-        pa('\\begin{tikzpicture} \n')
-        
-        pa('[ \n')
-        pa('    level 1/.style = {draw, red, sibling distance = 4cm, level distance = 3cm}, \n')
-        pa('    level 2/.style = {draw, blue, sibling distance = 2.cm} \n')
-        pa('] \n')
+    pa('\\begin{tikzpicture} \n')
+    pa('\\begin{axis}[ xlabel=anos, ylabel=coelhos] \n')
 
-        ####### Producao
+    pa('\\addplot[color=blue,mark=*] coordinates{ (1,2) (3,4) (5,6) (7,8) (9,10) }; \n')
 
-        #for cp in CP_:
-        pa('\\node{' + str(cp.nome_cp) +'} [abstract, retangle split, rectangle split parts=2] \n')
-        ##for cd in CD_:
-        pa('    child {node {child 1} \n')
-        pa('        child {[fill] circle (2pt)} \n')
-        pa('        child {[fill] circle (3pt)} \n')
-        pa('    edge from parent [dashed]} \n')
-        pa('    child {node {child 2} \n')
-        pa('        child {node {grandchild 1} \n')
-        pa('            child {node {great-grandchild}}} \n')
-        pa('        child {node {grandchild 2}} \n')
-        pa('    edge from parent node [right] {X}}; \n')
-        ##pa('\\pagebreak \n')
-        ## pa('\\newpage \n')
-
-        pa('\\end{tikzpicture} \n')
-    pa('\\end{center} \n')
+    pa('\\end{axis}\n')
+    pa('\\end{tikzpicture} \n')
     pa('\\end{document}')
 
     try:

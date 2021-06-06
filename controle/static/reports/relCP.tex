@@ -1,5 +1,5 @@
 % Relatório de Cartões de Produção.
-\documentclass[ a4paper, landscape]{article}
+\documentclass[ a4paper, portrait]{article}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
@@ -31,448 +31,95 @@
   \begin{longtable}{p{0.1cm}c|c|c|c|c|c|c|cp{0.1cm}}
   %%% Page(?) 
   \endfirsthead 
-    % 
-    \arrayrulecolor{CPro}  
-    \hline \hline
-    \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: Class Customization}}\\ 
-    \hline 
-    \rule[0mm]{0mm}{1mm}
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Inicial}}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Final}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Progresso}}} 
-      &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Dias }}}  \\ [1ex] \hline \hline 
-    &\textcolor{CPro}{Sem data}
-    &\textcolor{CPro}{28/08/2019}
-    &\textcolor{CPro}{5\% }
-    &\textcolor{CPro}{32} \\ [1ex] \hline \hline 
-    \addlinespace[2ex]
-      % 
-      \arrayrulecolor{CDes} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Class Customization}}\\ 
-     \cline{2-6} 
+                        
+  % C Producao 
+  \arrayrulecolor{CPro} 
+  \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: ANVISA}}\\ 
+  \hline 
+  \rule[0mm]{0mm}{1mm}
+  &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Des. Ini}}} 
+  &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Des Fim}}} 
+  &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Prog. \%}}} 
+  &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Real \% }}}  \\ [1ex] \hline \hline 
+    &\textcolor{CPro}{01/01/2021}
+  &\textcolor{CPro}{Sem data}
+  &\multicolumn{2}{c|}{\textcolor{CPro}{90}} 
+  &\multicolumn{1}{c}{\textcolor{CPro}{15300}} \\ [1ex] \hline \hline 
+  \addlinespace[2ex]
+                        
+    % C Desenvolvimento 
+    \arrayrulecolor{CDes} 
+    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Anvisa}}\\ 
+    \cline{2-6} 
       
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{Sem data}
-      &\textcolor{CDes}{Sem data}
-      &\textcolor{CDes}{100}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{5}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      &\multicolumn{1}{c||}{\textbf{\textcolor{Tar}{Tarefa}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{Tar}{Participação}}} 
-      &\multicolumn{2}{c}{\textbf{\textcolor{Tar}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{c||}{\textcolor{Tar}{Class Customization}}
-      &\multicolumn{2}{c|}{\textcolor{Tar}{100}}
-      &\multicolumn{2}{c}{\textcolor{Tar}{5}}\\ 
-\cline{2-6} 
-      \newpage 
-    % 
-    \arrayrulecolor{CPro}  
-    \hline \hline
-    \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: MVVM}}\\ 
-    \hline 
-    \rule[0mm]{0mm}{1mm}
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Inicial}}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Final}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Progresso}}} 
-      &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Dias }}}  \\ [1ex] \hline \hline 
-    &\textcolor{CPro}{15/08/2019}
-    &\textcolor{CPro}{23/08/2019}
-    &\textcolor{CPro}{55\% }
-    &\textcolor{CPro}{36} \\ [1ex] \hline \hline 
-    \addlinespace[2ex]
-      % 
-      \arrayrulecolor{CDes} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: D9564}}\\ 
-     \cline{2-6} 
+    &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
+    &\textbf{\textcolor{CDes}{Data Inicial}} 
+    &\textbf{\textcolor{CDes}{Data Final}} 
+    &\textbf{\textcolor{CDes}{Participação}} 
+    &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] 
+    \cline{2-6} 
+                
+    &\multicolumn{1}{|c|}{\textcolor{CDes}{Lucas}}
+    &\textcolor{CDes}{01/01/2021}
+    &\textcolor{CDes}{Sem data}
+    &\textcolor{CDes}{100}
+    &\multicolumn{1}{c|}{\textcolor{CDes}{90}}\\ [1ex] 
+    \cline{2-6}\\ 
+    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Testes de screens}}\\ 
+    \cline{2-6} 
       
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Lauro}}
-      &\textcolor{CDes}{15/08/2019}
-      &\textcolor{CDes}{16/08/2019}
-      &\textcolor{CDes}{8}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{100}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      &\multicolumn{1}{c||}{\textbf{\textcolor{Tar}{Tarefa}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{Tar}{Participação}}} 
-      &\multicolumn{2}{c}{\textbf{\textcolor{Tar}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{c||}{\textcolor{Tar}{Finalizar D9564}}
-      &\multicolumn{2}{c|}{\textcolor{Tar}{100}}
-      &\multicolumn{2}{c}{\textcolor{Tar}{100}}\\ 
-\cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Exemplo}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Lauro}}
-      &\textcolor{CDes}{15/08/2019}
-      &\textcolor{CDes}{23/08/2019}
-      &\textcolor{CDes}{15}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: FactoryBind}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Lauro}}
-      &\textcolor{CDes}{20/08/2019}
-      &\textcolor{CDes}{20/08/2019}
-      &\textcolor{CDes}{40}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{100}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      &\multicolumn{1}{c||}{\textbf{\textcolor{Tar}{Tarefa}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{Tar}{Participação}}} 
-      &\multicolumn{2}{c}{\textbf{\textcolor{Tar}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{c||}{\textcolor{Tar}{FactoryBind}}
-      &\multicolumn{2}{c|}{\textcolor{Tar}{100}}
-      &\multicolumn{2}{c}{\textcolor{Tar}{100}}\\ 
-\cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Propriedades - T8133}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{15/08/2019}
-      &\textcolor{CDes}{21/08/2019}
-      &\textcolor{CDes}{7}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{100}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      &\multicolumn{1}{c||}{\textbf{\textcolor{Tar}{Tarefa}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{Tar}{Participação}}} 
-      &\multicolumn{2}{c}{\textbf{\textcolor{Tar}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{c||}{\textcolor{Tar}{Propriedades T 8133}}
-      &\multicolumn{2}{c|}{\textcolor{Tar}{100}}
-      &\multicolumn{2}{c}{\textcolor{Tar}{100}}\\ 
-\cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Rest ful Models}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{22/08/2019}
-      &\textcolor{CDes}{28/08/2019}
-      &\textcolor{CDes}{30}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      \newpage 
-    % 
-    \arrayrulecolor{CPro}  
-    \hline \hline
-    \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: Manutenção}}\\ 
-    \hline 
-    \rule[0mm]{0mm}{1mm}
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Inicial}}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Final}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Progresso}}} 
-      &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Dias }}}  \\ [1ex] \hline \hline 
-    &\textcolor{CPro}{15/08/2019}
-    &\textcolor{CPro}{31/12/2019}
-    &\textcolor{CPro}{0\% }
-    &\textcolor{CPro}{36} \\ [1ex] \hline \hline 
-    \addlinespace[2ex]
-      % 
-      \arrayrulecolor{CDes} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Adicionar quebra de linha entre metodos e propried}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Bruno}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{1}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Remover prefixo de interface em eventos}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Bruno}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{1}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Renomear Sufixos de eventos}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Bruno}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{1}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Renomear arquivos de Build}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Bruno}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{1}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      \newpage 
-    % 
-    \arrayrulecolor{CPro}  
-    \hline \hline
-    \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: Numeros}}\\ 
-    \hline 
-    \rule[0mm]{0mm}{1mm}
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Inicial}}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Final}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Progresso}}} 
-      &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Dias }}}  \\ [1ex] \hline \hline 
-    &\textcolor{CPro}{Sem data}
-    &\textcolor{CPro}{Sem data}
-    &\textcolor{CPro}{0\% }
-    &\textcolor{CPro}{32} \\ [1ex] \hline \hline 
-    \addlinespace[2ex]
-      % 
-      \arrayrulecolor{CDes} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Consertar Build}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Lauro}}
-      &\textcolor{CDes}{19/01/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{3}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Criar regioes de touch}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{10}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Criar render Thread}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{5}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Dinamizar Inicializacao}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{2}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Foco}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{15}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Testes de Performance}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{7}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Unificacao de Descriptor Set}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{3}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Unificacao de pipline layout}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Lauro}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{5}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: Widgets - Tema}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Felipe}}
-      &\textcolor{CDes}{01/08/2019}
-      &\textcolor{CDes}{31/12/2019}
-      &\textcolor{CDes}{50}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \newpage 
-    % 
-    \arrayrulecolor{CPro}  
-    \hline \hline
-    \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: TCT}}\\ 
-    \hline 
-    \rule[0mm]{0mm}{1mm}
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Inicial}}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Final}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Progresso}}} 
-      &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Dias }}}  \\ [1ex] \hline \hline 
-    &\textcolor{CPro}{15/08/2019}
-    &\textcolor{CPro}{16/08/2019}
-    &\textcolor{CPro}{200\% }
-    &\textcolor{CPro}{36} \\ [1ex] \hline \hline 
-    \addlinespace[2ex]
-      % 
-      \arrayrulecolor{CDes} 
-    \multicolumn{6}{c}{ \textcolor{CDes}{ Cartão de Desenvolvimento: BlackList}}\\ 
-     \cline{2-6} 
-      
-      &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
-      &\textbf{\textcolor{CDes}{Data Inicial}} 
-      &\textbf{\textcolor{CDes}{Data Final}} 
-      &\textbf{\textcolor{CDes}{Participação}} 
-      &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{|c|}{\textcolor{CDes}{Lauro}}
-      &\textcolor{CDes}{15/08/2019}
-      &\textcolor{CDes}{16/08/2019}
-      &\textcolor{CDes}{100}
-      &\multicolumn{1}{c|}{\textcolor{CDes}{200}}\\ [1ex] 
-      \cline{2-6}\\ 
-      \arrayrulecolor{Tar} 
-     \cline{2-6} 
-      &\multicolumn{1}{c||}{\textbf{\textcolor{Tar}{Tarefa}}} 
-      &\multicolumn{2}{c|}{\textbf{\textcolor{Tar}{Participação}}} 
-      &\multicolumn{2}{c}{\textbf{\textcolor{Tar}{Progresso}}} \\ [1ex] \cline{2-6} 
-      &\multicolumn{1}{c||}{\textcolor{Tar}{Finalizar BlackList}}
-      &\multicolumn{2}{c|}{\textcolor{Tar}{100}}
-      &\multicolumn{2}{c}{\textcolor{Tar}{100}}\\ 
-\cline{2-6} 
-      &\multicolumn{1}{c||}{\textcolor{Tar}{testar tarefas duplas}}
-      &\multicolumn{2}{c|}{\textcolor{Tar}{100}}
-      &\multicolumn{2}{c}{\textcolor{Tar}{100}}\\ 
-\cline{2-6} 
-      \newpage 
-\hline \hline
+    &\multicolumn{1}{|c|}{\textbf{\textcolor{CDes}{Desenvolvedor}}} 
+    &\textbf{\textcolor{CDes}{Data Inicial}} 
+    &\textbf{\textcolor{CDes}{Data Final}} 
+    &\textbf{\textcolor{CDes}{Participação}} 
+    &\multicolumn{1}{c|}{\textbf{\textcolor{CDes}{Progresso}}} \\ [1ex] 
+    \cline{2-6} 
+                
+    &\multicolumn{1}{|c|}{\textcolor{CDes}{Lucas}}
+    &\textcolor{CDes}{01/05/2021}
+    &\textcolor{CDes}{05/05/2021}
+    &\textcolor{CDes}{20}
+    &\multicolumn{1}{c|}{\textcolor{CDes}{0}}\\ [1ex] 
+    \cline{2-6}\\ 
+  \newpage 
+                        
+  % C Producao 
+  \arrayrulecolor{CPro} 
+  \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: Marinha}}\\ 
+  \hline 
+  \rule[0mm]{0mm}{1mm}
+  &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Des. Ini}}} 
+  &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Des Fim}}} 
+  &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Prog. \%}}} 
+  &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Real \% }}}  \\ [1ex] \hline \hline 
+    &\textcolor{CPro}{01/01/2021}
+  &\textcolor{CPro}{Sem data}
+  &\multicolumn{2}{c|}{\textcolor{CPro}{0}} 
+  &\multicolumn{1}{c}{\textcolor{CPro}{42}} \\ [1ex] \hline \hline 
+  \addlinespace[2ex]
+                        
+    % C Desenvolvimento 
+    \arrayrulecolor{CDes} 
+  \newpage 
+                        
+  % C Producao 
+  \arrayrulecolor{CPro} 
+  \multicolumn{10}{c}{ \Large \textcolor{CPro}{  Cartão de Produção: Rede}}\\ 
+  \hline 
+  \rule[0mm]{0mm}{1mm}
+  &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Des. Ini}}} 
+  &\multicolumn{1}{c|}{\textbf{\textcolor{CPro}{Data Des Fim}}} 
+  &\multicolumn{2}{c|}{\textbf{\textcolor{CPro}{Prog. \%}}} 
+  &\multicolumn{1}{c}{\textbf{\textcolor{CPro}{Real \% }}}  \\ [1ex] \hline \hline 
+  &\textcolor{CPro}{Sem data}
+  &\textcolor{CPro}{Sem data}
+  &\multicolumn{2}{c|}{\textcolor{CPro}{0}} 
+  &\multicolumn{1}{c}{\textcolor{CPro}{42}} \\ [1ex] \hline \hline 
+  \addlinespace[2ex]
+                        
+    % C Desenvolvimento 
+    \arrayrulecolor{CDes} 
+  \newpage 
 \bottomrule\\ 
 \end{longtable}
 \end{document}

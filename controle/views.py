@@ -18,6 +18,10 @@ from .pdf import relCP, relGrafCP
 
 import re
 
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login
+
+
 # import io
 
 
@@ -336,13 +340,13 @@ def tr_edit(request, pk):
         form = TRForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            post.itdes_id = pk
+            '''post.itdes_id = pk >>> estava gravando o id da tarefa no id do It de des'''
             post.save()
 
             sql(pk)
 
-            '''return redirect( 'tr_edit', pk=post.pk)'''
-            return redirect('tr_list_it', pro=post.pk)
+            return redirect( 'tr_edit', pk=post.pk)
+            '''return redirect('tr_list_it', pro=post.pk)'''
 
         else:
             args['form'] = form
@@ -543,6 +547,17 @@ def pdf_view(request):
     return FileResponse(open(os.path.dirname(__file__) + '/static/reports/relCP.pdf', 'r'),
                         content_type='application/pdf')
 
+def pdf_view1(request):
+    import sys, os, os.path
+    import subprocess
+    from subprocess import call
+
+    relCP()
+    
+
+    return FileResponse(open(os.path.dirname(__file__) + '/static/reports/relCP.pdf', 'r'),
+                        content_type='application/pdf')
+
 
 def grafCP(request):
     import sys, os, os.path
@@ -550,15 +565,41 @@ def grafCP(request):
     from subprocess import call
 
     relGrafCP()
-
+    
     name = '/home/elizio/scramble/controle/static/reports/relGrafCP'
     diretorio = '/home/elizio/scramble/controle/static/reports/'
     proc = subprocess.Popen(['/usr/bin/pdflatex', '-output-directory', diretorio, '%s.tex' % name])
     proc.communicate()
-
+   
     return FileResponse(open(os.path.dirname(__file__) + '/static/reports/relGrafCP.pdf', 'r'),
                         content_type='application/pdf')
 
+def cadastrar_usuario(request):
+    if request.method == "POST":
+        form_usuario = UserCreationForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
+            return redirect('inicial')
+    else:
+        form_usuario = UserCreationForm()
+    return render(request, 'controle/cadastro.html', {'form_usuario': form_usuario})
+
+def logar_usuario(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        usuario = authenticate(request, username=username, password=password)
+        if usuario is not None:
+            login(request, usuario)
+            return redirect('inicial')
+        else:
+            form_login = AuthenticationForm()
+    
+    else:
+        form_login = AuthenticationForm()
+    return render(request, 'controle/login.html', {'form_login': form_login})
+
+            
 
 '''
     with open('/mnt/droplet/home/elizio/scramble/controle/templates/controle/teste.pdf', 'rb') as pdf:

@@ -1,33 +1,45 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.29)  31 MAY 2021 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.29)  31 MAY 2021 15:17
 entering extended mode
-**./relGrafCP.tex
-(relGrafCP.tex
+**./class-diagram1.tex
+(class-diagram1.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-09-03>
-(/usr/local/share/miktex-texmf/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/local/share/miktex-texmf/tex/latex/base/size10.clo
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/local/share/miktex-texmf/tex/latex/base/minimal.cls
+Document Class: minimal 2001/05/25 Standard LaTeX minimal class
+) (/home/elizio/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/share/miktex-texmf/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
 )
-\c@part=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
-)
+(/usr/local/share/miktex-texmf/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/share/miktex-texmf/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count168
+\Gm@cntv=\count169
+\c@Gm@tempcnt=\count170
+\Gm@bindingoffset=\dimen134
+\Gm@wd@mp=\dimen135
+\Gm@odd@mp=\dimen136
+\Gm@even@mp=\dimen137
+\Gm@layoutwidth=\dimen138
+\Gm@layoutheight=\dimen139
+\Gm@layouthoffset=\dimen140
+\Gm@layoutvoffset=\dimen141
+\Gm@dimlist=\toks16
+
+(/home/elizio/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
 (/usr/local/share/miktex-texmf/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks15
-\pgfutil@tempdima=\dimen135
-\pgfutil@tempdimb=\dimen136
+\pgfutil@everybye=\toks17
+\pgfutil@tempdima=\dimen142
+\pgfutil@tempdimb=\dimen143
 
 (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -45,10 +57,6 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/share/miktex-texmf/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-)
 (/usr/local/share/miktex-texmf/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
@@ -63,41 +71,41 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (/usr/local/share/miktex-texmf/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen137
-\Gin@req@width=\dimen138
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
 )
 (/usr/local/share/miktex-texmf/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks17
-\pgfkeys@temptoks=\toks18
+\pgfkeys@pathtoks=\toks18
+\pgfkeys@temptoks=\toks19
 
 (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks19
+\pgfkeys@tmptoks=\toks20
 ))
-\pgf@x=\dimen139
-\pgf@y=\dimen140
-\pgf@xa=\dimen141
-\pgf@ya=\dimen142
-\pgf@xb=\dimen143
-\pgf@yb=\dimen144
-\pgf@xc=\dimen145
-\pgf@yc=\dimen146
-\pgf@xd=\dimen147
-\pgf@yd=\dimen148
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\pgf@xd=\dimen154
+\pgf@yd=\dimen155
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count176
-\c@pgf@countb=\count177
-\c@pgf@countc=\count178
-\c@pgf@countd=\count179
-\t@pgf@toka=\toks20
-\t@pgf@tokb=\toks21
-\t@pgf@tokc=\toks22
-\pgf@sys@id@count=\count180
+\c@pgf@counta=\count171
+\c@pgf@countb=\count172
+\c@pgf@countc=\count173
+\c@pgf@countd=\count174
+\t@pgf@toka=\toks21
+\t@pgf@tokb=\toks22
+\t@pgf@tokc=\toks23
+\pgf@sys@id@count=\count175
  (/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -113,8 +121,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count181
-\pgfsyssoftpath@bigbuffer@items=\count182
+\pgfsyssoftpath@smallbuffer@items=\count176
+\pgfsyssoftpath@bigbuffer@items=\count177
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -143,12 +151,12 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen149
-\pgfmath@count=\count183
+\pgfmath@dimen=\dimen156
+\pgfmath@count=\count178
 \pgfmath@box=\box46
-\pgfmath@toks=\toks23
-\pgfmath@stack@operand=\toks24
-\pgfmath@stack@operation=\toks25
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -168,38 +176,38 @@ tex)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count184
+\c@pgfmathroundto@lastzeros=\count179
 ))
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen150
-\pgf@picmaxx=\dimen151
-\pgf@picminy=\dimen152
-\pgf@picmaxy=\dimen153
-\pgf@pathminx=\dimen154
-\pgf@pathmaxx=\dimen155
-\pgf@pathminy=\dimen156
-\pgf@pathmaxy=\dimen157
-\pgf@xx=\dimen158
-\pgf@xy=\dimen159
-\pgf@yx=\dimen160
-\pgf@yy=\dimen161
-\pgf@zx=\dimen162
-\pgf@zy=\dimen163
+\pgf@picminx=\dimen157
+\pgf@picmaxx=\dimen158
+\pgf@picminy=\dimen159
+\pgf@picmaxy=\dimen160
+\pgf@pathminx=\dimen161
+\pgf@pathmaxx=\dimen162
+\pgf@pathminy=\dimen163
+\pgf@pathmaxy=\dimen164
+\pgf@xx=\dimen165
+\pgf@xy=\dimen166
+\pgf@yx=\dimen167
+\pgf@yy=\dimen168
+\pgf@zx=\dimen169
+\pgf@zy=\dimen170
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen164
-\pgf@path@lasty=\dimen165
+\pgf@path@lastx=\dimen171
+\pgf@path@lasty=\dimen172
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen166
-\pgf@shorten@start@additional=\dimen167
+\pgf@shorten@end@additional=\dimen173
+\pgf@shorten@start@additional=\dimen174
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
@@ -207,19 +215,19 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box47
 \pgf@hbox=\box48
 \pgf@layerbox@main=\box49
-\pgf@picture@serial@count=\count185
+\pgf@picture@serial@count=\count180
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen168
+\pgflinewidth=\dimen175
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen169
-\pgf@pt@y=\dimen170
-\pgf@pt@temp=\dimen171
+\pgf@pt@x=\dimen176
+\pgf@pt@y=\dimen177
+\pgf@pt@temp=\dimen178
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -235,13 +243,13 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen172
+\pgfarrowsep=\dimen179
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen173
-\pgf@sys@shading@range@num=\count186
-\pgf@shadingcount=\count187
+\pgf@max=\dimen180
+\pgf@sys@shading@range@num=\count181
+\pgf@shadingcount=\count182
 )
 (/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -275,8 +283,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen174
-\pgf@nodesepend=\dimen175
+\pgf@nodesepstart=\dimen181
+\pgf@nodesepend=\dimen182
 )
 (/usr/local/share/miktex-texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -290,10 +298,10 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen176
-\pgffor@skip=\dimen177
-\pgffor@stack=\toks26
-\pgffor@toks=\toks27
+\pgffor@iter=\dimen183
+\pgffor@skip=\dimen184
+\pgffor@stack=\toks27
+\pgffor@toks=\toks28
 ))
 (/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
@@ -301,227 +309,57 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count188
-\pgfplotmarksize=\dimen178
+\pgf@plot@mark@count=\count183
+\pgfplotmarksize=\dimen185
 )
-\tikz@lastx=\dimen179
-\tikz@lasty=\dimen180
-\tikz@lastxsaved=\dimen181
-\tikz@lastysaved=\dimen182
-\tikz@lastmovetox=\dimen183
-\tikz@lastmovetoy=\dimen184
-\tikzleveldistance=\dimen185
-\tikzsiblingdistance=\dimen186
+\tikz@lastx=\dimen186
+\tikz@lasty=\dimen187
+\tikz@lastxsaved=\dimen188
+\tikz@lastysaved=\dimen189
+\tikz@lastmovetox=\dimen190
+\tikz@lastmovetoy=\dimen191
+\tikzleveldistance=\dimen192
+\tikzsiblingdistance=\dimen193
 \tikz@figbox=\box52
 \tikz@figbox@bg=\box53
 \tikz@tempbox=\box54
 \tikz@tempbox@bg=\box55
-\tikztreelevel=\count189
-\tikznumberofchildren=\count190
-\tikznumberofcurrentchild=\count191
-\tikz@fig@count=\count192
+\tikztreelevel=\count184
+\tikznumberofchildren=\count185
+\tikznumberofcurrentchild=\count186
+\tikz@fig@count=\count187
 
 (/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count193
-\pgfmatrixcurrentcolumn=\count194
-\pgf@matrix@numberofcolumns=\count195
+\pgfmatrixcurrentrow=\count188
+\pgfmatrixcurrentcolumn=\count189
+\pgf@matrix@numberofcolumns=\count190
 )
-\tikz@expandcount=\count196
+\tikz@expandcount=\count191
 
 (/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
-(/usr/local/share/miktex-texmf/tex/generic/babel/babel.sty
-Package: babel 2020/09/01 3.48 The Babel package
-
-(/usr/local/share/miktex-texmf/tex/generic/babel/babel.def
-File: babel.def 2020/09/01 3.48 Babel common definitions
-\babel@savecnt=\count197
-\U@D=\dimen187
-\l@babelnohyphens=\language1
-
-(/usr/local/share/miktex-texmf/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read3
+(/usr/local/share/miktex-texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks29
+\verbatim@line=\toks30
+\verbatim@in@stream=\read3
 )
-\bbl@dirlevel=\count198
+(/home/elizio/.miktex/texmfs/install/tex/latex/preview/preview.sty
+Package: preview 2017/04/24 12.3 (AUCTeX/preview-latex)
 
-*************************************
-* Local config file bblopts.cfg used
-*
-(/usr/local/share/miktex-texmf/tex/latex/arabi/bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
+(/usr/local/share/miktex-texmf/tex/generic/luatex85/luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
 )
-(/home/elizio/.miktex/texmfs/install/tex/latex/babel-portuges/brazil.ldf
-Language: portuges 2020/05/04 v1.2r Portuguese support from the babel system
-
-
-Package babel Warning: No hyphenation patterns were preloaded for
-(babel)                the language `Portuguese' into the format.
-(babel)                Please, configure your TeX system to add them and
-(babel)                rebuild the format. Now I will use the patterns
-(babel)                preloaded for \language=0 instead on input line 53.
-
-Package babel Info: Making " an active character on input line 143.
-)) (/usr/local/share/miktex-texmf/tex/latex/base/inputenc.sty
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks28
-\inpenc@posthook=\toks29
+(/home/elizio/.miktex/texmfs/install/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen194
 )
-(/home/elizio/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen188
-\lightrulewidth=\dimen189
-\cmidrulewidth=\dimen190
-\belowrulesep=\dimen191
-\belowbottomsep=\dimen192
-\aboverulesep=\dimen193
-\abovetopsep=\dimen194
-\cmidrulesep=\dimen195
-\cmidrulekern=\dimen196
-\defaultaddspace=\dimen197
-\@cmidla=\count199
-\@cmidlb=\count266
-\@aboverulesep=\dimen198
-\@belowrulesep=\dimen199
-\@thisruleclass=\count267
-\@lastruleclass=\count268
-\@thisrulewidth=\dimen256
+\pr@snippet=\count192
+\pr@box=\box56
+\pr@output=\toks31
 )
-(/home/elizio/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/local/share/miktex-texmf/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/local/share/miktex-texmf/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-))
-\Gm@cnth=\count269
-\Gm@cntv=\count270
-\c@Gm@tempcnt=\count271
-\Gm@bindingoffset=\dimen257
-\Gm@wd@mp=\dimen258
-\Gm@odd@mp=\dimen259
-\Gm@even@mp=\dimen260
-\Gm@layoutwidth=\dimen261
-\Gm@layoutheight=\dimen262
-\Gm@layouthoffset=\dimen263
-\Gm@layoutvoffset=\dimen264
-\Gm@dimlist=\toks30
-
-(/home/elizio/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
-(/usr/local/share/miktex-texmf/tex/latex/pgfplots/pgfplots.sty
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
-
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks31
-\t@pgfplots@tokb=\toks32
-\t@pgfplots@tokc=\toks33
-\pgfplots@tmpa=\dimen265
-\c@pgfplots@coordindex=\count272
-\c@pgfplots@scanlineindex=\count273
-
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
-.tex))
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
-ex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
-gfsupp_loader.code.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
-))
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotslists
-tructure.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotslists
-tructureext.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsarray
-.code.tex
-\c@pgfplotsarray@tmp=\count274
-)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsmatri
-x.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/numtable/pgfplotstableshare
-d.code.tex
-\c@pgfplotstable@counta=\count275
-\t@pgfplotstable@a=\toks34
-)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsdeque
-.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsbinary.code.te
-x
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsbinary.data.co
-de.tex))
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsutil.verb.code
-.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
-fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count276
-
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
-shading.pgfsys-pdftex.def)))
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotscolormap.code.
-tex
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotscolor.code.tex
-))
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsstackedplots.code.t
-ex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsplothandlers.code.t
-ex
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
-e.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
-tex)))
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.scaling.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotscoordprocessing.cod
-e.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.errorbars.code.tex
-) (/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.markers.code.tex
-) (/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsticks.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.paths.code.tex)
-(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.code.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduledecorations.cod
-e.tex
-\pgfdecoratedcompleteddistance=\dimen266
-\pgfdecoratedremainingdistance=\dimen267
-\pgfdecoratedinputsegmentcompleteddistance=\dimen268
-\pgfdecoratedinputsegmentremainingdistance=\dimen269
-\pgf@decorate@distancetomove=\dimen270
-\pgf@decorate@repeatstate=\count277
-\pgfdecorationsegmentamplitude=\dimen271
-\pgfdecorationsegmentlength=\dimen272
-)
-\tikz@lib@dec@box=\box56
-)
-(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.pathmorphing.code.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.pathmorphing.code.tex))
-(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.pathreplacing.code.tex
-(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count278
-\pgfplots@xmin@reg=\dimen273
-\pgfplots@xmax@reg=\dimen274
-\pgfplots@ymin@reg=\dimen275
-\pgfplots@ymax@reg=\dimen276
-\pgfplots@zmin@reg=\dimen277
-\pgfplots@zmax@reg=\dimen278
-)
-(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.co
-de.tex
-File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
 (/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -605,23 +443,138 @@ File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryfadings.code
 .tex
 File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
-! I can't write on file `relGrafCP.pdf'.
-Please type another file name for output
-! Emergency stop.
-\pgfsys@horishading ...e] >> >>}\pgfutil@tempboxa 
-                                                  \xdef \pgfutil@tempa {\hbo...
-l.17 ...t!100); color(100bp)=(pgftransparent!100)}
-                                                  %
-*** (job aborted, file error in nonstop mode)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen195
+)) (/usr/local/share/miktex-texmf/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-01 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count193
+\l__pdf_internal_box=\box77
+)
+No file class-diagram1.aux.
+\openout1 = `class-diagram1.aux'.
 
- 
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: landscape 
+* h-part:(L,W,R)=(28.45274pt, 788.14136pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 540.60239pt, 28.45274pt)
+* \paperwidth=845.04684pt
+* \paperheight=597.50787pt
+* \textwidth=788.14136pt
+* \textheight=540.60239pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-43.81725pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=10.0pt
+* \footskip=0.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=0.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 4.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EveryShipout initializing macros
+(/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count194
+\scratchdimen=\dimen196
+\scratchbox=\box78
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count197
+\MPscratchDim=\dimen197
+\MPnumerator=\count198
+\makeMPintoPDFobject=\count199
+\everyMPtoPDFconversion=\toks33
+) (/usr/local/share/miktex-texmf/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/home/elizio/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/home/elizio/.miktex/texmfs/install/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/home/elizio/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/home/elizio/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+
+(/home/elizio/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/home/elizio/.miktex/texmfs/install/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/local/share/miktex-texmf/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+)
+Preview: Fontsize 10pt
+Preview: PDFoutput 1
+Preview: Tightpage -327680 -327680 327680 327680
+[1{/home/elizio/.miktex/texmfs/data/pdftex/config/pdftex.map}]
+(class-diagram1.aux) ) 
 Here is how much of TeX's memory you used:
- 23972 strings out of 483123
- 636236 string characters out of 2957278
- 990687 words of memory out of 3000000
- 38967 multiletter control sequences out of 15000+200000
- 535386 words of font info for 30 fonts, out of 3000000 for 9000
+ 15163 strings out of 483123
+ 331971 string characters out of 2957278
+ 641603 words of memory out of 3000000
+ 30250 multiletter control sequences out of 15000+200000
+ 535396 words of font info for 30 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 63i,1n,98p,738b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 60i,7n,83p,398b,963s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/share/miktex-texmf/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/c
+mr10.pfb>
+Output written on class-diagram1.pdf (1 page, 46428 bytes).
+PDF statistics:
+ 41 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+

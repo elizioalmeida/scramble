@@ -4,16 +4,26 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from . import views
 from . import pdf
-#from reports import relatorio
+
+from django.contrib.auth import views as auth_views
 
 
 from django.conf.urls.static import static
 from django.conf import settings
 from django.core.urlresolvers import reverse
 
-#teste para salvar
+from .views import *
+
 
 urlpatterns = [
+
+    url(r'^cadastrar_usuario$', views.cadastrar_usuario, name="cadastrar_usuario"),
+    url(r'^logar_usuario$', views.logar_usuario, name="logar_usuario"), 
+
+    url(r'^login/$', auth_views.login, {'template_name': 'controle/login.html'}, name="login"),
+    url(r'^admin/',admin.site.urls),
+
+
 
     url(r'^$', views.inicial, name='inicial'),
 
@@ -69,6 +79,7 @@ urlpatterns = [
 
     ### PDF
     url(r'^controle/pdf_view', views.pdf_view, name='pdf_view'),
+    url(r'^controle/pdf_view1', views.pdf_view1, name='pdf_view1'),
     url(r'^controle/grafCP', views.grafCP, name='grafCP'),
 
 ]

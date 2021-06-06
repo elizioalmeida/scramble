@@ -93,42 +93,83 @@ def relCP():
     pa('\\usepackage{tabu}\n')
     pa('\\usepackage{longtable}\n')
 
+    
+    #pa('\\usepackage{pgfplots}\n')
+    #pa('\\pgfplotsset{compat=newest} \n')
+    ##pa('\\usepackage{xcolor}\n')
+    #pa('\\usepackage[ddmmyyyy]{datetime}\n')
+    #pa('\\usepackage{siunitx}\n') #% format SI units ( mas não resolveu )
+    ##pa('\\usepackage{tabularx}\n')    
+    ##pa('\\usepackage{color, colortbl}\n')
+    ##pa('\\usepackage{ltablex}\n')
+    ##pa('\\usepackage{tabularx}\n')
+    
     #### --- color
     pa('  % \n')
     pa('\\definecolor{color2}{gray}{0.9}\n')
     pa('\\definecolor{CDes}{RGB}{0, 0, 255} \n')
     pa('\\definecolor{CPro}{RGB}{51, 153, 51} \n')
     pa('\\definecolor{grey2}{RGB}{250,250,250} \n')
+    ##pa('\\definecolor{Tar}{black}{0.9}\n')
     pa('\\definecolor{Tar}{RGB}{0,0,0} \n')
      
+    ##pa('\\title{Relatório de Cartões de Produção}\n')
+    ##pa('\\author{elizio}\n')
     pa('\\vskip 2em \n')
     pa('\\font\\default=cmr12\n')
     pa('\\def\\today{January 21, 2011}\n')
     
+    '''
+    pa('  %%% \n')
+    pa(' \\fancypagestyle{style2}{ \n')
+    pa(' \\renewcommand{\\footrulewidth}{0.4pt} \n')
+    pa(' \\lhead{toptext} \n')
+    pa(' \\chead{} \n')
+    pa(' \\rhead{} \n')
+    pa(' \\lfoot{docref \\newline Document uncontrolled when printed} \n')
+    pa(' \\cfoot{} \n')
+    pa(' \\rfoot{Version\\ 1.0\\Page\\ \\thepage} }\n')
+    #pa(' } \n')
+    '''
+    
     pa('  %%% \n')
     
+    
     pa('\\begin{document}\n')
+    ##pa('\\maketitle\n')
     
     pa('\\renewcommand{\\arraystretch}{1.7} \n')
     
     pa('  % \n')
+    '''
+    pa('  \\begin{table}[!ht]\\centering \n')
+
+    pa('  \\caption{Projetos}\n')
+    pa('  \\caption*{ Esta é uma informação adicional para a legenda da tabela}\n')
+    pa('  \\vspace{0,5cm}\n')
+    '''
+    
     pa('  % \n')
     pa('  \\centering\n')
     pa('  \\begin{longtable}{p{0.1cm}c|c|c|c|c|c|c|cp{0.1cm}}\n')	
     pa('  %%% Page(?) \n')
     
+    #pa('    \\hline \\\ \n')
+    # ------> pa('    \\multicolumn{10}{c}{ \\color{red} \\LARGE Relatório de Cartões de Produção}\\\ \n')
+    #pa('    \\hline \n')
+    #pa('    \\caption{legenda da logtable. \\label{long}} \\\ \n')
     pa('  \\endfirsthead \n')
     
     
     p1 = '\\textbf{\\textcolor{CPro}{'
-    p2 = '  &\\textbf{\\textcolor{CPro}{'
+    p2 = '    &\\textbf{\\textcolor{CPro}{'
     p3 = '\\textcolor{CPro}{'
-    p4 = '  &\\textcolor{CPro}{'
+    p4 = '    &\\textcolor{CPro}{'
     
     c1 = '\\textbf{\\textcolor{CDes}{'
-    c2 = '    &\\textbf{\\textcolor{CDes}{'
+    c2 = '      &\\textbf{\\textcolor{CDes}{'
     c3 = '\\textcolor{CDes}{'
-    c4 = '    &\\textcolor{CDes}{'
+    c4 = '      &\\textcolor{CDes}{'
 
     t1 = '\\textbf{\\textcolor{Tar}{'
     t2 = '      &\\textbf{\\textcolor{Tar}{'
@@ -136,26 +177,26 @@ def relCP():
     t4 = '      &\\textcolor{Tar}{'
 
     
-    
-    #############################
-    ### Producao
     for row in CP_:
-	pa('                        \n')
-	pa('  % C Producao \n')
-	pa('  \\arrayrulecolor{CPro} \n')
-	#pa('    % \n')
-	#pa('    \\arrayrulecolor{CPro}  \n')
+	pa('    % \n')
 	
-	pa('  \\multicolumn{10}{c}{ \\Large ' + p3 + '  Cartão de Produção: ' + str(row.nome_cp) + '}}\\\ \n')
-	pa('  \\hline \n')
+	pa('    \\arrayrulecolor{CPro}  \n')
+	#pa('    \\hline \hline\n')
 	
-	pa('  \\rule[0mm]{0mm}{1mm}\n')
+	pa('    \\multicolumn{10}{c}{ \\Large ' + p3 + '  Cartão de Produção: ' + str(row.nome_cp) + '}}\\\ \n')
+	pa('    \\hline \n')
 	
-	pa('  &\\multicolumn{1}{c|}{' + p1 + 'Data Des. Ini}}} \n')
-	pa('  &\\multicolumn{1}{c|}{' + p1 + 'Data Des Fim}}} \n')
-	pa('  &\\multicolumn{2}{c|}{' + p1 + 'Prog. \%}}} \n')
-	pa('  &\\multicolumn{1}{c}{' + p1 + 'Real \% }}}  \\\\ [1ex] \hline \hline \n')
+	pa('    \\rule[0mm]{0mm}{1mm}\n')
 	
+	#pa('    \\multirow{2}{*}{} \n') 
+	#pa('    &\\renewcommand{\cellalign}{cc}\\multirow{2}{*}[-0.4cm]{' + p1 + 'Cartão Produção}}} \n') 
+	#pa('     & \multicolumn{2}{c|}{' + p1 + 'Data }}} & \multicolumn{2}{c|}{' + p1 + '\% Desenvolvimento}}} & \multicolumn{4}{c}{' + p1 + ' Dias Consumidos}}}\\\\ [1ex] \n')
+	#pa('    \\cline{1-10} \n')
+	pa('      &\\multicolumn{1}{c|}{' + p1 + 'Data Inicial}}} \n')
+	pa('      &\\multicolumn{1}{c|}{' + p1 + 'Data Final}}} \n')
+	pa('      &\\multicolumn{2}{c|}{' + p1 + 'Progresso}}} \n')
+	pa('      &\\multicolumn{1}{c}{' + p1 + 'Dias }}}  \\\\ [1ex] \hline \hline \n')
+        ## Participacao sempre sera 100% --pa('    \\ &  ' + p1 + 'Inicial}} & ' + p1 + 'Final}} &  ' + p1 + 'Participação}} &' + p1 + 'Progresso}} &  ' + p1 +  'Dias }} & ' + p1 + ' [ \% Percentual ] }} &  & & \\\\ [1ex] \hline \hline \n')
 	
 	
 	
@@ -166,23 +207,33 @@ def relCP():
 	if row.data_des_fim == None:
 	    pa(p4 + 'Sem data' + '}\n')
 	else:
-	    pa('  &' + p3 + str(row.data_fim.day).zfill(2) + '/' + str(row.data_fim.month).zfill(2) + '/' + str(row.data_fim.year) + '}\n')
+	    pa('    &' + p3 + str(row.data_fim.day).zfill(2) + '/' + str(row.data_fim.month).zfill(2) + '/' + str(row.data_fim.year) + '}\n')
 	
-	pa('  &\\multicolumn{2}{c|}{' + p3 + str(row.status) + '}} \n')
+	## - sempre será 100% -- pa(' & ' + p3 + str(row.participacao) +  ' \\% }\n')
+	
+	#pa('    &' + p3 + str(row.status) + '\\%' + ' }\n') # status
+	#pa(p4 + str(row.status) + '}\n')
+	pa('      &\\multicolumn{2}{c|}{' + p3 + str(row.status) + '}} \n')
 	
 	diasdecorridos = ( ( date.today() - row.data_ini ).days) 
-	diastotais = ( 1+ ( date.today() - row.data_fim ).days)
+	diastotais = ( ( date.today() - row.data_fim ).days)
 	dias = int(diasdecorridos / diastotais * 100)
-        tdias = ((row.data_fim - row.data_ini ).days)
-        pdias = int(diasdecorridos / tdias * 100)
 	
-	##pa('  &\\multicolumn{1}{c}{' + p3 + str(diasdecorridos) + '}} \\\\ [1ex] \hline \hline \n')
-       	pa('  &\\multicolumn{1}{c}{' + p3 + str(pdias) + '}} \\\\ [1ex] \hline \hline \n')
-        
+	pa('      &\\multicolumn{1}{c}{' + p3 + str(diasdecorridos) + '}} \\\\ [1ex] \hline \hline \n')
+	
+	#pa(      p4 + str(diasdecorridos) + '} \\\\ [1ex] \hline \hline \n')
+	
+	
+	#pa('      &\\multicolumn{2}{|c|}{' + p3 + str(diasdecorridos) + '} \\\\ [1ex] \hline \hline \n')
+	#pa('    &' + p3 +  '} & \\\\ [1ex] \hline \hline \n')
+	#pa(' &' + p3 + str(dias) + '\\%' + ' }\n')
+	
+	
 	
         if(row.data_fim - row.data_ini ).days == 0: d_total = 1 # analisar
         else: d_total = int((row.data_fim - row.data_ini ).days)
         d_trabalhado = int((date.today() - row.data_ini).days)
+        # decorrido    = int((d_trabalhado / d_total)*100) = Analisar este dado como seria mostrado.
         
 	
         if row.status == 0: 
@@ -192,29 +243,28 @@ def relCP():
         
         nova_data = (row.data_ini + timedelta(d_falta))
 	
-	pa('  \\addlinespace[2ex]\n')
 	
-	#############################
-	### Desenvolvimento
-	pa('                        \n')
-	pa('    % C Desenvolvimento \n')
-	pa('    \\arrayrulecolor{CDes} \n')
+	
+	pa('    \\addlinespace[2ex]\n')
+	###################################################################
+	
+	pa('      % \n')
+	pa('      \\arrayrulecolor{CDes} \n')
 	
 	for cd in CD_:
             if cd.cpod.id == row.id:
 		
 		pa('    \\multicolumn{6}{c}{ ' + c3 + ' Cartão de Desenvolvimento: ' +  str(cd.nome_cd) + '}}\\\ \n')
-		pa('    \\cline{2-6} \n')
+		pa('     \\cline{2-6} \n')
 		pa('      \n')
 		    
-		pa('    &\\multicolumn{1}{|c|}{' + c1 + 'Desenvolvedor}}} \n')
+		pa('      &\\multicolumn{1}{|c|}{' + c1 + 'Desenvolvedor}}} \n')
 		pa(c2 + 'Data Inicial}} \n')
 		pa(c2 + 'Data Final}} \n')
 		pa(c2 + 'Participação}} \n')
-		pa('    &\\multicolumn{1}{c|}{' + c1 + 'Progresso}}} \\\\ [1ex] \n')
-		pa('    \cline{2-6} \n')
-		pa('                \n')
-                pa('    &\\multicolumn{1}{|c|}{' + c3 + str(cd.desenvolvedor) + '}}\n' )
+		pa('      &\\multicolumn{1}{c|}{' + c1 + 'Progresso}}} \\\\ [1ex] \cline{2-6} \n')
+		
+                pa('      &\\multicolumn{1}{|c|}{' + c3 + str(cd.desenvolvedor) + '}}\n' )
                 if cd.data_des_ini == None:
 		    pa(c4 + 'Sem data' + '}\n')
 		else:
@@ -224,29 +274,27 @@ def relCP():
 		else:
 		    pa(c4 + str(cd.data_des_fim.day).zfill(2) + '/' + str(cd.data_des_fim.month).zfill(2) +'/'+ str(cd.data_des_fim.year).zfill(2) + '}\n')
                 pa( c4 + str(cd.participacao) + '}\n')
-		pa('    &\\multicolumn{1}{c|}{' + c3 + str(cd.status ) + '}}\\\\ [1ex] \n')
+		pa('      &\\multicolumn{1}{c|}{' + c3 + str(cd.status ) + '}}\\\\ [1ex] \n')
 		
-		pa('    \\cline{2-6}\\\\ \n')
+		pa('      \\cline{2-6}\\\\ \n')
 
 		############################
-		### Tarefas
+		
+		
 		for it in IT_:
 		    if it.cdes.id == cd.id:
-			nome = str(it.nome_item)
-			pa('                        \n')
-			pa('      % -- Tarefas ---  \n')
+			nome = str(it.nome_item) 
 			pa('      \\arrayrulecolor{Tar} \n')
-			
+			pa('     \\cline{2-6} \n')
+			#pa('      \n')
 			
 			#### - Cabeçaçho de Tarefas.
 			try:
 			    for tar in Tar_:
 				if tar.itdes.id == it.id:	
-				    pa('      \\cline{2-6} \n')
 				    pa('      &\\multicolumn{1}{c||}{' + t1 + 'Tarefa}}} \n')
 				    pa('      &\\multicolumn{2}{c|}{' + t1 + 'Participação}}} \n')
-				    pa('      &\\multicolumn{2}{c}{' + t1 + 'Progresso}}} \\\\ [1ex] \n')
-				    pa('      \cline{2-6} \n')
+				    pa('      &\\multicolumn{2}{c}{' + t1 + 'Progresso}}} \\\\ [1ex] \cline{2-6} \n')
 				    break
 			except:
 			    None
@@ -256,15 +304,33 @@ def relCP():
 				    pa('      &\\multicolumn{1}{c||}{' + t3 + str(tar.nome_tarefa) + '}}\n')
 				    pa('      &\\multicolumn{2}{c|}{' + t3 + str(tar.participacao) + '}}\n')
 				    pa('      &\\multicolumn{2}{c}{' + t3 + str(tar.status) + '}}\\\\ \n')
-				    pa('      \\cline{2-6} \n')
+				    pa('\\cline{2-6} \n')
 			
 		
-	pa('  \\newpage \n')
+	#pa('      \\addlinespace[2ex]   \n')
+	pa('      \\newpage \n')
 	
 	
+    #pa('\\pagebreak \n')
+
+    #pa('\\hline \\hline\n')
     pa('\\bottomrule\\\\ \n')
     
     pa('\\end{longtable}\n')
+    #pa('\\end{center} \n')
+    #pa('\\end{table}\n')
+    
+
+    '''
+    pa('\\begin{tikzpicture} \n')
+    pa('\\begin{axis}[ xlabel=anos, ylabel=coelhos] \n')
+
+    pa('\\addplot[color=blue,mark=*] coordinates{ (1,2) (3,4) (5,6) (7,8) (9,10) }; \n')
+
+    pa('\\end{axis}\n')
+    pa('\\end{tikzpicture} \n')
+    '''
+
     pa('\\end{document}')
    
    
@@ -282,15 +348,6 @@ def relCP():
 	return FileResponse(open(os.path.dirname(__file__) + '/static/reports/teste.pdf', 'r'), content_type='application/pdf')
 
 def relGrafCP():
-    CP_ = CPod.objects.all().order_by('nome_cp')
-    ctx = {'CProducao_lis': CP_ }
-
-    CD_ = CDesenvolvimento.objects.all().order_by('nome_cd')
-
-    IT_ = ItemDesenvolvimento.objects.all().order_by('nome_item')
-
-    Tar_ = Tarefas.objects.all().order_by('nome_tarefa')
-
     con = sqlite3.connect("/home/elizio/scramble/db.sqlite3")
     conecta = con.cursor()
     conecta.execute("""
@@ -312,21 +369,7 @@ def relGrafCP():
     pa = pageAry.append
 
     pa('% Gráfico de Cartões de Produção.\n')
-    ##pa('\\documentclass{article}\n')
-    ##pa('\\documentclass{minimal} \n')
-    pa('\\documentclass[a4paper, portrait]{article} \n')
-    pa('\\usepackage{tikz}  \n')
-    
-    '''
-    pa('%%%< \n')
-    pa('\usepackage{verbatim} \n')
-    pa('\usepackage[active,tightpage]{preview} \n')
-    pa('\PreviewEnvironment{tikzpicture} \n')
-    pa('\setlength\PreviewBorder{5pt}% \n')
-    pa('%%%> \n')
-    '''
-
-
+    pa('\\documentclass{article}\n')
     pa('\\usepackage[brazil]{babel}\n')
     pa('\\usepackage[utf8]{inputenc}\n')
     pa('\\usepackage{booktabs}\n')
@@ -336,56 +379,22 @@ def relGrafCP():
     pa('\\title{Relatório de Projetos}\n')
     pa('\\vskip 2em\n\\font\\default=cmr12\n ')
     pa('\\def\\today{January 21, 2011}\n')
-
-    pa('\\usetikzlibrary{positioning,shapes,shadows,arrows} \n')
-
     pa('\\begin{document}\n')
-    pa('\\tikzstyle{abstract}=[rectangle, draw=black, rounded corners, fill=blue!40, drop shadow, \n')
-    pa('text centered, anchor=north, text=white, text width=3cm] \n')
-    pa('\\tikzstyle{comment}=[rectangle, draw=black, rounded corners, fill=green, drop shadow, \n')
-    pa('text centered, anchor=north, text=white, text width=3cm] \n')
-    pa('\\tikzstyle{myarrow}=[->, >=open triangle 90, thick] \n')
-    pa('\\tikzstyle{line}=[-, thick] \n')
-
-
-    
-    pa('\\begin{center} \n')
     pa('\\maketitle\n')
-    pa('Gráfico de C. Produção em Processo.......\\\\ \n')
+
+    pa('Gráfico de C. Produção em Processo.\\\\ \n')
     pa('================================\\\\ \n')
 
     pa('Data: ' + str(now.day).zfill(2) + '/ ' + str(now.month).zfill(2) + '/ ' + str(now.year) + '\\\\ \n')
     pa('Hora: ' + str(now.hour).zfill(2) + ':' + (str(now.minute)).zfill(2) + '\\\\ \n')
 
-    for cp in CP_:
-        pa('Reiniciando \\\\ \n')
-        
-        pa('\\begin{tikzpicture} \n')
-        
-        pa('[ \n')
-        pa('    level 1/.style = {draw, red, sibling distance = 4cm, level distance = 3cm}, \n')
-        pa('    level 2/.style = {draw, blue, sibling distance = 2.cm} \n')
-        pa('] \n')
+    pa('\\begin{tikzpicture} \n')
+    pa('\\begin{axis}[ xlabel=anos, ylabel=coelhos] \n')
 
-        ####### Producao
+    pa('\\addplot[color=blue,mark=*] coordinates{ (1,2) (3,4) (5,6) (7,8) (9,10) }; \n')
 
-        #for cp in CP_:
-        pa('\\node{' + str(cp.nome_cp) +'} [abstract, retangle split, rectangle split parts=2] \n')
-        ##for cd in CD_:
-        pa('    child {node {child 1} \n')
-        pa('        child {[fill] circle (2pt)} \n')
-        pa('        child {[fill] circle (3pt)} \n')
-        pa('    edge from parent [dashed]} \n')
-        pa('    child {node {child 2} \n')
-        pa('        child {node {grandchild 1} \n')
-        pa('            child {node {great-grandchild}}} \n')
-        pa('        child {node {grandchild 2}} \n')
-        pa('    edge from parent node [right] {X}}; \n')
-        ##pa('\\pagebreak \n')
-        ## pa('\\newpage \n')
-
-        pa('\\end{tikzpicture} \n')
-    pa('\\end{center} \n')
+    pa('\\end{axis}\n')
+    pa('\\end{tikzpicture} \n')
     pa('\\end{document}')
 
     try:
