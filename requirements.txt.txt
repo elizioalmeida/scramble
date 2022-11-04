@@ -95,7 +95,7 @@ sqlparse==0.1.18
 tempdir==0.6
 testtools==1.8.1
 traceback2==1.4.0
-Twisted==16.0.0
+Twisted==22.10.0
 Twisted-Lore==15.2.1
 ubuntuone-client-data==14.4
 unittest2==1.1.0
