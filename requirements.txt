@@ -91,7 +91,7 @@ shutilwhich==1.1.0
 simplejson==3.8.1
 six==1.10.0
 software-center-aptd-plugins==0.0.0
-sqlparse==0.1.18
+sqlparse==0.4.4
 tempdir==0.6
 testtools==1.8.1
 traceback2==1.4.0
