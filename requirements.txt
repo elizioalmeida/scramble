@@ -9,7 +9,7 @@ chardet==2.3.0
 Cheetah==2.4.4
 command-not-found==0.3
 configobj==5.0.6
-cryptography==1.2.3
+cryptography==41.0.2
 cssutils==1.0
 data==0.4
 dbf==0.96.5
